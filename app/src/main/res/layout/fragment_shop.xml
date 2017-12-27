@@ -4,10 +4,67 @@
     android:layout_height="match_parent"
     tools:context="com.ysd.keepcar.view.shop.ShopFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <!--筛选栏-->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="shop" />
+        android:layout_height="40dp"
 
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <!--附近优先-->
+        <LinearLayout
+            android:background="#1234"
+            android:id="@+id/linear_Nearby"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:gravity="center"
+                android:text="品牌"
+                android:textSize="15sp" />
+        </LinearLayout>
+        <!--宠物类型-->
+        <LinearLayout
+            android:id="@+id/linear_Pat_Genre"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <CheckBox
+                android:id="@+id/popu_but_Pat_Genre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:button="@null"
+                android:gravity="center"
+                android:text="店面"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+        <!--筛选-->
+        <LinearLayout
+            android:id="@+id/linear_ShaiXuan"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <CheckBox
+                android:id="@+id/popu_but_ShaiXuan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:button="@null"
+                android:gravity="center"
+                android:text="排序"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+    </LinearLayout>
 </FrameLayout>

@@ -1,6 +1,5 @@
 package com.ysd.keepcar.view;
 
-import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.Fragment;
@@ -9,7 +8,6 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -106,7 +104,7 @@ public class HomeActivity extends BaseActivity {
                 switch (checkedId){
                     case R.id.home_home:
                         isShowFragment(homeFragment);
-                        customTool.setAppBackground(R.color.transparent);
+                      // customTool.setAppBackground(R.color.transparent);
                         customTool.initViewsVisible(false, false, false, true, false);
                         break;
                     case R.id.home_shop:

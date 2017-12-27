@@ -17,8 +17,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         initData();
         initLinstener();
         initToolBar();
-        AppService.baseActivity=this;
+        AppService.baseActivity = this;
     }
+
+
 
     public abstract int getInitId();
 
