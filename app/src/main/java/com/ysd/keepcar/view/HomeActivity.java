@@ -106,7 +106,6 @@ public class HomeActivity extends BaseActivity {
                 switch (checkedId){
                     case R.id.home_home:
                         isShowFragment(homeFragment);
-                        customTool.setAppBackground(R.color.transparent);
                         customTool.initViewsVisible(false, false, false, true, false);
                         break;
                     case R.id.home_shop:
