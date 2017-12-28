@@ -9,14 +9,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.MainActivity">
+        <activity android:name=".view.MainActivity" />
+        <activity android:name=".view.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.HomeActivity"></activity>
+        <activity android:name=".view.home.activity.MaintainActivity" />
+        <activity android:name=".view.home.activity.RepairActivity" />
+        <activity android:name=".view.home.activity.ExhibitionActivity" />
+        <activity android:name=".view.home.activity.RenewalActivity" />
+        <activity android:name=".view.home.activity.BoutiqueActivity" />
+        <activity android:name=".view.home.activity.WashCarActivity" />
+        <activity android:name=".view.home.activity.ActivityActivity" />
+        <activity android:name=".view.home.activity.ShoppingMallActivity" />
+        <activity android:name=".view.home.activity.QueryActivity" />
+        <activity android:name=".view.home.activity.RescueActivity"></activity>
     </application>
 
 </manifest>

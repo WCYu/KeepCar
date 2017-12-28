@@ -1,5 +1,6 @@
 package com.ysd.keepcar.view;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -8,6 +9,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ListView;
 import android.widget.RadioButton;
@@ -55,12 +57,12 @@ public class HomeActivity extends BaseActivity {
     @Override
     public void initView() {
         customTool = findViewById(R.id.home_custom);
-        home_frame=findViewById(R.id.home_frame);
-        home_home=findViewById(R.id.home_home);
-        home_shop=findViewById(R.id.home_shop);
-        home_shoppingcart=findViewById(R.id.home_shoppingcart);
-        home_personalcenter=findViewById(R.id.home_personalcenter);
-        home_group=findViewById(R.id.home_group);
+        home_frame = findViewById(R.id.home_frame);
+        home_home = findViewById(R.id.home_home);
+        home_shop = findViewById(R.id.home_shop);
+        home_shoppingcart = findViewById(R.id.home_shoppingcart);
+        home_personalcenter = findViewById(R.id.home_personalcenter);
+        home_group = findViewById(R.id.home_group);
         initFragment();
     }
 
@@ -71,10 +73,10 @@ public class HomeActivity extends BaseActivity {
         personFragment = new PersonFragment();
         shopFragment = new ShopFragment();
         shoppingFragment = new ShoppingFragment();
-        transaction.add(R.id.home_frame,personFragment);
-        transaction.add(R.id.home_frame,shopFragment);
-        transaction.add(R.id.home_frame,shoppingFragment);
-        transaction.add(R.id.home_frame,homeFragment);
+        transaction.add(R.id.home_frame, personFragment);
+        transaction.add(R.id.home_frame, shopFragment);
+        transaction.add(R.id.home_frame, shoppingFragment);
+        transaction.add(R.id.home_frame, homeFragment);
         isShowFragment(homeFragment);
         transaction.commit();
     }
@@ -89,7 +91,9 @@ public class HomeActivity extends BaseActivity {
 
     @Override
     public void initData() {
-
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        }
     }
 
     @Override
@@ -103,25 +107,18 @@ public class HomeActivity extends BaseActivity {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 transaction = fragmentManager.beginTransaction();
-                switch (checkedId){
+                switch (checkedId) {
                     case R.id.home_home:
-                        isShowFragment(homeFragment);
-                        customTool.initViewsVisible(false, false, false, true, false);
+                        initHomeBar();
                         break;
                     case R.id.home_shop:
-                        isShowFragment(shopFragment);
-                        customTool.setAppTitle("4S店");
-                        customTool.initViewsVisible(false, false, true, false, false);
+                        initShopBar();
                         break;
                     case R.id.home_shoppingcart:
-                        isShowFragment(shoppingFragment);
-                        customTool.setAppTitle("购物车");
-                        customTool.initViewsVisible(false, false, true, false, true);
+                        initShoppingBar();
                         break;
                     case R.id.home_personalcenter:
-                        isShowFragment(personFragment);
-                        customTool.setAppTitle("个人中心");
-                        customTool.initViewsVisible(false, false, true, true, false);
+                        initPersonBar();
                         break;
 
                 }
@@ -130,16 +127,60 @@ public class HomeActivity extends BaseActivity {
         });
     }
 
-    @Override
-    public void initToolBar() {
-        customTool.initViewsVisible(false, false, false, true, false);
-        customTool.setRightIcon(R.drawable.topplussign);
+    //个人中心
+    private void initPersonBar() {
+        isShowFragment(personFragment);
+        customTool.setRightIcon(R.mipmap.sandian);
+        customTool.setAppTitle("个人中心");
+        customTool.initViewsVisible(false, false, true, true, false);
         customTool.setOnRightImgClickLisrener(new CustomTool.OnRightImgClickListener() {
             @Override
             public void onRightImgClick(View v) {
+                Toast.makeText(HomeActivity.this, "hahah", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    //购物车
+    private void initShoppingBar() {
+        isShowFragment(shoppingFragment);
+        customTool.setAppTitle("购物车");
+        customTool.setRightTitle("编辑");
+        customTool.initViewsVisible(false, false, true, false, true);
+        customTool.setOnRightTitleClickListener(new CustomTool.OnRightTitleClickListener() {
+            @Override
+            public void onRightTitleClick(View v) {
 
             }
         });
+    }
+
+    //4S店
+    private void initShopBar() {
+        isShowFragment(shopFragment);
+        customTool.setAppTitle("4S店");
+        customTool.initViewsVisible(false, false, true, false, false);
+    }
+
+    @Override
+    public void initToolBar() {
+        initHomeBar();
+    }
+
+    //4S养车
+    private void initHomeBar() {
+        if (home_home.isChecked()) {
+            customTool.setRightIcon(R.drawable.topplussign);
+            isShowFragment(homeFragment);
+            customTool.setAppTitle("4S养车");
+            customTool.initViewsVisible(false, true, true, true, false);
+            customTool.setOnRightImgClickLisrener(new CustomTool.OnRightImgClickListener() {
+                @Override
+                public void onRightImgClick(View v) {
+                    Toast.makeText(HomeActivity.this, "enenen", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
     }
 
     @Override
@@ -161,6 +202,14 @@ public class HomeActivity extends BaseActivity {
         } else {
             finish();
             System.exit(0);
+        }
+    }
+
+    private void initWindow() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+
         }
     }
 }

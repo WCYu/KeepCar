@@ -42,7 +42,6 @@ public class CustomTool extends LinearLayout {
         LayoutParams layoutParams = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
         viewAppTitle = inflater.inflate(R.layout.custom_tool, null);
         this.addView(viewAppTitle, layoutParams);
-
         mViewHolder = new MyViewHolder(this);
         //左边返回监听
         mViewHolder.return_lly.setOnClickListener(new OnClickListener() {
@@ -73,11 +72,16 @@ public class CustomTool extends LinearLayout {
     public void initViewsVisible(boolean isLeftImgVisile, boolean isleftTitleVisile,
                                  boolean isTitleVisile, boolean isRightImgVisile, boolean isRightTitleVisile) {
         // 左侧返回
-        mViewHolder.return_img.setVisibility(isLeftImgVisile ? View.VISIBLE : View.INVISIBLE);
+        mViewHolder.return_img.setVisibility(isLeftImgVisile ? View.VISIBLE : View.GONE);
         mViewHolder.return_tv.setVisibility(isleftTitleVisile ? View.VISIBLE : View.INVISIBLE);
         mViewHolder.title_tv.setVisibility(isTitleVisile ? View.VISIBLE : View.INVISIBLE);
         mViewHolder.right_Img.setVisibility(isRightImgVisile ? View.VISIBLE : View.INVISIBLE);
         mViewHolder.right_Title.setVisibility(isRightTitleVisile ? View.VISIBLE : View.GONE);
+        if (0 == (mViewHolder.return_tv.getVisibility())) {
+            mViewHolder.img.setVisibility(VISIBLE);
+        } else {
+            mViewHolder.img.setVisibility(GONE);
+        }
     }
 
     //设置标题
@@ -122,7 +126,7 @@ public class CustomTool extends LinearLayout {
 
     //设置右边图片监听
     public void setOnRightImgClickLisrener(OnRightImgClickListener onRightImgClickListener) {
-        if (onRightImgClickListener != null){
+        if (onRightImgClickListener != null) {
             this.onRightImgClickListener = onRightImgClickListener;
         }
     }
@@ -154,14 +158,17 @@ public class CustomTool extends LinearLayout {
         private TextView title_tv;
         private ImageView right_Img;
         private TextView right_Title;
+        private ImageView img;
 
         public MyViewHolder(View v) {
+
             return_img = v.findViewById(R.id.Return_img);
             return_tv = v.findViewById(R.id.Return_tv);
             return_lly = v.findViewById(R.id.Return_lly);
             title_tv = v.findViewById(R.id.Title_tv);
             right_Img = v.findViewById(R.id.Right_Img);
             right_Title = v.findViewById(R.id.Right_Title);
+            img = v.findViewById(R.id.img);
         }
     }
 }
