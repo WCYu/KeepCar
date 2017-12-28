@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ysd.keepcar.custom.PercentLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/denglubeijing"
+    tools:context="com.ysd.keepcar.view.personalcenter.login.LoginActivity">
+
+    <ImageView
+        android:layout_margin="100dp"
+        android:layout_gravity="center"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/logo" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/login_ed"
+        android:layout_width="match_parent"
+        android:layout_height="55dp">
+        <ImageView
+            android:layout_gravity="center"
+            android:src="@drawable/shoujihao"
+            android:layout_width="30dp"
+            android:layout_height="30dp" />
+        <EditText
+            android:id="@+id/shoujihao_login"
+            android:hint="输入手机号"
+            android:textSize="20sp"
+            android:textColorHint="@color/subscribe_item_pressed_stroke"
+            android:background="@null"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15px"
+            android:textColor="@color/colorWhite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="50dp"
+        android:orientation="horizontal"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/login_ed"
+        android:layout_width="match_parent"
+        android:layout_height="55dp">
+
+        <ImageView
+            android:layout_gravity="center"
+            android:src="@drawable/mimasuo"
+            android:layout_width="30dp"
+            android:layout_height="30dp" />
+        <EditText
+            android:id="@+id/yanzhengma_login"
+            android:hint="输入验证码"
+            android:textSize="20sp"
+            android:textColorHint="@color/subscribe_item_pressed_stroke"
+            android:background="@null"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15px"
+            android:textColor="@color/colorWhite"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/huoqu_login"
+            android:textColor="@color/subscribe_item_pressed_stroke"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="获取验证码" />
+    </LinearLayout>
+    <Button
+        android:id="@+id/denglu_login"
+        android:text="立即登陆"
+        android:textSize="22sp"
+        android:textColor="@color/colorWhite"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/login_ed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</com.ysd.keepcar.custom.PercentLinearLayout>

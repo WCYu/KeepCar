@@ -1,17 +1,25 @@
 package com.ysd.keepcar.view;
 
+import android.content.Intent;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.view.Gravity;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.PopupWindow;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ysd.keepcar.R;
@@ -19,6 +27,7 @@ import com.ysd.keepcar.app.BaseActivity;
 import com.ysd.keepcar.custom.CustomTool;
 import com.ysd.keepcar.view.home.HomeFragment;
 import com.ysd.keepcar.view.personalcenter.PersonFragment;
+import com.ysd.keepcar.view.personalcenter.login.LoginActivity;
 import com.ysd.keepcar.view.shop.ShopFragment;
 import com.ysd.keepcar.view.shoppingcart.ShoppingFragment;
 
@@ -122,8 +131,41 @@ public class HomeActivity extends BaseActivity {
                         isShowFragment(personFragment);
                         customTool.setAppTitle("个人中心");
                         customTool.initViewsVisible(false, false, true, true, false);
-                        break;
+                        final ImageView img = customTool.findViewById(R.id.Right_Img);
+                        img.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                //显示popuwindow
+                                v = LayoutInflater.from(HomeActivity.this).inflate(R.layout.popu_layout, null);
+                                //创建一个popuwindow对象
+                                PopupWindow popu = new PopupWindow(v, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                                //默认获取不到焦点，设置获取焦点
+                                popu.setFocusable(true);
+                                //点击窗口以外区域，窗口消失
+                                popu.setBackgroundDrawable(new BitmapDrawable());
+                                //弹出或者消失的时候带动画效果
+                                //popu.setAnimationStyle(R.style.mypopu);
+                                //显示popuwindow
+                                popu.showAsDropDown(img,-50,10);
 
+                                TextView qiehuan = v.findViewById(R.id.qiehuan_popu);
+                                TextView tuichu = v.findViewById(R.id.tuichu_popu);
+                                qiehuan.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
+                                        startActivity(intent);
+                                    }
+                                });
+                                tuichu.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        Toast.makeText(HomeActivity.this, "退出账号阿拉", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+                            }
+                        });
+                        break;
                 }
                 transaction.commit();
             }
