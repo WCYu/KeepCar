@@ -1,5 +1,6 @@
 package com.ysd.keepcar.view.personalcenter.login;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -12,18 +13,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ysd.keepcar.R;
-import com.ysd.keepcar.utils.NoDoubleClickListener;
 import com.ysd.keepcar.utils.OkhttpUtil;
+import com.ysd.keepcar.utils.SharedPreferencesutils;
 import com.ysd.keepcar.utils.UrlPath;
 import com.ysd.keepcar.utils.ZJson;
-import com.ysd.keepcar.view.MainActivity;
 
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import cn.smssdk.EventHandler;
-import cn.smssdk.SMSSDK;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
@@ -35,8 +33,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private EditText yanzhengma_login;
     private TextView huoqu_login;
     private Button denglu_login;
-
-    private EventHandler eventHandler;
     private String s1;
     private String s2;
 
@@ -57,9 +53,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         denglu_login.setOnClickListener(this);
         huoqu_login.setOnClickListener(this);
-
-
-
 
 
     }
@@ -91,6 +84,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             @Override
                             public void run() {
                                 Toast.makeText(LoginActivity.this, string, Toast.LENGTH_SHORT).show();
+                                SharedPreferencesutils.put(LoginActivity.this,"name",s1);
                             }
                         });
                     }

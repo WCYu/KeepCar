@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ysd.keepcar.custom.PercentLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.ysd.keepcar.view.home.activity.RepairActivity">
+
+    <com.ysd.keepcar.custom.CustomTool
+        android:id="@+id/repair_custom"
+        android:fitsSystemWindows="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBlackText"
+        android:gravity="center"
+        android:paddingTop="15dp"
+        app:layout_heightPercent="10%">
+
+    </com.ysd.keepcar.custom.CustomTool>
+
+</com.ysd.keepcar.custom.PercentLinearLayout>

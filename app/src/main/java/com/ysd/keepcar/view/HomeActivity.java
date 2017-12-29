@@ -2,6 +2,7 @@ package com.ysd.keepcar.view;
 
 import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -13,6 +14,7 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -112,76 +114,108 @@ public class HomeActivity extends BaseActivity {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 transaction = fragmentManager.beginTransaction();
-                switch (checkedId){
+                switch (checkedId) {
                     case R.id.home_home:
-                        isShowFragment(homeFragment);
-                        customTool.initViewsVisible(false, false, false, true, false);
+                        initHomeBar();
                         break;
                     case R.id.home_shop:
-                        isShowFragment(shopFragment);
-                        customTool.setAppTitle("4S店");
-                        customTool.initViewsVisible(false, false, true, false, false);
+                        initShopBar();
                         break;
                     case R.id.home_shoppingcart:
-                        isShowFragment(shoppingFragment);
-                        customTool.setAppTitle("购物车");
-                        customTool.initViewsVisible(false, false, true, false, true);
+                        initShoppingBar();
                         break;
                     case R.id.home_personalcenter:
-                        isShowFragment(personFragment);
-                        customTool.setAppTitle("个人中心");
-                        customTool.initViewsVisible(false, false, true, true, false);
-                        final ImageView img = customTool.findViewById(R.id.Right_Img);
-                        img.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                //显示popuwindow
-                                v = LayoutInflater.from(HomeActivity.this).inflate(R.layout.popu_layout, null);
-                                //创建一个popuwindow对象
-                                PopupWindow popu = new PopupWindow(v, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-                                //默认获取不到焦点，设置获取焦点
-                                popu.setFocusable(true);
-                                //点击窗口以外区域，窗口消失
-                                popu.setBackgroundDrawable(new BitmapDrawable());
-                                //弹出或者消失的时候带动画效果
-                                //popu.setAnimationStyle(R.style.mypopu);
-                                //显示popuwindow
-                                popu.showAsDropDown(img,-50,10);
-
-                                TextView qiehuan = v.findViewById(R.id.qiehuan_popu);
-                                TextView tuichu = v.findViewById(R.id.tuichu_popu);
-                                qiehuan.setOnClickListener(new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View v) {
-                                        Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
-                                        startActivity(intent);
-                                    }
-                                });
-                                tuichu.setOnClickListener(new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View v) {
-                                        Toast.makeText(HomeActivity.this, "退出账号阿拉", Toast.LENGTH_SHORT).show();
-                                    }
-                                });
-                            }
-                        });
+                        initPersonBar();
                         break;
+
                 }
                 transaction.commit();
             }
         });
     }
 
-    @Override
-    public void initToolBar() {
-        customTool.initViewsVisible(false, false, false, true, false);
-        customTool.setRightIcon(R.drawable.topplussign);
+    //个人中心
+    private void initPersonBar() {
+        isShowFragment(personFragment);
+        customTool.setRightIcon(R.mipmap.sandian);
+        customTool.setAppTitle("个人中心");
+        customTool.initViewsVisible(false, false, true, true, false);
+        final ImageView right = customTool.findViewById(R.id.Right_Img);
         customTool.setOnRightImgClickLisrener(new CustomTool.OnRightImgClickListener() {
             @Override
             public void onRightImgClick(View v) {
+                //显示popuwindow
+                v = LayoutInflater.from(HomeActivity.this).inflate(R.layout.popu_layout, null);
+                //创建一个popuwindow对象
+                PopupWindow popu = new PopupWindow(v, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                //默认获取不到焦点，设置获取焦点
+                popu.setFocusable(true);
+                //点击窗口以外区域，窗口消失
+                popu.setBackgroundDrawable(new BitmapDrawable());
+                //弹出或者消失的时候带动画效果
+                //popu.setAnimationStyle(R.style.mypopu);
+                //显示popuwindow
+                popu.showAsDropDown(right,-50,10);
+
+                TextView qiehuan = v.findViewById(R.id.qiehuan_popu);
+                TextView tuichu = v.findViewById(R.id.tuichu_popu);
+                qiehuan.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
+                        startActivity(intent);
+                    }
+                });
+                tuichu.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(HomeActivity.this, "退出账号阿拉", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        });
+    }
+
+    //购物车
+    private void initShoppingBar() {
+        isShowFragment(shoppingFragment);
+        customTool.setAppTitle("购物车");
+        customTool.setRightTitle("编辑");
+        customTool.initViewsVisible(false, false, true, false, true);
+        customTool.setOnRightTitleClickListener(new CustomTool.OnRightTitleClickListener() {
+            @Override
+            public void onRightTitleClick(View v) {
 
             }
         });
+    }
+
+    //4S店
+    private void initShopBar() {
+        isShowFragment(shopFragment);
+        customTool.setAppTitle("4S店");
+        customTool.initViewsVisible(false, false, true, false, false);
+    }
+
+    @Override
+    public void initToolBar() {
+        initHomeBar();
+    }
+
+    //4S养车
+    private void initHomeBar() {
+        if (home_home.isChecked()) {
+            customTool.setRightIcon(R.drawable.topplussign);
+            isShowFragment(homeFragment);
+            customTool.setAppTitle("4S养车");
+            customTool.initViewsVisible(false, true, true, true, false);
+            customTool.setOnRightImgClickLisrener(new CustomTool.OnRightImgClickListener() {
+                @Override
+                public void onRightImgClick(View v) {
+                    Toast.makeText(HomeActivity.this, "enenen", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
     }
 
     @Override
@@ -203,6 +237,14 @@ public class HomeActivity extends BaseActivity {
         } else {
             finish();
             System.exit(0);
+        }
+    }
+
+    private void initWindow() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+
         }
     }
 }

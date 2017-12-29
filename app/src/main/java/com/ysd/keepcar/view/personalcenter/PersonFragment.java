@@ -29,6 +29,8 @@ import com.ysd.keepcar.R;
 import com.ysd.keepcar.app.BaseFragment;
 import com.ysd.keepcar.utils.ImageUtils;
 import com.ysd.keepcar.view.HomeActivity;
+import com.ysd.keepcar.view.personalcenter.mycar.MyCarActivity;
+import com.ysd.keepcar.view.personalcenter.myshop.MyShopActivity;
 
 import java.io.File;
 
@@ -100,6 +102,8 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
                 showChoosePicDialog(imageView);
                 break;
             case R.id.wodecheliang_person:
+                Intent intent1 = new Intent(getActivity(), MyCarActivity.class);
+                startActivity(intent1);
                 Toast.makeText(getActivity(), "我的车辆", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.dangqiancheliang_person:
@@ -109,6 +113,8 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
                 Toast.makeText(getActivity(), "账户", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.dianpu_person:
+                Intent intent4 = new Intent(getActivity(), MyShopActivity.class);
+                startActivity(intent4);
                 Toast.makeText(getActivity(), "店铺", Toast.LENGTH_SHORT).show();
                 break;
         }
