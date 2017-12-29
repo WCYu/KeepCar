@@ -1,7 +1,9 @@
 package com.ysd.keepcar.app;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.WindowManager;
 
 
 /**
@@ -17,6 +19,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         initData();
         initLinstener();
         initToolBar();
+        initWindow();
         AppService.baseActivity=this;
     }
 
@@ -31,4 +34,12 @@ public abstract class BaseActivity extends AppCompatActivity {
     public abstract void initLinstener();
 
     public abstract void initToolBar();
+
+    private void initWindow() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+
+        }
+    }
 }

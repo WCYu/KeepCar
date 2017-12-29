@@ -16,10 +16,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //noinspection GradleCompatible
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     implementation 'com.android.support:support-v4:26.1.0'
@@ -35,4 +37,15 @@ dependencies {
     implementation 'com.android.support:design:26.1.0'
     //banner
     compile 'com.youth.banner:banner:1.4.9'
+    //城市选择器
+    compile 'com.desmond:CityPicker:xxx'
+    compile('com.desmond:CityPicker:0.3.0') {
+        exclude group: 'com.android.support'
+        exclude group: 'com.squareup.sqlbrite'
+        exclude group: 'io.reactivex'
+        exclude group: 'io.rxandroid'
+        exclude group: 'org.greenrobot'
+    }
+    //二维码生成
+    compile 'cn.yipianfengye.android:zxing-library:2.2'
 }
