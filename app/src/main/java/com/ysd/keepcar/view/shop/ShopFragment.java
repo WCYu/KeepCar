@@ -82,6 +82,7 @@ public class ShopFragment extends BaseFragment implements WaveSideBar.OnSelectIn
     public void initData() {
 
 
+
         shop_group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @SuppressLint("ResourceAsColor")
             @Override
