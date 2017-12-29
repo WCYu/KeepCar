@@ -87,12 +87,10 @@ public class HomeActivity extends BaseActivity {
 
     @Override
     public void initData() {
-
     }
 
     @Override
     public void initAdapter() {
-
     }
 
     @Override
@@ -104,7 +102,6 @@ public class HomeActivity extends BaseActivity {
                 switch (checkedId){
                     case R.id.home_home:
                         isShowFragment(homeFragment);
-                      // customTool.setAppBackground(R.color.transparent);
                         customTool.initViewsVisible(false, false, false, true, false);
                         break;
                     case R.id.home_shop:
@@ -147,8 +144,7 @@ public class HomeActivity extends BaseActivity {
             exit();
             return true;
         }
-        return super.onKeyDown(keyCode, event);
-    }
+        return super.onKeyDown(keyCode, event);}
 
     private void exit() {
         if (!isExit) {

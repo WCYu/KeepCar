@@ -32,5 +32,9 @@ dependencies {
     //下拉刷新
     compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.1'
     compile 'com.github.bumptech.glide:glide:4.0.0'
+
+    //字母排序
+    compile 'com.gjiazhe:wavesidebar:1.0.2'
+    compile 'com.android.support:recyclerview-v7:26.+'
     implementation 'com.android.support:design:26.1.0'
 }
