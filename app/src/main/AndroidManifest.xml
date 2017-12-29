@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ysd.keepcar">
 
+    <!-- 读写sd卡权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -26,7 +29,10 @@
         <activity android:name=".view.home.activity.ActivityActivity" />
         <activity android:name=".view.home.activity.ShoppingMallActivity" />
         <activity android:name=".view.home.activity.QueryActivity" />
-        <activity android:name=".view.home.activity.RescueActivity"></activity>
+        <activity android:name=".view.home.activity.RescueActivity" />
+        <activity android:name=".view.personalcenter.login.LoginActivity" />
+        <activity android:name=".view.personalcenter.mycar.MyCarActivity" />
+        <activity android:name=".view.personalcenter.myshop.MyShopActivity"></activity>
     </application>
 
 </manifest>
