@@ -31,8 +31,14 @@ public class OkhttpUtil {
     }
 
     public void post(String url, String data, Callback callback){
-        RequestBody requestBody = RequestBody.create(MediaType.parse("application/json;charset=utf-8"),data);
-        Request request = new Request.Builder().post(requestBody).url(url).build();
+        Request request;
+        if(data!=null){
+            RequestBody requestBody = RequestBody.create(MediaType.parse("application/json;charset=utf-8"),data);
+            request = new Request.Builder().post(requestBody).url(url).build();
+        }else {
+            request = new Request.Builder().url(url).build();
+        }
+
         okHttpClient.newCall(request).enqueue(callback);
     }
 }

@@ -29,4 +29,6 @@ public class UrlPath {
 
 //    //图片服务器地址
 //    public static final String URLPATHIMG=" http://39.106.173.47:8080/saas-img/";
+    //轮播图地址
+    public static final String URLPATHBANNER="main/queryBrandImg.do";
 }

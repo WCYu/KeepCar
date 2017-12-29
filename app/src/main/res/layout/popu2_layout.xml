@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+
+    <RadioGroup
+        android:background="@color/colorWhite"
+        android:orientation="vertical"
+        android:id="@+id/radiogroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/moren_washcar"
+            android:text="默认排序"
+            android:button="@null"
+            android:layout_margin="10dp"
+            android:textColor="#cd333333"
+            android:layout_marginLeft="15px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        <View
+            android:background="@color/colorGreyBottom"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"/>
+        <RadioButton
+            android:id="@+id/juli_washcar"
+            android:text="距离最短"
+            android:button="@null"
+            android:layout_margin="10dp"
+            android:textColor="#cd333333"
+            android:layout_marginLeft="15px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        <View
+            android:background="@color/colorGreyBottom"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"/>
+        <RadioButton
+            android:id="@+id/pingjia_washcar"
+            android:text="评价最高"
+            android:button="@null"
+            android:layout_margin="10dp"
+            android:textColor="#cd333333"
+            android:layout_marginLeft="15px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        <View
+            android:background="@color/colorGreyBottom"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"/>
+        <RadioButton
+            android:id="@+id/jiage_washcar"
+            android:text="价格最低"
+            android:button="@null"
+            android:layout_margin="10dp"
+            android:textColor="#cd333333"
+            android:layout_marginLeft="15px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </RadioGroup>
+
+</LinearLayout>
