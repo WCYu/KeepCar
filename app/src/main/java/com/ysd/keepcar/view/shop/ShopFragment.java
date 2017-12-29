@@ -76,6 +76,7 @@ public class ShopFragment extends BaseFragment implements WaveSideBar.OnSelectIn
         lv_listview = view.findViewById(R.id.lv_listview);
 
 
+
     }
 
     @Override
