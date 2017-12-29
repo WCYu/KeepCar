@@ -25,8 +25,7 @@ import com.ysd.keepcar.utils.OkhttpUtil;
 import com.ysd.keepcar.utils.UrlPath;
 import com.ysd.keepcar.utils.ZJson;
 import com.ysd.keepcar.view.shop.activity.ShopActivity;
-import com.ysd.keepcar.view.shop.adapter.MyAdapter;
-import com.ysd.keepcar.view.shop.adapter.Shop_Fragment_Adapter;
+import com.ysd.keepcar.view.shop.adapter.Shop_Popuwindow1_Adapter;
 import com.ysd.keepcar.view.shop.entity.Contact;
 
 import java.io.IOException;
@@ -82,6 +81,7 @@ public class ShopFragment extends BaseFragment implements WaveSideBar.OnSelectIn
     @Override
     public void initData() {
 
+
         shop_group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @SuppressLint("ResourceAsColor")
             @Override
@@ -119,8 +119,7 @@ public class ShopFragment extends BaseFragment implements WaveSideBar.OnSelectIn
     @Override
     public void initAdapter() {
 
-        Shop_Fragment_Adapter shop_fragment_adapter = new Shop_Fragment_Adapter();
-        lv_listview.setAdapter(shop_fragment_adapter);
+
     }
 
     @Override
@@ -178,7 +177,7 @@ public class ShopFragment extends BaseFragment implements WaveSideBar.OnSelectIn
         recycler_view.setLayoutManager(linearLayoutManager);
         contacts = new ArrayList<>();
 
-        MyAdapter myAdapter = new MyAdapter(contacts, AppService.baseActivity);
+        Shop_Popuwindow1_Adapter myAdapter = new Shop_Popuwindow1_Adapter(contacts, AppService.baseActivity);
         recycler_view.setAdapter(myAdapter);
 
         Log.e("TAG", myAdapter + "");

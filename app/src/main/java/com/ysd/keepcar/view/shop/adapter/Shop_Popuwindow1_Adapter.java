@@ -40,26 +40,26 @@ import java.util.ArrayList;
 //
 //
 //
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+public class Shop_Popuwindow1_Adapter extends RecyclerView.Adapter<Shop_Popuwindow1_Adapter.ViewHolder> {
     private ArrayList<Contact> contacts;
     private Context context;
 
 
-    public MyAdapter(ArrayList<Contact> contacts, BaseActivity mainActivity) {
+    public Shop_Popuwindow1_Adapter(ArrayList<Contact> contacts, BaseActivity mainActivity) {
 
         this.contacts = contacts;
         this.context = mainActivity;
     }
 
     @Override
-    public MyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public Shop_Popuwindow1_Adapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_contacts_right, parent, false);
         ViewHolder viewHolder = new ViewHolder(inflate);
         return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(MyAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(Shop_Popuwindow1_Adapter.ViewHolder holder, int position) {
         Contact contact = contacts.get(position);
         if (position == 0 || !contacts.get(position-1).getIndex().equals(contact.getIndex())) {
             holder.tv_index.setVisibility(View.VISIBLE);
