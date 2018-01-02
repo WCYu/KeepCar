@@ -40,5 +40,6 @@ public class MainAdapter extends FragmentPagerAdapter {
     @Override
     public CharSequence getPageTitle(int position) {
         return strings.get(position);
+
     }
 }
