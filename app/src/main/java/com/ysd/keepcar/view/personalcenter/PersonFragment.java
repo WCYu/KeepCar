@@ -106,8 +106,6 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
         zhanghu.setOnClickListener(this);
         dianpu.setOnClickListener(this);
         wode.setOnClickListener(this);
-
-
     }
 
     @Override
