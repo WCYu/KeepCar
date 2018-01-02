@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <View
+        android:background="@color/colorGreyBottom"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/leixing_reuse"
+            android:text="保养"
+            android:textSize="18sp"
+            android:textColor="@color/colorBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/shijian_reuse"
+            android:text="2017-09-07"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/zhuangtai_reuse"
+            android:text="待付款"
+            android:textSize="18sp"
+            android:textColor="@color/colorBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <View
+        android:background="@color/colorGreyBottom"
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"/>
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/gongsi_reuse"
+            android:textSize="18sp"
+            android:textColor="@color/colorBlack"
+            android:text="北京亚之杰伯乐汽车销售有限公司"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginTop="15dp"
+            android:id="@+id/xinxi_reuse"
+            android:text="京P8D888 2017-09-07"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginTop="5dp"
+            android:id="@+id/xiangmu_reuse"
+            android:text="项目A.项目B"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <View
+        android:background="@color/colorGreyBottom"
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"/>
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="查看详情"
+            android:textSize="18sp"
+            android:id="@+id/chakan_reuse"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="合计：￥1720"
+            android:textSize="18sp"
+            android:textColor="@color/colorBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>

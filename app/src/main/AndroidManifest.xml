@@ -47,6 +47,8 @@
         <activity android:name=".view.personalcenter.login.LoginActivity" />
         <activity android:name=".view.personalcenter.mycar.MyCarActivity" />
         <activity android:name=".view.personalcenter.myshop.MyShopActivity" />
+        <activity android:name=".view.personalcenter.myOrder.MyOrderActivity" />
+        <activity android:name=".view.personalcenter.myOrder.ReuseActivity"></activity>
         <activity android:name=".view.shop.activity.ShopActivity" />
         <activity android:name=".CityActivity" />
         <activity android:name=".view.home.activity.ErWeiMaActivity"></activity>

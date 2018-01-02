@@ -18,6 +18,9 @@ import com.ysd.keepcar.utils.SharedPreferencesutils;
 import com.ysd.keepcar.utils.UrlPath;
 import com.ysd.keepcar.utils.ZJson;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -84,7 +87,20 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             @Override
                             public void run() {
                                 Toast.makeText(LoginActivity.this, string, Toast.LENGTH_SHORT).show();
-                                SharedPreferencesutils.put(LoginActivity.this,"name",s1);
+                                Log.e("TAG", "ooooooooooooooooo"+string );
+                                try {
+                                    JSONObject jsonObject = new JSONObject(string);
+                                    int code = jsonObject.getInt("code");
+                                    Log.e("TAG","code+++++++++++++++"+ code );
+
+                                    if (code == 200){
+                                        String data = jsonObject.getString("data");
+                                        Log.e("TAG","================"+ data );
+                                    }
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+
                             }
                         });
                     }

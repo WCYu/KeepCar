@@ -4,13 +4,14 @@
     android:layout_height="match_parent"
     tools:context="com.ysd.keepcar.view.personalcenter.PersonFragment">
 
-    <com.ysd.keepcar.custom.PercentLinearLayout
+    <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <RelativeLayout
-            android:background="@color/colorAccent"
+            android:id="@+id/wodedingdan_person"
+            android:background="@drawable/che"
             android:layout_width="match_parent"
             android:layout_height="300dp">
 
@@ -68,7 +69,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp" />
                 <TextView
-                    android:text="代付款"
+                    android:text="待付款"
                     android:textSize="26px"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -102,7 +103,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp" />
                 <TextView
-                    android:text="代发货"
+                    android:text="待发货"
                     android:textSize="26px"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -136,7 +137,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp" />
                 <TextView
-                    android:text="带评价"
+                    android:text="待评价"
                     android:textSize="26px"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -224,6 +225,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>
+        <View
+            android:background="@color/tab_top_line_color"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"/>
 
         <LinearLayout
             android:id="@+id/dianpu_person"
@@ -253,5 +258,65 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp" />
         </LinearLayout>
-    </com.ysd.keepcar.custom.PercentLinearLayout>
+        <View
+            android:background="@color/tab_top_line_color"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"/>
+        <RadioGroup
+            android:id="@+id/rg"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:padding="10dp"
+                android:id="@+id/jifen_person"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="积分"
+                android:button="@null"
+                android:gravity="center"
+                android:checked="true"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/jifen1"
+                android:background="@drawable/person_tab"/>
+            <RadioButton
+                android:padding="10dp"
+                android:id="@+id/chuzhi_person"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="储值"
+                android:button="@null"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/chuzhi1"
+                android:background="@drawable/person_tab"/>
+            <RadioButton
+                android:padding="10dp"
+                android:id="@+id/yue_person"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="余额券"
+                android:button="@null"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/yuejuan"
+                android:background="@drawable/person_tab"/>
+            <RadioButton
+                android:padding="10dp"
+                android:id="@+id/dinge_person"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="定额券"
+                android:button="@null"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/dingejuan1"
+                android:background="@drawable/person_tab"/>
+        </RadioGroup>
+
+        <FrameLayout
+            android:id="@+id/framelayout_person"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></FrameLayout>
+    </LinearLayout>
 </ScrollView>
