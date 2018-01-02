@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_dark"
+    tools:context="com.ysd.keepcar.view.home.activity.ErWeiMaActivity">
+
+    <com.ysd.keepcar.custom.CustomTool
+        android:id="@+id/er_wei_ma_custom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_heightPercent="6%">
+
+    </com.ysd.keepcar.custom.CustomTool>
+
+    <com.ysd.keepcar.custom.PercentLinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_widthPercent="90%"
+        app:layout_heightPercent="70%"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:background="@android:color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/shangcheng"/>
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="电话"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_widthPercent="80%"
+            android:layout_gravity="center"
+            android:layout_weight="1">
+
+        </LinearLayout>
+        <TextView
+            android:layout_margin="10dp"
+            app:layout_heightPercent="10%"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="扫描上方二维码"/>
+    </com.ysd.keepcar.custom.PercentLinearLayout>
+</android.support.percent.PercentRelativeLayout>

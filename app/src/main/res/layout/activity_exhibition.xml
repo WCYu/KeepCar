@@ -20,4 +20,34 @@
 
     </com.ysd.keepcar.custom.CustomTool>
 
+    <RadioGroup
+        android:id="@+id/exhibition_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+        <RadioButton
+            android:id="@+id/exhibition_xin_che"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:textSize="34px"
+            android:text="新车展厅"/>
+        <RadioButton
+            android:id="@+id/exhibition_er_shou"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:gravity="center"
+            android:textSize="34px"
+            android:text="二手车展厅"/>
+    </RadioGroup>
+    <FrameLayout
+        android:id="@+id/exhibition_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"></FrameLayout>
 </com.ysd.keepcar.custom.PercentLinearLayout>
