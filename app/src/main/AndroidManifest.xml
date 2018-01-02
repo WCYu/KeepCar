@@ -32,7 +32,9 @@
         <activity android:name=".view.home.activity.RescueActivity" />
         <activity android:name=".view.personalcenter.login.LoginActivity" />
         <activity android:name=".view.personalcenter.mycar.MyCarActivity" />
-        <activity android:name=".view.personalcenter.myshop.MyShopActivity"></activity>
+        <activity android:name=".view.personalcenter.myshop.MyShopActivity" />
+        <activity android:name=".view.personalcenter.myOrder.MyOrderActivity" />
+        <activity android:name=".view.personalcenter.myOrder.ReuseActivity"></activity>
     </application>
 
 </manifest>

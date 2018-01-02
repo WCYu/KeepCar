@@ -2,7 +2,9 @@ package com.ysd.keepcar.view.personalcenter.mycar;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -37,5 +39,13 @@ public class MyCarActivity extends AppCompatActivity {
 
         title_tv.setText("选择爱车");
         tool_car.initViewsVisible(true, false, true, false, false);
+
+        ImageView return_img = tool_car.findViewById(R.id.Return_img);
+        return_img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 }

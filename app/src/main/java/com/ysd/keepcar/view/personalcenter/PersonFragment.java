@@ -13,24 +13,35 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ysd.keepcar.R;
 import com.ysd.keepcar.app.BaseFragment;
 import com.ysd.keepcar.utils.ImageUtils;
-import com.ysd.keepcar.view.HomeActivity;
+import com.ysd.keepcar.view.personalcenter.myOrder.MyOrderActivity;
 import com.ysd.keepcar.view.personalcenter.mycar.MyCarActivity;
 import com.ysd.keepcar.view.personalcenter.myshop.MyShopActivity;
+import com.ysd.keepcar.view.personalcenter.tab.ChuZhiFragment;
+import com.ysd.keepcar.view.personalcenter.tab.DingEFragment;
+import com.ysd.keepcar.view.personalcenter.tab.JiFenFragment;
+import com.ysd.keepcar.view.personalcenter.tab.YuEFragment;
 
 import java.io.File;
 
@@ -57,6 +68,15 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
     private LinearLayout dangqiancheliang;
     private LinearLayout zhanghu;
     private LinearLayout dianpu;
+    private ViewPager vp_person;
+    private RadioButton jifen_person;
+    private RadioButton chuzhi_person;
+    private RadioButton yue_person;
+    private RadioButton dinge_person;
+    private FrameLayout framelayout_person;
+    private RadioGroup rg;
+    private RelativeLayout wodedingdan_person;
+    private RelativeLayout wode;
 
 
     @Override
@@ -72,17 +92,64 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
         dangqiancheliang = (LinearLayout) inflate.findViewById(R.id.dangqiancheliang_person);
         zhanghu = (LinearLayout) inflate.findViewById(R.id.zhanghu_person);
         dianpu = (LinearLayout) inflate.findViewById(R.id.dianpu_person);
+        framelayout_person = (FrameLayout) inflate.findViewById(R.id.framelayout_person);
+        jifen_person = (RadioButton) inflate.findViewById(R.id.jifen_person);
+        chuzhi_person = (RadioButton) inflate.findViewById(R.id.chuzhi_person);
+        yue_person = (RadioButton) inflate.findViewById(R.id.yue_person);
+        dinge_person = (RadioButton) inflate.findViewById(R.id.dinge_person);
+        rg = (RadioGroup) inflate.findViewById(R.id.rg);
+        wode = inflate.findViewById(R.id.wodedingdan_person);
 
         imageView.setOnClickListener(this);
         wodecheliang.setOnClickListener(this);
         dangqiancheliang.setOnClickListener(this);
         zhanghu.setOnClickListener(this);
         dianpu.setOnClickListener(this);
+        wode.setOnClickListener(this);
+
+
     }
 
     @Override
     public void initData() {
+        FragmentManager fragmentManager = getChildFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
+        final ChuZhiFragment chuZhiFragment = new ChuZhiFragment();
+        final DingEFragment dingEFragment = new DingEFragment();
+        final JiFenFragment jiFenFragment = new JiFenFragment();
+        final YuEFragment yuEFragment = new YuEFragment();
+
+        fragmentTransaction.add(R.id.framelayout_person, jiFenFragment);
+        fragmentTransaction.add(R.id.framelayout_person, chuZhiFragment);
+        fragmentTransaction.add(R.id.framelayout_person, yuEFragment);
+        fragmentTransaction.add(R.id.framelayout_person, dingEFragment);
+        fragmentTransaction.show(jiFenFragment).hide(chuZhiFragment).hide(dingEFragment).hide(yuEFragment);
+        fragmentTransaction.commit();
+
+        rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                FragmentManager childFragmentManager = getChildFragmentManager();
+                FragmentTransaction fragmentTransaction1 = childFragmentManager.beginTransaction();
+                switch (checkedId) {
+                    case R.id.jifen_person:
+                        fragmentTransaction1.show(jiFenFragment).hide(dingEFragment).hide(chuZhiFragment).hide(yuEFragment);
+                        break;
+                    case R.id.chuzhi_person:
+                        fragmentTransaction1.show(chuZhiFragment).hide(dingEFragment).hide(jiFenFragment).hide(yuEFragment);
+                        break;
+                    case R.id.yue_person:
+                        fragmentTransaction1.show(yuEFragment).hide(dingEFragment).hide(jiFenFragment).hide(chuZhiFragment);
+                        break;
+                    case R.id.dinge_person:
+                        fragmentTransaction1.show(dingEFragment).hide(chuZhiFragment).hide(jiFenFragment).hide(yuEFragment);
+                        break;
+                }
+                fragmentTransaction1.commit();
+            }
+        });
     }
 
     @Override
@@ -107,6 +174,8 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
                 Toast.makeText(getActivity(), "我的车辆", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.dangqiancheliang_person:
+                Intent intent2 = new Intent(getActivity(), MyCarActivity.class);
+                startActivity(intent2);
                 Toast.makeText(getActivity(), "当前车辆", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.zhanghu_person:
@@ -116,6 +185,10 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
                 Intent intent4 = new Intent(getActivity(), MyShopActivity.class);
                 startActivity(intent4);
                 Toast.makeText(getActivity(), "店铺", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.wodedingdan_person:
+                Intent intent = new Intent(getActivity(), MyOrderActivity.class);
+                startActivity(intent);
                 break;
         }
     }
