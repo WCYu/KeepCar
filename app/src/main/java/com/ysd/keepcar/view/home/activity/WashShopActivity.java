@@ -21,7 +21,7 @@ import android.widget.Toast;
 import com.ysd.keepcar.R;
 import com.ysd.keepcar.app.BaseActivity;
 
-public class ShopActivity extends BaseActivity implements View.OnClickListener {
+public class WashShopActivity extends BaseActivity implements View.OnClickListener {
 
     private ImageView imageView3;
     private TextView xianjia1_shop;
@@ -52,7 +52,7 @@ public class ShopActivity extends BaseActivity implements View.OnClickListener {
 
     @Override
     public int getInitId() {
-        return R.layout.activity_shop;
+        return R.layout.activity_shop_wash;
         //中间加横线
 //        tv.getPaint().setFlags(Paint. STRIKE_THRU_TEXT_FLAG );
     }
@@ -74,10 +74,10 @@ public class ShopActivity extends BaseActivity implements View.OnClickListener {
         xianjia5_shop = (TextView) findViewById(R.id.xianjia5_shop);
         yuanjia5_shop = (TextView) findViewById(R.id.yuanjia5_shop);
         yishou5_shop = (TextView) findViewById(R.id.yishou5_shop);
-//        zhanghu_shop = (RadioButton) findViewById(R.id.zhanghu_shop);
-//        pingjia_shop = (RadioButton) findViewById(R.id.pingjia_shop);
-//        daohang_shop = (RadioButton) findViewById(R.id.daohang_shop);
-//        linrat_shop = (LinearLayout) findViewById(R.id.linrat_shop);
+        zhanghu_shop = (RadioButton) findViewById(R.id.zhanghu_shop);
+        pingjia_shop = (RadioButton) findViewById(R.id.pingjia_shop);
+        daohang_shop = (RadioButton) findViewById(R.id.daohang_shop);
+        linrat_shop = (LinearLayout) findViewById(R.id.linrat_shop);
 
         yuanjia1_shop.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
         yuanjia2_shop.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
@@ -89,7 +89,7 @@ public class ShopActivity extends BaseActivity implements View.OnClickListener {
         biaoxi1_itme = findViewById(R.id.biaoxi1_itme);
         xicheka_itme = findViewById(R.id.xicheka_itme);
         shop_group = (RadioGroup) findViewById(R.id.shop_group);
-//        itme_shop = (View) findViewById(R.id.itme_shop);
+        itme_shop = (View) findViewById(R.id.itme_shop);
 
         zhanghu_shop.setOnClickListener(this);
         pingjia_shop.setOnClickListener(this);
@@ -128,45 +128,45 @@ public class ShopActivity extends BaseActivity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.biaoxi_itme:
-                Intent intent = new Intent(ShopActivity.this, DetailsActivity.class);
+                Intent intent = new Intent(WashShopActivity.this, WashDetailsActivity.class);
                 startActivity(intent);
                 break;
             case R.id.biaoxi1_itme:
-                Intent intent1 = new Intent(ShopActivity.this, DetailsActivity.class);
+                Intent intent1 = new Intent(WashShopActivity.this, WashDetailsActivity.class);
                 startActivity(intent1);
                 break;
             case R.id.xicheka_itme:
-                Intent intent2 = new Intent(ShopActivity.this, DetailsActivity.class);
+                Intent intent2 = new Intent(WashShopActivity.this, WashDetailsActivity.class);
                 startActivity(intent2);
                 break;
-//            case R.id.zhanghu_shop:
-//
-//                Toast.makeText(ShopActivity.this, "1111", Toast.LENGTH_SHORT).show();
-//
-//                View view = LayoutInflater.from(ShopActivity.this).inflate(R.layout.shop_popu1_layout, null);
-//                PopupWindow popupWindow = new PopupWindow(view, ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
-//                //默认获取不到焦点，设置获取焦点
-//                popupWindow.setFocusable(true);
-//                //点击窗口以外区域，窗口消失
-//                popupWindow.setBackgroundDrawable(new BitmapDrawable());
-//                //弹出或者消失的时候带动画效果
-//                //popu.setAnimationStyle(R.style.mypopu);
-//                setBackgroundAlpha(0.5f);
-//                //显示popuwindow
-////                        popupWindow.showAsDropDown(shop_group,0,0);
-//                popupWindow.showAtLocation(linrat_shop, Gravity.BOTTOM,0,0);
-//                popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
-//                    @Override
-//                    public void onDismiss() {
-////                                zhanghu_shop.setChecked(false);
-//                        setBackgroundAlpha(1.0f);
-//                    }
-//                });
-//                break;
-//            case R.id.pingjia_shop:
-//                break;
-//            case R.id.daohang_shop:
-//                break;
+            case R.id.zhanghu_shop:
+
+                Toast.makeText(WashShopActivity.this, "1111", Toast.LENGTH_SHORT).show();
+
+                View view = LayoutInflater.from(WashShopActivity.this).inflate(R.layout.shop_popu1_layout, null);
+                PopupWindow popupWindow = new PopupWindow(view, ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+                //默认获取不到焦点，设置获取焦点
+                popupWindow.setFocusable(true);
+                //点击窗口以外区域，窗口消失
+                popupWindow.setBackgroundDrawable(new BitmapDrawable());
+                //弹出或者消失的时候带动画效果
+                //popu.setAnimationStyle(R.style.mypopu);
+                setBackgroundAlpha(0.5f);
+                //显示popuwindow
+//                        popupWindow.showAsDropDown(shop_group,0,0);
+                popupWindow.showAtLocation(linrat_shop, Gravity.BOTTOM,0,0);
+                popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
+                    @Override
+                    public void onDismiss() {
+//                                zhanghu_shop.setChecked(false);
+                        setBackgroundAlpha(1.0f);
+                    }
+                });
+                break;
+            case R.id.pingjia_shop:
+                break;
+            case R.id.daohang_shop:
+                break;
         }
     }
 

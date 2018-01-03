@@ -209,7 +209,7 @@ public class HomeActivity extends BaseActivity {
                     pw.setBackgroundDrawable(new BitmapDrawable());
                     ImageView imageView = customTool.findViewById(R.id.Right_Img);
 //                    pw.showAtLocation(imageView, Gravity.CENTER,0,0);
-                    pw.showAsDropDown(imageView, 0, -60);
+                    pw.showAsDropDown(imageView, 0, 0);
                 }
             });
             customTool.setOnLeftButtonClickListener(new CustomTool.OnLeftButtonClickListener() {

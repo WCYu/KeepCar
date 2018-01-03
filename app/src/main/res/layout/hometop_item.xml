@@ -389,7 +389,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="y100">
+            android:layout_height="@dimen/y100">
             <ImageView
                 android:layout_width="0dp"
                 android:layout_weight="1"

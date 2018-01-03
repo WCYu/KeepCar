@@ -29,7 +29,7 @@ import com.ysd.keepcar.view.shop.fragment.UsedCar_Fragment;
 
 import java.util.ArrayList;
 
-public class ShopActivity extends BaseActivity implements View.OnClickListener {
+public class Four_S_ShopActivity extends BaseActivity implements View.OnClickListener {
 
 
     private ImageView image_background;
@@ -150,7 +150,7 @@ public class ShopActivity extends BaseActivity implements View.OnClickListener {
             //本店账户
             case R.id.btn_bendianzhanghu:
 
-                startActivity(new Intent(ShopActivity.this, DetailsActivity.class));
+                startActivity(new Intent(Four_S_ShopActivity.this, Shop_DetailsActivity.class));
                 break;
 
             //发现

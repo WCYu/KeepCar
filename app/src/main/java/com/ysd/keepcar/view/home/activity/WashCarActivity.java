@@ -195,15 +195,15 @@ public class WashCarActivity extends BaseActivity implements CompoundButton.OnCh
                 Toast.makeText(this, "价格最低", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.itme_1:
-                Intent intent1 = new Intent(WashCarActivity.this,ShopActivity.class);
+                Intent intent1 = new Intent(WashCarActivity.this,WashShopActivity.class);
                 startActivity(intent1);
                 break;
             case R.id.itme_2:
-                Intent intent2 = new Intent(WashCarActivity.this,ShopActivity.class);
+                Intent intent2 = new Intent(WashCarActivity.this,WashShopActivity.class);
                 startActivity(intent2);
                 break;
             case R.id.itme_3:
-                Intent intent3 = new Intent(WashCarActivity.this,ShopActivity.class);
+                Intent intent3 = new Intent(WashCarActivity.this,WashShopActivity.class);
                 startActivity(intent3);
                 break;
         }

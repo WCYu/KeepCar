@@ -27,7 +27,7 @@ import com.ysd.keepcar.app.BaseFragment;
 import com.ysd.keepcar.utils.OkhttpUtil;
 import com.ysd.keepcar.utils.UrlPath;
 import com.ysd.keepcar.utils.ZJson;
-import com.ysd.keepcar.view.shop.activity.ShopActivity;
+import com.ysd.keepcar.view.shop.activity.Four_S_ShopActivity;
 import com.ysd.keepcar.view.shop.adapter.Shop_FourSList_Adapter;
 import com.ysd.keepcar.view.shop.adapter.Shop_Popuwindow1_Adapter;
 import com.ysd.keepcar.view.shop.entity.Brand_Bean;
@@ -209,7 +209,7 @@ public class ShopFragment extends BaseFragment implements WaveSideBar.OnSelectIn
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-                Intent intent = new Intent(AppService.baseActivity, ShopActivity.class);
+                Intent intent = new Intent(AppService.baseActivity, Four_S_ShopActivity.class);
                 intent.putExtra("logo", list.get(i).getLogo());
                 intent.putExtra("shopimg", list.get(i).getShopImg());
                 intent.putExtra("shopname", list.get(i).getShopName());
@@ -228,7 +228,7 @@ public class ShopFragment extends BaseFragment implements WaveSideBar.OnSelectIn
     //品牌
     private void popupWindow1(View vicinityView) {
 
-        popupWindow1 = new PopupWindow(vicinityView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        popupWindow1 = new PopupWindow(vicinityView, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         vicinityView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -238,8 +238,7 @@ public class ShopFragment extends BaseFragment implements WaveSideBar.OnSelectIn
 
 
         popupWindow1.setFocusable(true);
-        popupWindow1.setWidth(ViewGroup.LayoutParams.FILL_PARENT);
-        popupWindow1.setHeight(ViewGroup.LayoutParams.FILL_PARENT);
+
         popupWindow1.setBackgroundDrawable(new BitmapDrawable());
         popupWindow1.showAsDropDown(radiobut_Brand, 0, 20);
 
@@ -303,7 +302,7 @@ public class ShopFragment extends BaseFragment implements WaveSideBar.OnSelectIn
     private void popupWindow2(View vicinityView) {
 
 
-        popupWindow = new PopupWindow(vicinityView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        popupWindow = new PopupWindow(vicinityView, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         vicinityView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -312,11 +311,10 @@ public class ShopFragment extends BaseFragment implements WaveSideBar.OnSelectIn
         });
 
         popupWindow.setFocusable(true);
-        popupWindow.setWidth(ViewGroup.LayoutParams.FILL_PARENT);
-        popupWindow.setHeight(ViewGroup.LayoutParams.FILL_PARENT);
+
         popupWindow.setBackgroundDrawable(new BitmapDrawable());
 
-    popupWindow.showAsDropDown(shop_group, 0, 20);
+    popupWindow.showAsDropDown(shop_group, 0, 10);
         popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
             @Override
             public void onDismiss() {

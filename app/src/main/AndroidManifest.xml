@@ -45,8 +45,8 @@
         <activity android:name=".view.home.activity.QueryActivity" />
         <activity android:name=".view.home.activity.RescueActivity" />
         <activity android:name=".CityActivity" />
-        <activity android:name=".view.shop.activity.ShopActivity" />
-        <activity android:name=".view.shop.activity.DetailsActivity" />
+        <activity android:name=".view.shop.activity.Four_S_ShopActivity" />
+        <activity android:name=".view.shop.activity.Shop_DetailsActivity" />
         <activity android:name=".view.shop.activity.Place_OrderActivity" />
         <activity android:name=".view.shop.activity.Payment_SuccessActivity"></activity>
         <activity android:name=".view.personalcenter.login.LoginActivity" />
@@ -54,16 +54,11 @@
         <activity android:name=".view.personalcenter.myshop.MyShopActivity" />
         <activity android:name=".view.personalcenter.myOrder.MyOrderActivity" />
         <activity android:name=".view.personalcenter.myOrder.ReuseActivity" />
-        <activity android:name=".view.personalcenter.myOrder.ReuseActivity" />
-        <activity android:name=".view.home.activity.ShopActivity" />
-        <activity android:name=".view.home.activity.DetailsActivity"></activity>
-        <activity android:name=".view.personalcenter.myOrder.ReuseActivity"></activity>
-        <activity android:name=".view.shop.activity.ShopActivity" />
-        <activity android:name=".CityActivity" />
+        <activity android:name=".view.home.activity.WashShopActivity" />
+        <activity android:name=".view.home.activity.WashDetailsActivity"></activity>
         <activity android:name=".view.home.activity.ErWeiMaActivity" />
         <activity android:name=".view.home.activity.exhibition.XinCarInfoActivity" />
         <activity android:name=".view.home.activity.exhibition.ErShouCarActivity"></activity>
-        <activity android:name=".view.home.activity.ErWeiMaActivity" />
         <activity android:name=".view.shoppingcart.activity.RealOrderActivity"></activity>
     </application>
 

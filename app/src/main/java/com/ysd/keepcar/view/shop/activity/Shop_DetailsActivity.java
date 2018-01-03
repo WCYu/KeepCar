@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 //详情
-public class DetailsActivity extends AppCompatActivity {
+public class Shop_DetailsActivity extends AppCompatActivity {
 
     //定义图片数组
     private int images[] = {R.mipmap.ic_icon15, R.mipmap.ic_icon15, R.mipmap.ic_icon15};
@@ -30,17 +30,15 @@ public class DetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop_details);
 
-//        TextView text_pice = findViewById(R.id.text_pice);
-//        text_pice.getPaint().setFlags(Paint. STRIKE_THRU_TEXT_FLAG );
-//        vp_main_viewpager = (ViewPager) findViewById(R.id.viewPager);
-//        textView = findViewById(R.id.button);
-        int currentItem = vp_main_viewpager.getCurrentItem();
+        TextView text_pice = findViewById(R.id.text_pice);
+        text_pice.getPaint().setFlags(Paint. STRIKE_THRU_TEXT_FLAG );
+        vp_main_viewpager = (ViewPager) findViewById(R.id.viewPager);
+        textView = findViewById(R.id.button);
 
         //将images数组中的图片放入ImageView
         for (int i = 0; i < images.length; i++) {
             ImageView imageView = new ImageView(this);
             imageView.setImageResource(images[i]);
-            textView.setText(currentItem);
             views.add(imageView);
         }
 
