@@ -35,8 +35,8 @@
         <activity android:name=".view.personalcenter.myshop.MyShopActivity" />
         <activity android:name=".view.personalcenter.myOrder.MyOrderActivity" />
         <activity android:name=".view.personalcenter.myOrder.ReuseActivity" />
-        <activity android:name=".view.home.activity.ShopActivity" />
-        <activity android:name=".view.home.activity.DetailsActivity"></activity>
+        <activity android:name=".view.home.activity.WashShopActivity" />
+        <activity android:name=".view.home.activity.WashDetailsActivity"></activity>
     </application>
 
 </manifest>

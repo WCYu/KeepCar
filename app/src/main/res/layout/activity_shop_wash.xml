@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:id="@+id/linrat_shop"
-    tools:context="com.ysd.keepcar.view.home.activity.ShopActivity">
+    tools:context="com.ysd.keepcar.view.home.activity.WashShopActivity">
 
     <include
         android:id="@+id/itme_shop"

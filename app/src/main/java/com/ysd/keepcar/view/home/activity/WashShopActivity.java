@@ -21,7 +21,7 @@ import android.widget.Toast;
 import com.ysd.keepcar.R;
 import com.ysd.keepcar.app.BaseActivity;
 
-public class ShopActivity extends BaseActivity implements View.OnClickListener {
+public class WashShopActivity extends BaseActivity implements View.OnClickListener {
 
     private ImageView imageView3;
     private TextView xianjia1_shop;
@@ -52,7 +52,7 @@ public class ShopActivity extends BaseActivity implements View.OnClickListener {
 
     @Override
     public int getInitId() {
-        return R.layout.activity_shop;
+        return R.layout.activity_shop_wash;
         //中间加横线
 //        tv.getPaint().setFlags(Paint. STRIKE_THRU_TEXT_FLAG );
     }
@@ -128,22 +128,22 @@ public class ShopActivity extends BaseActivity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.biaoxi_itme:
-                Intent intent = new Intent(ShopActivity.this, DetailsActivity.class);
+                Intent intent = new Intent(WashShopActivity.this, WashDetailsActivity.class);
                 startActivity(intent);
                 break;
             case R.id.biaoxi1_itme:
-                Intent intent1 = new Intent(ShopActivity.this, DetailsActivity.class);
+                Intent intent1 = new Intent(WashShopActivity.this, WashDetailsActivity.class);
                 startActivity(intent1);
                 break;
             case R.id.xicheka_itme:
-                Intent intent2 = new Intent(ShopActivity.this, DetailsActivity.class);
+                Intent intent2 = new Intent(WashShopActivity.this, WashDetailsActivity.class);
                 startActivity(intent2);
                 break;
             case R.id.zhanghu_shop:
 
-                Toast.makeText(ShopActivity.this, "1111", Toast.LENGTH_SHORT).show();
+                Toast.makeText(WashShopActivity.this, "1111", Toast.LENGTH_SHORT).show();
 
-                View view = LayoutInflater.from(ShopActivity.this).inflate(R.layout.shop_popu1_layout, null);
+                View view = LayoutInflater.from(WashShopActivity.this).inflate(R.layout.shop_popu1_layout, null);
                 PopupWindow popupWindow = new PopupWindow(view, ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
                 //默认获取不到焦点，设置获取焦点
                 popupWindow.setFocusable(true);

@@ -4,8 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,7 +26,7 @@ import com.ysd.keepcar.utils.GlideImage;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DetailsActivity extends BaseActivity implements View.OnClickListener {
+public class WashDetailsActivity extends BaseActivity implements View.OnClickListener {
 
     private Banner banner;
     private TextView leixing_details;
@@ -60,7 +58,7 @@ public class DetailsActivity extends BaseActivity implements View.OnClickListene
 
     @Override
     public int getInitId() {
-        return R.layout.activity_details;
+        return R.layout.activity_details_wash;
     }
 
     public void initView() {
@@ -146,7 +144,7 @@ public class DetailsActivity extends BaseActivity implements View.OnClickListene
                 break;
             case R.id.dianhua_details:
                 //显示popuwindow
-                View view = LayoutInflater.from(DetailsActivity.this).inflate(R.layout.call_layout, null);
+                View view = LayoutInflater.from(WashDetailsActivity.this).inflate(R.layout.call_layout, null);
                 //创建一个popuwindow对象
                 PopupWindow popupWindow = new PopupWindow(view, ViewGroup.LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.WRAP_CONTENT);
                 //默认获取不到焦点，设置获取焦点
@@ -174,7 +172,7 @@ public class DetailsActivity extends BaseActivity implements View.OnClickListene
                 break;
             case R.id.goumai_details:
                 //显示popuwindow
-                View view1 = LayoutInflater.from(DetailsActivity.this).inflate(R.layout.goumai_layout, null);
+                View view1 = LayoutInflater.from(WashDetailsActivity.this).inflate(R.layout.goumai_layout, null);
                 //创建一个popuwindow对象
                 PopupWindow popupWindow1 = new PopupWindow(view1, ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
                 //默认获取不到焦点，设置获取焦点
