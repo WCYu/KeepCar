@@ -317,6 +317,6 @@
         <FrameLayout
             android:id="@+id/framelayout_person"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"></FrameLayout>
+            android:layout_height="300dp"></FrameLayout>
     </LinearLayout>
 </ScrollView>
