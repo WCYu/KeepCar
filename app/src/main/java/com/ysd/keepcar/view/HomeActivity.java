@@ -88,6 +88,7 @@ public class HomeActivity extends BaseActivity {
     private PopupWindow pw;
     private TextView cityName;
     public int cityId;
+
     @Override
     public int getInitId() {
         return R.layout.activity_home;
@@ -317,13 +318,13 @@ public class HomeActivity extends BaseActivity {
             public void onResponse(Call call, Response response) throws IOException {
                 String string = response.body().string();
                 try {
-                    JSONObject jsonObject=new JSONObject(string);
+                    JSONObject jsonObject = new JSONObject(string);
                     int code = jsonObject.getInt("code");
-                    if(code==200){
+                    if (code == 200) {
                         JSONObject data = jsonObject.getJSONObject("data");
                         int key = data.getInt("key");
-                        cityId=key;
-                        Log.e("---HomeActivity---", string+"-----"+key);
+                        cityId = key;
+                        Log.e("---HomeActivity---", string + "-----" + key);
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
