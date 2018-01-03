@@ -20,8 +20,8 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void initView() {
-        viewPager=findViewById(R.id.welcome_pager);
-        button=findViewById(R.id.experience);
+        viewPager = findViewById(R.id.welcome_pager);
+        button = findViewById(R.id.experience);
     }
 
     @Override
@@ -39,7 +39,7 @@ public class MainActivity extends BaseActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this, HomeActivity.class);
+                Intent intent = new Intent(MainActivity.this, HomeActivity.class);
                 startActivity(intent);
                 finish();
             }
