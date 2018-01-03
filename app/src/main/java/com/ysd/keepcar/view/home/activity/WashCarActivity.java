@@ -30,6 +30,9 @@ public class WashCarActivity extends BaseActivity implements CompoundButton.OnCh
     private LinearLayout linear_washcar;
     private View v1;
     private PopupWindow popu1;
+    private View itme_1;
+    private View itme_2;
+    private View itme_3;
 
     @Override
     public int getInitId() {
@@ -42,9 +45,16 @@ public class WashCarActivity extends BaseActivity implements CompoundButton.OnCh
         dianpu_washcar = findViewById(R.id.dianpu_washcar);
         paixu_washcar = findViewById(R.id.paixu_washcar);
         linear_washcar = findViewById(R.id.linear_washcar);
+        itme_1 = findViewById(R.id.itme_1);
+        itme_2 = findViewById(R.id.itme_2);
+        itme_3 = findViewById(R.id.itme_3);
+
 
         dianpu_washcar.setOnCheckedChangeListener(this);
         paixu_washcar.setOnCheckedChangeListener(this);
+        itme_1.setOnClickListener(this);
+        itme_2.setOnClickListener(this);
+        itme_3.setOnClickListener(this);
     }
 
     @Override
@@ -148,6 +158,7 @@ public class WashCarActivity extends BaseActivity implements CompoundButton.OnCh
                     jiage_washcar.setOnClickListener(this);
                 }
                 break;
+
         }
     }
 
@@ -182,6 +193,18 @@ public class WashCarActivity extends BaseActivity implements CompoundButton.OnCh
                 break;
             case R.id.jiage_washcar:
                 Toast.makeText(this, "价格最低", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.itme_1:
+                Intent intent1 = new Intent(WashCarActivity.this,ShopActivity.class);
+                startActivity(intent1);
+                break;
+            case R.id.itme_2:
+                Intent intent2 = new Intent(WashCarActivity.this,ShopActivity.class);
+                startActivity(intent2);
+                break;
+            case R.id.itme_3:
+                Intent intent3 = new Intent(WashCarActivity.this,ShopActivity.class);
+                startActivity(intent3);
                 break;
         }
     }
