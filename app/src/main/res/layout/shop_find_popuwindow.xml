@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ysd.keepcar.custom.PercentLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@mipmap/popuwindow">
+
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/but_maintain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:drawableLeft="@mipmap/maintain"
+            android:paddingLeft="10dp"
+            android:text="保养" />
+
+        <Button
+            android:id="@+id/but_Repair"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:drawableLeft="@mipmap/repair"
+            android:paddingLeft="10dp"
+            android:text="维修" />
+
+        <Button
+            android:id="@+id/but_make_an_appointment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:drawableLeft="@mipmap/makeanappointment"
+            android:paddingLeft="10dp"
+            android:text="预约" />
+
+        <Button
+            android:id="@+id/but_but_Renewal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:drawableLeft="@mipmap/renewal"
+            android:paddingLeft="10dp"
+            android:text="续保" />
+
+
+    </LinearLayout>
+</com.ysd.keepcar.custom.PercentLinearLayout>

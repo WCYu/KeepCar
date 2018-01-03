@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#88000000">
+    android:background="@color/transparent_half">
 
     <com.ysd.keepcar.custom.PercentLinearLayout
         android:layout_width="match_parent"
@@ -17,42 +17,54 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
-            app:layout_heightPercent="25%"
+            app:layout_heightPercent="30%"
             app:layout_widthPercent="98%">
 
             <RadioButton
-                android:id="@+id/radio_Storefront"
-                android:layout_width="match_parent"
+                android:id="@+id/radio_Default_sort"
+                android:layout_width="wrap_content"
                 android:layout_height="0dp"
+                android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:button="@null"
-
                 android:gravity="center_vertical"
                 android:paddingRight="20dp"
                 android:text="默认排序" />
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@android:color/darker_gray" />
 
 
             <RadioButton
                 android:id="@+id/radiobutMy_member_store"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="0dp"
+                android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:button="@null"
                 android:gravity="center_vertical"
                 android:paddingRight="50dp"
-                android:text="距离最近" />
+                android:text="销量最高" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@android:color/darker_gray" />
 
 
             <RadioButton
-                android:id="@+id/radiobut_Single_store_in_history"
-                android:layout_width="match_parent"
+                android:id="@+id/radiobut_"
+                android:layout_width="wrap_content"
                 android:layout_height="0dp"
+                android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:button="@null"
                 android:gravity="center_vertical"
-                android:paddingRight="10dp"
-                android:text="评价最高" />
+                android:paddingRight="50dp"
+                android:text="积分值最低" />
+
 
         </RadioGroup>
     </com.ysd.keepcar.custom.PercentLinearLayout>

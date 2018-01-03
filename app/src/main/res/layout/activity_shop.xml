@@ -26,7 +26,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:scaleType="fitXY"
-                android:src="@mipmap/ic_launcher" />
+                android:src="@mipmap/ic_icon15" />
 
             <RelativeLayout
 
@@ -52,7 +52,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:src="@mipmap/ic_launcher" />
+                    android:src="@mipmap/ic_launcher_round" />
 
                 <TextView
                     android:id="@+id/text_name"
@@ -78,7 +78,6 @@
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"
                 android:layout_margin="10dp"
-                android:background="@mipmap/ic_launcher_round"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -140,17 +139,84 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="#1234"></View>
+            android:background="#1234" />
 
         <android.support.design.widget.TabLayout
             android:id="@+id/shop_tablayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"></android.support.design.widget.TabLayout>
+            android:layout_height="wrap_content"
+            app:tabSelectedTextColor="#EB181A" />
 
         <android.support.v4.view.ViewPager
             android:id="@+id/viewp_shop"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></android.support.v4.view.ViewPager>
+            android:layout_height="270dp" />
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true">
+
+                <LinearLayout
+                    android:id="@+id/line_shopitem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FFF"
+                    android:gravity="bottom"
+                    android:orientation="horizontal"
+                    app:layout_heightPercent="10%">
+
+                    <Button
+                        android:id="@+id/btn_bendianzhanghu"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:background="#00000000"
+                        android:button="@null"
+                        android:drawablePadding="5px"
+                        android:drawableTop="@mipmap/store_account"
+                        android:gravity="center"
+                        android:padding="5px"
+                        android:text="本店账户"
+                        android:textColor="#9D9D9D" />
+
+                    <Button
+                        android:id="@+id/btn_find"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:background="#00000000"
+                        android:button="@null"
+                        android:drawablePadding="5px"
+                        android:drawableTop="@mipmap/store_account"
+                        android:gravity="center"
+                        android:padding="5px"
+                        android:text="发现"
+                        android:textColor="#9D9D9D" />
+
+                    <Button
+                        android:id="@+id/btn_daohang"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:background="#00000000"
+                        android:button="@null"
+                        android:drawablePadding="5px"
+                        android:drawableTop="@mipmap/navigation"
+                        android:gravity="center"
+                        android:padding="5px"
+                        android:text="导航"
+                        android:textColor="#9D9D9D" />
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
     </LinearLayout>
+
 </com.ysd.keepcar.custom.PercentLinearLayout>
