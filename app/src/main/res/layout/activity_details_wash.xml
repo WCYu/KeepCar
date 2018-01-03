@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.ysd.keepcar.view.home.activity.DetailsActivity">
+    tools:context="com.ysd.keepcar.view.home.activity.WashDetailsActivity">
 
     <include
         layout="@layout/details_layout"
