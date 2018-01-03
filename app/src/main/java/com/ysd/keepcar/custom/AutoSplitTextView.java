@@ -10,6 +10,7 @@ import android.widget.TextView;
 /**
  * Created by Administrator on 2018-01-03.
  * //自定分割换行的类
+ * //aaa
  */
 
 @SuppressLint("AppCompatCustomView")
