@@ -60,7 +60,8 @@
         <activity android:name=".view.personalcenter.myOrder.ReuseActivity"></activity>
         <activity android:name=".view.shop.activity.ShopActivity" />
         <activity android:name=".CityActivity" />
-        <activity android:name=".view.home.activity.ErWeiMaActivity"></activity>
+        <activity android:name=".view.home.activity.ErWeiMaActivity" />
+        <activity android:name=".view.shoppingcart.activity.RealOrderActivity"></activity>
     </application>
 
 </manifest>
