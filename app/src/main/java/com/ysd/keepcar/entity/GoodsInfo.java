@@ -4,7 +4,6 @@ package com.ysd.keepcar.entity;
  * Created by Administrator on 2017-12-27.
  * 商品信息
  */
-
 public class GoodsInfo {
     //id
     private String id;
