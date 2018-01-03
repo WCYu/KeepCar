@@ -12,6 +12,7 @@ import java.security.PublicKey;
 
 public class AppService extends Application {
     public static BaseActivity baseActivity;
+
     @Override
     public void onCreate() {
         super.onCreate();
