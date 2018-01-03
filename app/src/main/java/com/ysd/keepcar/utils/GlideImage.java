@@ -12,7 +12,6 @@ import com.youth.banner.loader.ImageLoader;
  * 写这段代码的时候，只有上帝和我知道它是干嘛的
  * 现在只有上帝知道0.0
  */
-
 public class GlideImage extends ImageLoader {
     @Override
     public void displayImage(Context context, Object path, ImageView imageView) {
