@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/darker_gray">
+    android:background="#88000000">
 
     <com.ysd.keepcar.custom.PercentLinearLayout
         android:layout_width="match_parent"
@@ -11,10 +11,7 @@
         android:background="@color/subscribe_item_pressed_bg"
         android:orientation="vertical">
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:background="@android:color/darker_gray" />
+
 
         <RadioGroup
             android:id="@+id/brand_Group"
@@ -34,10 +31,6 @@
                 android:paddingRight="20dp"
                 android:text="店面不限" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="@android:color/darker_gray" />
 
             <RadioButton
                 android:id="@+id/radiobutMy_member_store"
@@ -48,11 +41,6 @@
                 android:gravity="center_vertical"
                 android:paddingRight="50dp"
                 android:text="我的会员店" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="@android:color/darker_gray" />
 
             <RadioButton
                 android:id="@+id/radiobut_Single_store_in_history"
