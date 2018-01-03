@@ -2,6 +2,7 @@ package com.ysd.keepcar.view.home.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
@@ -12,6 +13,8 @@ import android.widget.RadioGroup;
 import com.ysd.keepcar.R;
 import com.ysd.keepcar.app.BaseActivity;
 import com.ysd.keepcar.custom.CustomTool;
+import com.ysd.keepcar.view.home.fragment.ErShouFragment;
+import com.ysd.keepcar.view.home.fragment.XinCarFragment;
 
 //展厅Activity
 public class ExhibitionActivity extends BaseActivity {
@@ -23,6 +26,8 @@ public class ExhibitionActivity extends BaseActivity {
     private FrameLayout exhibition_frame;
     private FragmentManager supportFragmentManager;
     private FragmentTransaction transaction;
+    private ErShouFragment erShouFragment;
+    private XinCarFragment xinCarFragment;
 
     @Override
     public int getInitId() {
@@ -38,9 +43,19 @@ public class ExhibitionActivity extends BaseActivity {
         exhibition_frame = findViewById(R.id.exhibition_frame);
         supportFragmentManager = getSupportFragmentManager();
         transaction = supportFragmentManager.beginTransaction();
+        erShouFragment = new ErShouFragment();
+        xinCarFragment = new XinCarFragment();
+        transaction.add(R.id.exhibition_frame,erShouFragment);
+        transaction.add(R.id.exhibition_frame,xinCarFragment);
+        isCheckFragment(xinCarFragment);
         transaction.commit();
     }
 
+    public void isCheckFragment(Fragment fragment){
+        transaction.hide(erShouFragment);
+        transaction.hide(xinCarFragment);
+        transaction.show(fragment);
+    }
     @Override
     public void initData() {
         Intent intent = getIntent();
@@ -58,14 +73,16 @@ public class ExhibitionActivity extends BaseActivity {
         exhibition_group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
+                transaction = supportFragmentManager.beginTransaction();
                 switch (checkedId){
                     case R.id.exhibition_xin_che:
-
+                        isCheckFragment(xinCarFragment);
                         break;
                     case R.id.exhibition_er_shou:
-
+                        isCheckFragment(erShouFragment);
                         break;
                 }
+                transaction.commit();
             }
         });
     }

@@ -27,4 +27,10 @@ public class UrlPath {
 
     // 根据城市名称转换成系统统一id
     public static final String URLCITYID = "address/queryByCityName.do";
+
+    //热门
+    public static final String URLREMEN = "main/queryHotProduct.do";
+
+    //中间滚动部分展示当前账户所在的4s店
+    public static final String URLGUNDONGTIAO = "myAccount/queryMyVipShop_v1_0.do";
 }

@@ -6,12 +6,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.gson.Gson;
 import com.youth.banner.Banner;
 import com.ysd.keepcar.R;
 import com.ysd.keepcar.app.BaseFragment;
+import com.ysd.keepcar.utils.MySharedPreferences;
+import com.ysd.keepcar.entity.ReMenBean;
 import com.ysd.keepcar.utils.GlideImageLoader;
 import com.ysd.keepcar.utils.OkhttpUtil;
 import com.ysd.keepcar.utils.UrlPath;
@@ -36,6 +41,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import okhttp3.Call;
@@ -43,13 +49,13 @@ import okhttp3.Callback;
 import okhttp3.Response;
 
 
-public class HomeFragment extends BaseFragment implements View.OnClickListener{
+public class HomeFragment extends BaseFragment implements View.OnClickListener {
 
     ListView listView;
-    private ArrayList<String> arrayList;
     private ViewHolder vh;
     private ArrayList<String> imgList;
     private TextView cityName;
+    private List<ReMenBean.DataBean> data;
 
     @Override
     public int getInitId() {
@@ -62,18 +68,82 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener{
         View viewTop = LayoutInflater.from(getActivity()).inflate(R.layout.hometop_item, null);
         vh = new ViewHolder(viewTop);
         listView.addHeaderView(viewTop);
-        HomeActivity homeActivity= (HomeActivity) getActivity();
+    }
 
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        if (hidden) {
+            remen();
+        }
     }
 
     @Override
     public void initData() {
         getBannerImg();
-        arrayList = new ArrayList();
-        for (int i = 0; i < 5; i++) {
-            arrayList.add(i + "");
+        String userId = MySharedPreferences.getInstance().getUserId();
+        if(userId!=null){
+            gunDongTiao(userId);
+        }else {
+            Toast.makeText(getActivity(), "data为空", Toast.LENGTH_SHORT).show();
         }
     }
+
+    //滚动条信息
+    private void gunDongTiao(String data) {
+        Map map=new HashMap();
+        map.put("tk",data);
+        map.put("type",0);
+        String jsonMap = ZJson.toJSONMap(map);
+        Log.e("---HomeFragment---", data);
+        Log.e("---HomeFragment---", jsonMap);
+        OkhttpUtil.getInstance().post((UrlPath.URLPATHAPP + UrlPath.URLGUNDONGTIAO), jsonMap, new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                String string = response.body().string();
+                Log.e("---HomeFragment---", string);
+            }
+        });
+    }
+
+    //热门
+    private void remen() {
+        Map map = new HashMap();
+        HomeActivity homeActivity = (HomeActivity) getActivity();
+        int cityId = homeActivity.cityId;
+        map.put("cityId", cityId);
+        String jsonMap = ZJson.toJSONMap(map);
+        OkhttpUtil.getInstance().post((UrlPath.URLPATHAPP + UrlPath.URLREMEN), jsonMap, new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                final String string = response.body().string();
+//                Log.e("---HomeFragment---", string);
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Gson gson = new Gson();
+                        ReMenBean reMenBean = gson.fromJson(string, ReMenBean.class);
+                        data = reMenBean.getData();
+                        if(data!=null){
+                            HomeListAdapter homeListAdapter = new HomeListAdapter(getActivity(), (ArrayList<ReMenBean.DataBean>) data);
+                            listView.setAdapter(homeListAdapter);
+                        }
+                    }
+                });
+            }
+        });
+    }
+
     //获得引导页图片
     private void getBannerImg() {
         OkhttpUtil.getInstance().post((UrlPath.URLPATHAPP + UrlPath.URLPATHBANNER), null, new Callback() {
@@ -114,8 +184,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener{
 
     @Override
     public void initAdapter() {
-        HomeListAdapter homeListAdapter = new HomeListAdapter(getActivity(), arrayList);
-        listView.setAdapter(homeListAdapter);
+
     }
 
     @Override
@@ -135,47 +204,47 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener{
 
     @Override
     public void onClick(View v) {
-        Intent intent=new Intent();
-        switch (v.getId()){
+        Intent intent = new Intent();
+        switch (v.getId()) {
             case R.id.hometop_baoyang:
                 intent.setClass(getActivity(), MaintainActivity.class);
-                intent.putExtra("title",vh.hometop_baoyang.getText());
+                intent.putExtra("title", vh.hometop_baoyang.getText());
                 break;
             case R.id.hometop_weixiu:
                 intent.setClass(getActivity(), RepairActivity.class);
-                intent.putExtra("title",vh.hometop_weixiu.getText());
+                intent.putExtra("title", vh.hometop_weixiu.getText());
                 break;
             case R.id.hometop_zhanting:
                 intent.setClass(getActivity(), ExhibitionActivity.class);
-                intent.putExtra("title",vh.hometop_zhanting.getText());
+                intent.putExtra("title", vh.hometop_zhanting.getText());
                 break;
             case R.id.hometop_xubao:
                 intent.setClass(getActivity(), RenewalActivity.class);
-                intent.putExtra("title",vh.hometop_xubao.getText());
+                intent.putExtra("title", vh.hometop_xubao.getText());
                 break;
             case R.id.hometop_jingpin:
                 intent.setClass(getActivity(), BoutiqueActivity.class);
-                intent.putExtra("title",vh.hometop_jingpin.getText());
+                intent.putExtra("title", vh.hometop_jingpin.getText());
                 break;
             case R.id.hometop_xiche:
                 intent.setClass(getActivity(), WashCarActivity.class);
-                intent.putExtra("title",vh.hometop_xiche.getText());
+                intent.putExtra("title", vh.hometop_xiche.getText());
                 break;
             case R.id.hometop_huodong:
                 intent.setClass(getActivity(), ActivityActivity.class);
-                intent.putExtra("title",vh.hometop_huodong.getText());
+                intent.putExtra("title", vh.hometop_huodong.getText());
                 break;
             case R.id.hometop_shangchneg:
                 intent.setClass(getActivity(), ShoppingMallActivity.class);
-                intent.putExtra("title",vh.hometop_shangchneg.getText());
+                intent.putExtra("title", vh.hometop_shangchneg.getText());
                 break;
             case R.id.hometop_chaxun:
                 intent.setClass(getActivity(), QueryActivity.class);
-                intent.putExtra("title",vh.hometop_chaxun.getText());
+                intent.putExtra("title", vh.hometop_chaxun.getText());
                 break;
             case R.id.hometop_jiuyuan:
                 intent.setClass(getActivity(), RescueActivity.class);
-                intent.putExtra("title",vh.hometop_jiuyuan.getText());
+                intent.putExtra("title", vh.hometop_jiuyuan.getText());
                 break;
         }
         startActivity(intent);
@@ -194,7 +263,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener{
         public TextView hometop_shangchneg;
         public TextView hometop_chaxun;
         public TextView hometop_jiuyuan;
-        public FrameLayout hometop_lunhua;
+        public LinearLayout hometop_lunhua;
         public ImageView hometop_maizeng;
         public ImageView hometop_miaosha;
         public ImageView hometop_qianggou;
@@ -213,7 +282,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener{
             this.hometop_shangchneg = (TextView) rootView.findViewById(R.id.hometop_shangchneg);
             this.hometop_chaxun = (TextView) rootView.findViewById(R.id.hometop_chaxun);
             this.hometop_jiuyuan = (TextView) rootView.findViewById(R.id.hometop_jiuyuan);
-            this.hometop_lunhua = (FrameLayout) rootView.findViewById(R.id.hometop_lunhua);
+            this.hometop_lunhua = (LinearLayout) rootView.findViewById(R.id.hometop_lunhua);
             this.hometop_maizeng = (ImageView) rootView.findViewById(R.id.hometop_maizeng);
             this.hometop_miaosha = (ImageView) rootView.findViewById(R.id.hometop_miaosha);
             this.hometop_qianggou = (ImageView) rootView.findViewById(R.id.hometop_qianggou);

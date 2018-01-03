@@ -23,10 +23,11 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:orientation="vertical"
-            android:background="@android:color/white">
+            android:background="@mipmap/shouyeerweima">
             <LinearLayout
                 android:id="@+id/jiahao_myerweima"
                 android:padding="10dp"
+                android:layout_marginTop="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
                 <ImageView

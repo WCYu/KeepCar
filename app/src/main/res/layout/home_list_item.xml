@@ -1,56 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="wrap_content">
 
-    <LinearLayout
+    <com.ysd.keepcar.custom.PercentLinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        >
-        <ImageView
-            android:id="@+id/home_list_item_icon"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_gravity="center"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/xiche"
-            />
+        android:layout_margin="@dimen/x8">
+
         <RelativeLayout
-            android:layout_width="0dp"
-            android:layout_weight="3"
-            android:layout_margin="10dp"
+            android:layout_width="@dimen/x208"
             android:layout_height="wrap_content">
-            <LinearLayout
+
+            <ImageView
+                android:id="@+id/home_list_item_icon"
+                android:layout_width="@dimen/x208"
+                android:layout_height="@dimen/y208"
+                android:layout_gravity="center"
+                android:background="@android:color/background_dark" />
+
+            <ImageView
+                android:id="@+id/home_list_jiaobiao"
+                android:layout_width="@dimen/x56"
+                android:layout_height="@dimen/y56"
+                android:layout_alignParentRight="true"
+                android:background="@mipmap/huodongjiaobiao" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="@dimen/y10">
+
+            <TextView
+                android:id="@+id/home_list_item_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:orientation="vertical">
-                <TextView
-                    android:id="@+id/home_list_item_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="name"/>
-                <TextView
-                    android:id="@+id/home_list_item_shop_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="shop_name"
-                    />
-                <TextView
-                    android:id="@+id/home_list_item_fukuan"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="付款"/>
-            </LinearLayout>
-        </RelativeLayout>
+                android:text="精品"
+                android:textColor="#343434"
+                android:textSize="@dimen/y30" />
+
+            <TextView
+                android:id="@+id/home_list_item_shop_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="shop_name"
+                android:textColor="#999999"
+                android:textSize="@dimen/y26" />
+
+            <TextView
+                android:id="@+id/home_list_item_fukuan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="付款"
+                android:textColor="#999999"
+                android:textSize="@dimen/y24" />
+        </LinearLayout>
+
         <TextView
             android:id="@+id/home_list_item_jiage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="10dp"
-            android:text="价格"/>
+            android:layout_margin="@dimen/y10"
+            android:text="价格"
+            android:textColor="#FF0000"
+            android:textSize="@dimen/y30" />
 
-    </LinearLayout>
+    </com.ysd.keepcar.custom.PercentLinearLayout>
 </LinearLayout>

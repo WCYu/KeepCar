@@ -1,13 +1,55 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.ysd.keepcar.view.home.fragment.ErShouFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+        <CheckBox
+            android:id="@+id/er_shou_brand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:text="品牌"
+            android:textSize="30px"
+            android:gravity="center"/>
+        <CheckBox
+            android:id="@+id/er_shou_4S"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:text="4S店不限"
+            android:textSize="30px"
+            android:gravity="center"/>
+        <CheckBox
+            android:id="@+id/er_shou_sort"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:text="排序"
+            android:textSize="30px"
+            android:gravity="center"/>
+        <CheckBox
+            android:id="@+id/er_shou_screen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:text="筛选"
+            android:textSize="30px"
+            android:gravity="center"/>
+    </LinearLayout>
+    <ListView
+        android:id="@+id/er_shou_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-</FrameLayout>
+    </ListView>
+
+</LinearLayout>

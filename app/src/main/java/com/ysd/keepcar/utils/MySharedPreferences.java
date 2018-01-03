@@ -1,10 +1,8 @@
-package com.ysd.keepcar.app;
+package com.ysd.keepcar.utils;
 
 import android.content.SharedPreferences;
 
-import com.ysd.keepcar.utils.OkhttpUtil;
-
-import okhttp3.OkHttpClient;
+import com.ysd.keepcar.app.AppService;
 
 /**
  * Created by 阿禹 on 2018/1/2.
@@ -15,7 +13,7 @@ public class MySharedPreferences {
     private SharedPreferences sharedPreferences;
 
     private MySharedPreferences(){
-        sharedPreferences=AppService.baseActivity.getSharedPreferences("KeepCar",0);
+        sharedPreferences= AppService.baseActivity.getSharedPreferences("KeepCar",0);
     }
 
     public static MySharedPreferences getInstance(){
@@ -29,18 +27,18 @@ public class MySharedPreferences {
         return mySharedPreferences;
     }
     //用户Id
-    public void setUserId(int usetId){
-        sharedPreferences.edit().putInt("userId",usetId);
+    public void setUserId(String usetId){
+        sharedPreferences.edit().putString("userId",usetId).commit();
     }
 
-    public int getUserId(){
-        int userId = sharedPreferences.getInt("userId", 0);
+    public String getUserId(){
+        String userId = sharedPreferences.getString("userId",null);
         return userId;
     }
 
     //城市Id
     public void setCityId(int usetId){
-        sharedPreferences.edit().putInt("cityId",usetId);
+        sharedPreferences.edit().putInt("cityId",usetId).commit();
     }
 
     public int getCityId(){

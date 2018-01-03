@@ -1,10 +1,7 @@
 package com.ysd.keepcar.view.personalcenter.login;
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -13,8 +10,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ysd.keepcar.R;
+import com.ysd.keepcar.utils.MySharedPreferences;
 import com.ysd.keepcar.utils.OkhttpUtil;
-import com.ysd.keepcar.utils.SharedPreferencesutils;
 import com.ysd.keepcar.utils.UrlPath;
 import com.ysd.keepcar.utils.ZJson;
 
@@ -92,10 +89,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                     JSONObject jsonObject = new JSONObject(string);
                                     int code = jsonObject.getInt("code");
                                     Log.e("TAG","code+++++++++++++++"+ code );
-
                                     if (code == 200){
                                         String data = jsonObject.getString("data");
                                         Log.e("TAG","================"+ data );
+                                        MySharedPreferences.getInstance().setUserId(data);
+                                        finish();
                                     }
                                 } catch (JSONException e) {
                                     e.printStackTrace();

@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ysd.keepcar.R;
+import com.ysd.keepcar.entity.ReMenBean;
 
 import java.util.ArrayList;
 
@@ -19,9 +20,9 @@ import java.util.ArrayList;
 public class HomeListAdapter extends BaseAdapter {
 
     Context context;
-    ArrayList<String> arrayList;
+    ArrayList<ReMenBean.DataBean> arrayList;
 
-    public HomeListAdapter(Context context, ArrayList<String> arrayList) {
+    public HomeListAdapter(Context context, ArrayList<ReMenBean.DataBean> arrayList) {
         this.context = context;
         this.arrayList = arrayList;
     }
@@ -46,10 +47,10 @@ public class HomeListAdapter extends BaseAdapter {
         convertView = LayoutInflater.from(context).inflate(R.layout.home_list_item, null);
         ViewHolder viewHolder=new ViewHolder(convertView);
 
-        viewHolder.home_list_item_name.setText(arrayList.get(position));
-        viewHolder.home_list_item_shop_name.setText(arrayList.get(position));
-        viewHolder.home_list_item_fukuan.setText(arrayList.get(position));
-        viewHolder.home_list_item_jiage.setText(arrayList.get(position));
+        viewHolder.home_list_item_name.setText(arrayList.get(position).getProductType());
+        viewHolder.home_list_item_shop_name.setText(arrayList.get(position).getShopName());
+        viewHolder.home_list_item_fukuan.setText(arrayList.get(position).getProductName());
+        viewHolder.home_list_item_jiage.setText("￥"+arrayList.get(position).getOriginalPrice());
         return convertView;
     }
 

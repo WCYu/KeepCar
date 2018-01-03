@@ -87,7 +87,7 @@ public class HomeActivity extends BaseActivity {
     public static final int REQUEST_CODE = 1;
     private PopupWindow pw;
     private TextView cityName;
-    int cityId;
+    public int cityId;
     @Override
     public int getInitId() {
         return R.layout.activity_home;
