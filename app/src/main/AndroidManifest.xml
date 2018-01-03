@@ -34,6 +34,7 @@
             android:name="com.desmond.citypicker.ui.CityPickerActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme"></activity>
         <activity android:name=".view.home.activity.MaintainActivity" />
         <activity android:name=".view.home.activity.RepairActivity" />
         <activity android:name=".view.home.activity.ExhibitionActivity" />
@@ -49,6 +50,14 @@
         <activity android:name=".view.shop.activity.DetailsActivity" />
         <activity android:name=".view.shop.activity.Place_OrderActivity" />
         <activity android:name=".view.shop.activity.Payment_SuccessActivity"></activity>
+        <activity android:name=".view.personalcenter.login.LoginActivity" />
+        <activity android:name=".view.personalcenter.mycar.MyCarActivity" />
+        <activity android:name=".view.personalcenter.myshop.MyShopActivity" />
+        <activity android:name=".view.personalcenter.myOrder.MyOrderActivity" />
+        <activity android:name=".view.personalcenter.myOrder.ReuseActivity"></activity>
+        <activity android:name=".view.shop.activity.ShopActivity" />
+        <activity android:name=".CityActivity" />
+        <activity android:name=".view.home.activity.ErWeiMaActivity"></activity>
     </application>
 
 </manifest>
