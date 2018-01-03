@@ -20,7 +20,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         initLinstener();
         initToolBar();
         initWindow();
-        AppService.baseActivity=this;
+        AppService.baseActivity = this;
     }
 
     public abstract int getInitId();
