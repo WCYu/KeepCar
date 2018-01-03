@@ -245,16 +245,11 @@ public class ShopFragment extends BaseFragment implements WaveSideBar.OnSelectIn
         popupWindow1.setOnDismissListener(new PopupWindow.OnDismissListener() {
             @Override
             public void onDismiss() {
-
                 shop_group.clearCheck();
-
 
             }
         });
-
-
     }
-
 
     //品牌
     private void initPettypeView1(View vicinityView) {
@@ -314,7 +309,7 @@ public class ShopFragment extends BaseFragment implements WaveSideBar.OnSelectIn
 
         popupWindow.setBackgroundDrawable(new BitmapDrawable());
 
-    popupWindow.showAsDropDown(shop_group, 0, 10);
+        popupWindow.showAsDropDown(shop_group, 0, 10);
         popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
             @Override
             public void onDismiss() {
@@ -325,7 +320,6 @@ public class ShopFragment extends BaseFragment implements WaveSideBar.OnSelectIn
             }
         });
     }
-
 
 
     private void initPettypeView(View vicinityView) {
@@ -350,7 +344,6 @@ public class ShopFragment extends BaseFragment implements WaveSideBar.OnSelectIn
             }
         });
     }
-
 
 
 }
