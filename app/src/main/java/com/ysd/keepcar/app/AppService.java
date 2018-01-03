@@ -2,6 +2,8 @@ package com.ysd.keepcar.app;
 
 import android.app.Application;
 
+import com.uuzuche.lib_zxing.activity.ZXingLibrary;
+
 import java.security.PublicKey;
 
 /**
@@ -13,5 +15,6 @@ public class AppService extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        ZXingLibrary.initDisplayOpinion(this);
     }
 }

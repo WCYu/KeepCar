@@ -15,6 +15,8 @@ import com.ysd.keepcar.app.BaseFragment;
 import com.ysd.keepcar.utils.GlideImageLoader;
 import com.ysd.keepcar.utils.OkhttpUtil;
 import com.ysd.keepcar.utils.UrlPath;
+import com.ysd.keepcar.utils.ZJson;
+import com.ysd.keepcar.view.HomeActivity;
 import com.ysd.keepcar.view.home.activity.ActivityActivity;
 import com.ysd.keepcar.view.home.activity.BoutiqueActivity;
 import com.ysd.keepcar.view.home.activity.ExhibitionActivity;
@@ -33,6 +35,8 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -45,6 +49,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener{
     private ArrayList<String> arrayList;
     private ViewHolder vh;
     private ArrayList<String> imgList;
+    private TextView cityName;
 
     @Override
     public int getInitId() {
@@ -57,10 +62,20 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener{
         View viewTop = LayoutInflater.from(getActivity()).inflate(R.layout.hometop_item, null);
         vh = new ViewHolder(viewTop);
         listView.addHeaderView(viewTop);
+        HomeActivity homeActivity= (HomeActivity) getActivity();
+
     }
 
     @Override
     public void initData() {
+        getBannerImg();
+        arrayList = new ArrayList();
+        for (int i = 0; i < 5; i++) {
+            arrayList.add(i + "");
+        }
+    }
+    //获得引导页图片
+    private void getBannerImg() {
         OkhttpUtil.getInstance().post((UrlPath.URLPATHAPP + UrlPath.URLPATHBANNER), null, new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
@@ -95,10 +110,6 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener{
                 });
             }
         });
-        arrayList = new ArrayList();
-        for (int i = 0; i < 5; i++) {
-            arrayList.add(i + "");
-        }
     }
 
     @Override
