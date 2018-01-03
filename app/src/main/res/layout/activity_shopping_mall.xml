@@ -17,7 +17,59 @@
         android:gravity="center"
         android:paddingTop="15dp"
         app:layout_heightPercent="10%">
-
     </com.ysd.keepcar.custom.CustomTool>
 
+    <RadioGroup
+        android:fitsSystemWindows="true"
+        android:id="@+id/shopping_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        app:layout_heightPercent="7%">
+
+        <RadioButton
+            android:id="@+id/radiobut_shopping_Brand"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableRight="@drawable/item_filter_arrow"
+            android:gravity="center"
+            android:text="分类"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/radiobut_shopping_Storefront"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableRight="@drawable/item_filter_arrow"
+            android:gravity="center"
+            android:text="店面不限"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/radiobut_shopping_sort"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableRight="@drawable/item_filter_arrow"
+            android:gravity="center"
+            android:text="排序"
+            android:textSize="16sp" />
+    </RadioGroup>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_shopping_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 </com.ysd.keepcar.custom.PercentLinearLayout>

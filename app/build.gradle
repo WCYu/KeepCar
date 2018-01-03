@@ -39,6 +39,8 @@ dependencies {
     implementation files('libs/MobCommons-2017.0607.1736.jar')
     //banner
     compile 'com.youth.banner:banner:1.4.9'
+
+    compile 'com.google.code.gson:gson:2.8.1'
     //城市选择器
     compile 'com.desmond:CityPicker:xxx'
     compile('com.desmond:CityPicker:0.3.0') {

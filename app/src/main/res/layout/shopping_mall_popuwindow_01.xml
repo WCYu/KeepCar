@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ysd.keepcar.custom.PercentLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent_half">
+
+    <com.ysd.keepcar.custom.PercentLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/subscribe_item_pressed_bg"
+        android:orientation="vertical">
+
+
+        <RadioGroup
+            android:id="@+id/brand_Group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            app:layout_heightPercent="50%"
+            app:layout_widthPercent="98%">
+
+            <RadioButton
+                android:id="@+id/radio_Classification_unlimited"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:button="@null"
+                android:gravity="center_vertical"
+                android:paddingRight="20dp"
+                android:text="分类不限" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@android:color/darker_gray" />
+
+
+            <RadioButton
+                android:id="@+id/radiobut_Boutique"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:button="@null"
+                android:gravity="center_vertical"
+                android:paddingRight="50dp"
+                android:text="精品" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@android:color/darker_gray" />
+
+            <RadioButton
+                android:id="@+id/radiobut_Fixed_value_Voucher"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:button="@null"
+                android:gravity="center_vertical"
+                android:paddingRight="10dp"
+                android:text="定值券" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@android:color/darker_gray" />
+
+            <RadioButton
+                android:id="@+id/radio_but_yu_e"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:button="@null"
+                android:gravity="center_vertical"
+                android:paddingRight="10dp"
+                android:text="余额券" />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@android:color/darker_gray" />
+
+            <RadioButton
+                android:id="@+id/radiobut_project"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:button="@null"
+                android:gravity="center_vertical"
+                android:paddingRight="10dp"
+                android:text="项目" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@android:color/darker_gray" />
+
+            <RadioButton
+                android:id="@+id/radiobut_Car_Wash"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:button="@null"
+                android:gravity="center_vertical"
+                android:paddingRight="10dp"
+                android:text="洗车" />
+        </RadioGroup>
+    </com.ysd.keepcar.custom.PercentLinearLayout>
+</com.ysd.keepcar.custom.PercentLinearLayout>

@@ -76,7 +76,7 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
     private FrameLayout framelayout_person;
     private RadioGroup rg;
     private RelativeLayout wodedingdan_person;
-    private RelativeLayout wode;
+    private ImageView wode;
 
 
     @Override
@@ -98,7 +98,7 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
         yue_person = (RadioButton) inflate.findViewById(R.id.yue_person);
         dinge_person = (RadioButton) inflate.findViewById(R.id.dinge_person);
         rg = (RadioGroup) inflate.findViewById(R.id.rg);
-        wode = inflate.findViewById(R.id.wodedingdan_person);
+        wode = inflate.findViewById(R.id.imageView2);
 
         imageView.setOnClickListener(this);
         wodecheliang.setOnClickListener(this);
@@ -184,7 +184,7 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
                 startActivity(intent4);
                 Toast.makeText(getActivity(), "店铺", Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.wodedingdan_person:
+            case R.id.imageView2:
                 Intent intent = new Intent(getActivity(), MyOrderActivity.class);
                 startActivity(intent);
                 break;

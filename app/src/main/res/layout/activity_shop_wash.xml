@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/linrat_shop"
+    tools:context="com.ysd.keepcar.view.home.activity.WashShopActivity">
+
+    <include
+        android:id="@+id/itme_shop"
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        layout="@layout/shop_layout"/>
+
+    <View
+        android:background="@color/colorGreyBottom"
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"/>
+    <RadioGroup
+        android:id="@+id/shop_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/zhanghu_shop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/zhanghu"
+            android:text="本店账户"
+            android:gravity="center"
+            android:button="@null" />
+
+        <RadioButton
+            android:id="@+id/pingjia_shop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/pingjia"
+            android:text="待评价"
+            android:gravity="center"
+            android:button="@null" />
+
+        <RadioButton
+            android:id="@+id/daohang_shop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/daohang"
+            android:text="导航"
+            android:gravity="center"
+            android:button="@null" />
+    </RadioGroup>
+</LinearLayout>
