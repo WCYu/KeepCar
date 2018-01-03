@@ -1,13 +1,130 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context="com.ysd.keepcar.view.shoppingcart.ShoppingFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="shopping" />
+        android:layout_height="wrap_content"
+        >
 
-</FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/ll_cart"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+
+                <ExpandableListView
+                    android:id="@+id/ev_listView"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    >
+
+                </ExpandableListView>
+
+                <!--分割线-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/ic_gray" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.1"
+                    >
+                    <!--全选框-->
+                    <CheckBox
+                        android:id="@+id/all_checkBox"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.25"
+                        android:background="@null"
+                        android:button="@null"
+                        android:clickable="true"
+                        android:drawableLeft="@drawable/checkbox_bg"
+                        android:drawablePadding="10dp"
+                        android:minHeight="64dp"
+                        android:text="@string/all"
+                        android:textSize="16sp"
+                        android:layout_marginLeft="10dp" />
+
+                        <!--合计部分的总布局id-->
+                        <LinearLayout
+                            android:id="@+id/order_info"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.7"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.5"
+                                android:orientation="vertical"
+                                android:layout_marginRight="20dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="end"
+                                    android:orientation="horizontal">
+                                    <!--合计-->
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="5dp"
+                                        android:text="@string/order_total"
+                                        android:textColor="@android:color/black"
+                                        android:textSize="18sp"
+                                        android:layout_marginLeft="5dp" />
+                                    <!--价格-->
+                                    <TextView
+                                        android:id="@+id/total_price"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="￥0.00"
+                                        android:textColor="@color/ic_red"
+                                        android:textSize="18sp" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+
+
+                    </LinearLayout>
+                    <!--提交订单-->
+                    <TextView
+                        android:id="@+id/go_pay"
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_weight="0.3"
+                        android:background="@color/ic_red"
+                        android:gravity="center"
+                        android:text="提交订单"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </FrameLayout>
+
+    </RelativeLayout>
+
+
+</ScrollView>
