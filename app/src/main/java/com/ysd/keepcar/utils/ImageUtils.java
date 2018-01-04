@@ -80,7 +80,7 @@ public class ImageUtils {
         int width = bitmap.getWidth();
         int height = bitmap.getHeight();
         float roundPx;
-        float left,top,right,bottom,dst_left,dst_top,dst_right,dst_bottom;
+        float left, top, right, bottom, dst_left, dst_top, dst_right, dst_bottom;
         if (width <= height) {
             roundPx = width / 2;
             top = 0;
@@ -110,8 +110,8 @@ public class ImageUtils {
         Canvas canvas = new Canvas(output);
         final int color = 0xff424242;
         final Paint paint = new Paint();
-        final Rect src = new Rect((int)left, (int)top, (int)right, (int)bottom);
-        final Rect dst = new Rect((int)dst_left, (int)dst_top, (int)dst_right, (int)dst_bottom);
+        final Rect src = new Rect((int) left, (int) top, (int) right, (int) bottom);
+        final Rect dst = new Rect((int) dst_left, (int) dst_top, (int) dst_right, (int) dst_bottom);
         final RectF rectF = new RectF(dst);
         paint.setAntiAlias(true);
         canvas.drawARGB(0, 0, 0, 0);
