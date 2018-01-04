@@ -66,9 +66,10 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     @Override
     public void initView(View view) {
         listView = view.findViewById(R.id.home_list);
-        View viewTop = LayoutInflater.from(getActivity()).inflate(R.layout.hometop_item, null);
+        View viewTop = view.findViewById(R.id.home_include);
         vh = new ViewHolder(viewTop);
-        listView.addHeaderView(viewTop);
+//        View viewTop = LayoutInflater.from(getActivity()).inflate(R.layout.hometop_item, null);
+//        listView.addHeaderView(viewTop);
     }
 
     @Override

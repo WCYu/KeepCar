@@ -197,10 +197,15 @@ public class ShopFragment extends BaseFragment implements WaveSideBar.OnSelectIn
                 FourSList_Bean fourSList_bean = gson.fromJson(string1, FourSList_Bean.class);
                 FourSList_Bean.DataBean data = fourSList_bean.getData();
                 list = data.getList();
-                Shop_FourSList_Adapter shop_fourSList_adapter = new Shop_FourSList_Adapter(list, AppService.baseActivity);
-                lv_listview.setAdapter(shop_fourSList_adapter);
-
-
+                final Shop_FourSList_Adapter shop_fourSList_adapter = new Shop_FourSList_Adapter(list, AppService.baseActivity);
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        if(shop_fourSList_adapter!=null){
+                            lv_listview.setAdapter(shop_fourSList_adapter);
+                        }
+                    }
+                });
             }
         });
 
