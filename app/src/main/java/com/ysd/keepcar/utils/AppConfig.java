@@ -18,16 +18,19 @@ public class AppConfig {
             + "pandatv"
             + File.separator;
 
-    /** 默认存放图片的路径 */
+    /**
+     * 默认存放图片的路径
+     */
     public final static String DEFAULT_IMAGE_PATH = APP_PATH
             + "camera"
             + File.separator;
 
-    /** 默认存放文件的路径 */
+    /**
+     * 默认存放文件的路径
+     */
     public final static String DEFAULT_CACHE_PATH = APP_PATH
             + "cache"
             + File.separator;
-
 
 
     private Context mContext;
