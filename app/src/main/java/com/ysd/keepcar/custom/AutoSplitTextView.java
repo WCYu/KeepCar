@@ -54,7 +54,7 @@ public class AutoSplitTextView extends TextView {
         final float tvWidth = tv.getWidth() - tv.getPaddingLeft() - tv.getPaddingRight(); //控件可用宽度
 
         //将原始文本按行拆分
-        String [] rawTextLines = rawText.replaceAll("\r", "").split("\n");
+        String[] rawTextLines = rawText.replaceAll("\r", "").split("\n");
         StringBuilder sbNewText = new StringBuilder();
         for (String rawTextLine : rawTextLines) {
             if (tvPaint.measureText(rawTextLine) <= tvWidth) {
