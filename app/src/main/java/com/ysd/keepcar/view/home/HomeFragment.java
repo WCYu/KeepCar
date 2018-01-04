@@ -1,10 +1,11 @@
 package com.ysd.keepcar.view.home;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.FrameLayout;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -15,9 +16,9 @@ import com.google.gson.Gson;
 import com.youth.banner.Banner;
 import com.ysd.keepcar.R;
 import com.ysd.keepcar.app.BaseFragment;
-import com.ysd.keepcar.utils.MySharedPreferences;
 import com.ysd.keepcar.entity.ReMenBean;
 import com.ysd.keepcar.utils.GlideImageLoader;
+import com.ysd.keepcar.utils.MySharedPreferences;
 import com.ysd.keepcar.utils.OkhttpUtil;
 import com.ysd.keepcar.utils.UrlPath;
 import com.ysd.keepcar.utils.ZJson;
@@ -82,18 +83,18 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     public void initData() {
         getBannerImg();
         String userId = MySharedPreferences.getInstance().getUserId();
-        if(userId!=null){
+        if (userId != null) {
             gunDongTiao(userId);
-        }else {
+        } else {
             Toast.makeText(getActivity(), "data为空", Toast.LENGTH_SHORT).show();
         }
     }
 
     //滚动条信息
     private void gunDongTiao(String data) {
-        Map map=new HashMap();
-        map.put("tk",data);
-        map.put("type",0);
+        Map map = new HashMap();
+        map.put("tk", data);
+        map.put("type", 0);
         String jsonMap = ZJson.toJSONMap(map);
         Log.e("---HomeFragment---", data);
         Log.e("---HomeFragment---", jsonMap);
@@ -134,7 +135,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
                         Gson gson = new Gson();
                         ReMenBean reMenBean = gson.fromJson(string, ReMenBean.class);
                         data = reMenBean.getData();
-                        if(data!=null){
+                        if (data != null) {
                             HomeListAdapter homeListAdapter = new HomeListAdapter(getActivity(), (ArrayList<ReMenBean.DataBean>) data);
                             listView.setAdapter(homeListAdapter);
                         }
@@ -208,43 +209,43 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.hometop_baoyang:
                 intent.setClass(getActivity(), MaintainActivity.class);
-                intent.putExtra("title", vh.hometop_baoyang.getText());
+                intent.putExtra("title", "4S店保养");
                 break;
             case R.id.hometop_weixiu:
                 intent.setClass(getActivity(), RepairActivity.class);
-                intent.putExtra("title", vh.hometop_weixiu.getText());
+                intent.putExtra("title", "4S店维修");
                 break;
             case R.id.hometop_zhanting:
                 intent.setClass(getActivity(), ExhibitionActivity.class);
-                intent.putExtra("title", vh.hometop_zhanting.getText());
+                intent.putExtra("title", "4S店展厅");
                 break;
             case R.id.hometop_xubao:
                 intent.setClass(getActivity(), RenewalActivity.class);
-                intent.putExtra("title", vh.hometop_xubao.getText());
+                intent.putExtra("title", "4S店续保");
                 break;
             case R.id.hometop_jingpin:
                 intent.setClass(getActivity(), BoutiqueActivity.class);
-                intent.putExtra("title", vh.hometop_jingpin.getText());
+                intent.putExtra("title", "4S店精品");
                 break;
             case R.id.hometop_xiche:
                 intent.setClass(getActivity(), WashCarActivity.class);
-                intent.putExtra("title", vh.hometop_xiche.getText());
+                intent.putExtra("title", "洗车");
                 break;
             case R.id.hometop_huodong:
                 intent.setClass(getActivity(), ActivityActivity.class);
-                intent.putExtra("title", vh.hometop_huodong.getText());
+                intent.putExtra("title", "精彩活动");
                 break;
             case R.id.hometop_shangchneg:
                 intent.setClass(getActivity(), ShoppingMallActivity.class);
-                intent.putExtra("title", vh.hometop_shangchneg.getText());
+                intent.putExtra("title", "积分商城");
                 break;
             case R.id.hometop_chaxun:
                 intent.setClass(getActivity(), QueryActivity.class);
-                intent.putExtra("title", vh.hometop_chaxun.getText());
+                intent.putExtra("title", "违章查询");
                 break;
             case R.id.hometop_jiuyuan:
                 intent.setClass(getActivity(), RescueActivity.class);
-                intent.putExtra("title", vh.hometop_jiuyuan.getText());
+                intent.putExtra("title", "道路救援");
                 break;
         }
         startActivity(intent);
@@ -253,35 +254,42 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     public static class ViewHolder {
         public View rootView;
         public Banner hometop_banner;
-        public TextView hometop_baoyang;
-        public TextView hometop_weixiu;
-        public TextView hometop_zhanting;
-        public TextView hometop_xubao;
-        public TextView hometop_jingpin;
-        public TextView hometop_xiche;
-        public TextView hometop_huodong;
-        public TextView hometop_shangchneg;
-        public TextView hometop_chaxun;
-        public TextView hometop_jiuyuan;
+        public LinearLayout hometop_baoyang;
+        public LinearLayout hometop_weixiu;
+        public LinearLayout hometop_zhanting;
+        public LinearLayout hometop_xubao;
+        public LinearLayout hometop_jingpin;
+        public LinearLayout hometop_xiche;
+        public LinearLayout hometop_huodong;
+        public LinearLayout hometop_shangchneg;
+        public LinearLayout hometop_chaxun;
+        public LinearLayout hometop_jiuyuan;
         public LinearLayout hometop_lunhua;
         public ImageView hometop_maizeng;
         public ImageView hometop_miaosha;
         public ImageView hometop_qianggou;
         public ImageView hometop_tuangou;
+        public ImageView hometop_lunhua_img;
+        public TextView hometop_lunhua_tv1;
+        public TextView hometop_lunhua_tv2;
+        public TextView hometop_lunhua_tv3;
+        public TextView hometop_lunhua_tv4;
+        public TextView hometop_lunhua_tv5;
+        public ImageView hometop_lunhua_imgicon;
 
         public ViewHolder(View rootView) {
             this.rootView = rootView;
             this.hometop_banner = (Banner) rootView.findViewById(R.id.hometop_banner);
-            this.hometop_baoyang = (TextView) rootView.findViewById(R.id.hometop_baoyang);
-            this.hometop_weixiu = (TextView) rootView.findViewById(R.id.hometop_weixiu);
-            this.hometop_zhanting = (TextView) rootView.findViewById(R.id.hometop_zhanting);
-            this.hometop_xubao = (TextView) rootView.findViewById(R.id.hometop_xubao);
-            this.hometop_jingpin = (TextView) rootView.findViewById(R.id.hometop_jingpin);
-            this.hometop_xiche = (TextView) rootView.findViewById(R.id.hometop_xiche);
-            this.hometop_huodong = (TextView) rootView.findViewById(R.id.hometop_huodong);
-            this.hometop_shangchneg = (TextView) rootView.findViewById(R.id.hometop_shangchneg);
-            this.hometop_chaxun = (TextView) rootView.findViewById(R.id.hometop_chaxun);
-            this.hometop_jiuyuan = (TextView) rootView.findViewById(R.id.hometop_jiuyuan);
+            this.hometop_baoyang = (LinearLayout) rootView.findViewById(R.id.hometop_baoyang);
+            this.hometop_weixiu = (LinearLayout) rootView.findViewById(R.id.hometop_weixiu);
+            this.hometop_zhanting = (LinearLayout) rootView.findViewById(R.id.hometop_zhanting);
+            this.hometop_xubao = (LinearLayout) rootView.findViewById(R.id.hometop_xubao);
+            this.hometop_jingpin = (LinearLayout) rootView.findViewById(R.id.hometop_jingpin);
+            this.hometop_xiche = (LinearLayout) rootView.findViewById(R.id.hometop_xiche);
+            this.hometop_huodong = (LinearLayout) rootView.findViewById(R.id.hometop_huodong);
+            this.hometop_shangchneg = (LinearLayout) rootView.findViewById(R.id.hometop_shangchneg);
+            this.hometop_chaxun = (LinearLayout) rootView.findViewById(R.id.hometop_chaxun);
+            this.hometop_jiuyuan = (LinearLayout) rootView.findViewById(R.id.hometop_jiuyuan);
             this.hometop_lunhua = (LinearLayout) rootView.findViewById(R.id.hometop_lunhua);
             this.hometop_maizeng = (ImageView) rootView.findViewById(R.id.hometop_maizeng);
             this.hometop_miaosha = (ImageView) rootView.findViewById(R.id.hometop_miaosha);
