@@ -131,9 +131,7 @@ public class HomeActivity extends BaseActivity {
 
     @Override
     public void initData() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        }
+
     }
 
     @Override
@@ -210,7 +208,7 @@ public class HomeActivity extends BaseActivity {
                     pw.setBackgroundDrawable(new BitmapDrawable());
                     ImageView imageView = customTool.findViewById(R.id.Right_Img);
 //                    pw.showAtLocation(imageView, Gravity.CENTER,0,0);
-                    pw.showAsDropDown(imageView, 0, 0);
+                    pw.showAsDropDown(imageView, 0, -60);
                 }
             });
             customTool.setOnLeftButtonClickListener(new CustomTool.OnLeftButtonClickListener() {

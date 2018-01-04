@@ -9,7 +9,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="?actionBarSize">
+        android:layout_marginTop="@dimen/y88">
         <LinearLayout
             android:id="@+id/jiahao_lly"
             android:layout_width="match_parent"
