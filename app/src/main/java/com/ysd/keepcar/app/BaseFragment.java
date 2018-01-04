@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-
 public abstract class BaseFragment extends Fragment {
 
     @Override
@@ -21,6 +20,7 @@ public abstract class BaseFragment extends Fragment {
         initLinstener();
         return view;
     }
+
     public abstract int getInitId();
 
     public abstract void initView(View view);
