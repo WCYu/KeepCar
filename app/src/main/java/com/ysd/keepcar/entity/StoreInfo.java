@@ -3,16 +3,17 @@ package com.ysd.keepcar.entity;
 /**
  * Created by Administrator on 2017-12-27.
  * 店铺信息
- *
+ * <p>
  * 因为组的编辑没有，所有在再此类不需要 判断 是否都该组的编辑状态 全局对该组的编辑状态，应该在商店信息里
  */
 public class StoreInfo {
     private String id;
     private String name;
     private boolean isChoosed;
-   /* private boolean isEditor; //自己对该组的编辑状态
-    private boolean ActionBarEditor;// 全局对该组的编辑状态*/
+    /* private boolean isEditor; //自己对该组的编辑状态
+     private boolean ActionBarEditor;// 全局对该组的编辑状态*/
     private int flag;
+
     public StoreInfo(String id, String name) {
         this.id = id;
         this.name = name;
