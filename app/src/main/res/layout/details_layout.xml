@@ -14,7 +14,7 @@
         <com.youth.banner.Banner
             android:id="@+id/banner_details"
             android:layout_width="match_parent"
-            android:layout_height="300dp"></com.youth.banner.Banner>
+            android:layout_height="@dimen/y750"></com.youth.banner.Banner>
 
         <LinearLayout
             android:padding="10dp"
@@ -25,7 +25,7 @@
             <TextView
                 android:id="@+id/leixing_details"
                 android:text="标准洗车-五座轿车"
-                android:textSize="18sp"
+                android:textSize="32px"
                 android:textColor="@color/black"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
@@ -33,12 +33,14 @@
                 android:id="@+id/dianpu_details"
                 android:layout_marginTop="10dp"
                 android:text="某某某某洗车店"
+                android:textSize="28px"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <TextView
                 android:id="@+id/dizhi_details"
                 android:layout_marginTop="10dp"
                 android:text="北京市朝阳区高碑店"
+                android:textSize="28px"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <LinearLayout
@@ -49,13 +51,14 @@
                 <TextView
                     android:id="@+id/jiage_details"
                     android:text="￥396"
-                    android:textSize="18sp"
+                    android:textSize="38px"
                     android:textColor="@color/black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <TextView
                     android:id="@+id/yuanjia_details"
                     android:text="￥400"
+                    android:textSize="28px"
                     android:layout_marginLeft="10dp"
                     android:layout_width="0dp"
                     android:layout_weight="1"
@@ -63,6 +66,7 @@
                 <TextView
                     android:id="@+id/chushou_details"
                     android:text="已售出1000"
+                    android:textSize="28px"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>
@@ -70,7 +74,7 @@
         <View
             android:background="@color/colorGreyBottom"
             android:layout_width="match_parent"
-            android:layout_height="10dp"/>
+            android:layout_height="@dimen/y20"/>
         <LinearLayout
             android:background="@color/colorWhite"
             android:orientation="vertical"
@@ -84,7 +88,7 @@
                     android:id="@+id/neirong_details"
                     android:text="内容"
                     android:layout_margin="10dp"
-                    android:textSize="18sp"
+                    android:textSize="32px"
                     android:textColor="@color/black"
                     android:layout_width="0dp"
                     android:layout_weight="1"
@@ -116,7 +120,7 @@
             <View
                 android:background="@color/colorGreyBottom"
                 android:layout_width="match_parent"
-                android:layout_height="0.1dp"/>
+                android:layout_height="1dp"/>
             <LinearLayout
                 android:layout_margin="10dp"
                 android:layout_width="match_parent"
@@ -124,12 +128,14 @@
                 <TextView
                     android:id="@+id/neirong1_details"
                     android:text="标准洗车-五座轿车"
+                    android:textSize="28px"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content" />
                 <TextView
                     android:id="@+id/shuliang1_details"
                     android:text="x1"
+                    android:textSize="24px"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>
@@ -141,12 +147,14 @@
                 <TextView
                     android:id="@+id/neirong2_details"
                     android:text="标准洗车-五座轿车"
+                    android:textSize="28px"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content" />
                 <TextView
                     android:id="@+id/shuliang2_details"
                     android:text="x1"
+                    android:textSize="24px"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>
@@ -158,12 +166,14 @@
                 <TextView
                     android:id="@+id/neirong3_details"
                     android:text="标准洗车-五座轿车"
+                    android:textSize="28px"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content" />
                 <TextView
                     android:id="@+id/shuliang3_details"
                     android:text="x1"
+                    android:textSize="24px"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>
@@ -179,10 +189,11 @@
                 android:layout_margin="10dp"
                 android:text="用户评价（553）"
                 android:textColor="@color/black"
-                android:textSize="18sp" />
+                android:textSize="32px" />
             <TextView
                 android:id="@+id/dianhu_details"
                 android:text="136****1578"
+                android:textSize="28px"
                 android:textColor="@color/black"
                 android:layout_marginLeft="10dp"
                 android:layout_width="match_parent"
@@ -191,16 +202,18 @@
                 android:id="@+id/pingjia_details"
                 android:layout_margin="10dp"
                 android:text="宝贝特别漂亮，实用，耐磨。。。"
+                android:textSize="28px"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <Button
                 android:id="@+id/but_details"
                 android:text="查看更多"
+                android:textSize="28px"
                 android:layout_margin="10dp"
                 android:layout_gravity="center"
                 android:background="@drawable/yuanjiao"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_width="@dimen/x159"
+                android:layout_height="@dimen/y48" />
         </LinearLayout>
         <LinearLayout
             android:layout_marginTop="20dp"
@@ -217,6 +230,7 @@
                 android:background="@color/colorGreyBottom"/>
             <TextView
                 android:text="详情介绍"
+                android:textSize="28px"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <View
@@ -231,6 +245,7 @@
         </LinearLayout>
         <TextView
             android:text="暂无简介"
+            android:textSize="28px"
             android:gravity="center"
             android:textColor="@color/colorGreyBottom"
             android:layout_marginTop="20dp"

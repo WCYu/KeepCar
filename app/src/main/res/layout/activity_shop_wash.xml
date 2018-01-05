@@ -18,11 +18,11 @@
     <View
         android:background="@color/colorGreyBottom"
         android:layout_width="match_parent"
-        android:layout_height="0.1dp"/>
+        android:layout_height="1dp"/>
     <RadioGroup
         android:id="@+id/shop_group"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/y110"
         android:background="@android:color/white"
         android:gravity="center"
         android:orientation="horizontal">
@@ -37,8 +37,9 @@
             android:layout_marginRight="25dp"
             android:layout_marginTop="5dp"
             android:layout_weight="1"
-            android:drawableTop="@drawable/zhanghu"
+            android:drawableTop="@mipmap/zhanghu"
             android:text="本店账户"
+            android:textSize="24px"
             android:gravity="center"
             android:button="@null" />
 
@@ -52,8 +53,9 @@
             android:layout_marginRight="20dp"
             android:layout_marginTop="5dp"
             android:layout_weight="1"
-            android:drawableTop="@drawable/pingjia"
+            android:drawableTop="@mipmap/pingji"
             android:text="待评价"
+            android:textSize="24px"
             android:gravity="center"
             android:button="@null" />
 
@@ -67,8 +69,9 @@
             android:layout_marginRight="20dp"
             android:layout_marginTop="5dp"
             android:layout_weight="1"
-            android:drawableTop="@drawable/daohang"
+            android:drawableTop="@mipmap/daohang"
             android:text="导航"
+            android:textSize="24px"
             android:gravity="center"
             android:button="@null" />
     </RadioGroup>
