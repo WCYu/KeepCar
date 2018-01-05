@@ -82,6 +82,7 @@ public class Four_S_ShopActivity extends BaseActivity implements View.OnClickLis
 
 
         shop_tablayout.setupWithViewPager(viewp_shop);
+        shop_tablayout.setTabMode(TabLayout.MODE_FIXED);
 
 
         ArrayList<String> list = new ArrayList<>();
@@ -102,8 +103,8 @@ public class Four_S_ShopActivity extends BaseActivity implements View.OnClickLis
         fragmentslist.add(usedCar_fragment);
         fragmentslist.add(integral_mall_fragment);
 
-        viewp_shop.setOffscreenPageLimit(3);
         FragmentManager fm = getSupportFragmentManager();
+
         Shop_Fragment_Adapter shop_fragment_adapter = new Shop_Fragment_Adapter(fm, list, fragmentslist);
         viewp_shop.setAdapter(shop_fragment_adapter);
 
@@ -150,7 +151,8 @@ public class Four_S_ShopActivity extends BaseActivity implements View.OnClickLis
             //本店账户
             case R.id.btn_bendianzhanghu:
 
-                startActivity(new Intent(Four_S_ShopActivity.this, Shop_DetailsActivity.class));
+
+               startActivity(new Intent(Four_S_ShopActivity.this, Shop_DetailsActivity.class));
                 break;
 
             //发现
@@ -175,10 +177,8 @@ public class Four_S_ShopActivity extends BaseActivity implements View.OnClickLis
             }
         });
         popupWindow.setFocusable(true);
-        popupWindow.setWidth(ViewGroup.LayoutParams.WRAP_CONTENT);
-        popupWindow.setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
         popupWindow.setBackgroundDrawable(new BitmapDrawable());
-        popupWindow.showAsDropDown(btn_find, 0, 20);
+        popupWindow.showAsDropDown(btn_find, 0, 0);
 
     }
 

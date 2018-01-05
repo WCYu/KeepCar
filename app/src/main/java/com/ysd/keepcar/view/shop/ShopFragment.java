@@ -61,7 +61,6 @@ public class ShopFragment extends BaseFragment implements WaveSideBar.OnSelectIn
     private RecyclerView recycler_view;
     private PopupWindow popupWindow1;
     private RadioGroup home_group;
-    private int height;
 
     @Override
     public int getInitId() {
@@ -133,6 +132,7 @@ public class ShopFragment extends BaseFragment implements WaveSideBar.OnSelectIn
     }
 
     private List<Brand_Bean.DataBean> data;
+    private Shop_Popuwindow1_Adapter myAdapter;
 
     @Override
     public void initLinstener() {
@@ -144,6 +144,8 @@ public class ShopFragment extends BaseFragment implements WaveSideBar.OnSelectIn
         OkhttpUtil.getInstance().post(UrlPath.URLPATHAPP + UrlPath.URLFOURSBRAND, null, new Callback() {
 
 
+            private String string;
+
             @Override
             public void onFailure(Call call, IOException e) {
 
@@ -153,11 +155,21 @@ public class ShopFragment extends BaseFragment implements WaveSideBar.OnSelectIn
             public void onResponse(Call call, Response response) throws IOException {
 
 
-                String string = response.body().string();
-                //   Log.e("TAG", "孟" + string);
-                Gson gson = new Gson();
-                Brand_Bean brand_bean = gson.fromJson(string, Brand_Bean.class);
-                data = brand_bean.getData();
+                string = response.body().string();
+
+
+                getActivity().runOnUiThread(new Runnable() {
+
+
+                    @Override
+                    public void run() {
+                        Log.e("TAG", "孟" + string);
+                        Gson gson = new Gson();
+                        Brand_Bean brand_bean = gson.fromJson(string, Brand_Bean.class);
+                        data = brand_bean.getData();
+
+                    }
+                });
 
             }
         });
@@ -201,7 +213,7 @@ public class ShopFragment extends BaseFragment implements WaveSideBar.OnSelectIn
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        if(shop_fourSList_adapter!=null){
+                        if (shop_fourSList_adapter != null) {
                             lv_listview.setAdapter(shop_fourSList_adapter);
                         }
                     }
@@ -261,12 +273,12 @@ public class ShopFragment extends BaseFragment implements WaveSideBar.OnSelectIn
         recycler_view = (RecyclerView) vicinityView.findViewById(R.id.recycler_view);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(AppService.baseActivity);
         recycler_view.setLayoutManager(linearLayoutManager);
-
-        Shop_Popuwindow1_Adapter myAdapter = new Shop_Popuwindow1_Adapter(data, AppService.baseActivity);
+        myAdapter = new Shop_Popuwindow1_Adapter(data, AppService.baseActivity);
         recycler_view.setAdapter(myAdapter);
         myAdapter.notifyDataSetChanged();
 
         Log.e("TAG", myAdapter + "");
+
         WaveSideBar waveSideBar = (WaveSideBar) vicinityView.findViewById(R.id.side_bar);
         waveSideBar.setTextColor(Color.BLACK);
         waveSideBar.setMaxOffset(10);//字母偏移量
@@ -302,7 +314,7 @@ public class ShopFragment extends BaseFragment implements WaveSideBar.OnSelectIn
     private void popupWindow2(View vicinityView) {
 
 
-        popupWindow = new PopupWindow(vicinityView, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        popupWindow = new PopupWindow(vicinityView, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         vicinityView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
