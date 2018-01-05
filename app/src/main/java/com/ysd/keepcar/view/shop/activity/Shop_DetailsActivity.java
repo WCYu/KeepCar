@@ -133,6 +133,7 @@ public class Shop_DetailsActivity extends AppCompatActivity implements View.OnCl
                 Button jian = (Button) popupview.findViewById(R.id.jian);
                 final EditText jiage = (EditText) popupview.findViewById(R.id.jiage);
                 a = 1;
+
                 jia.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
