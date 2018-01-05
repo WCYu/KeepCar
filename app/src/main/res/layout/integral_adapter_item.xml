@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/integral_adapter_lly"
+        android:layout_width="@dimen/x369"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/x12"
+        android:layout_marginTop="@dimen/y12"
+        android:orientation="vertical"
+        android:background="@android:color/white">
+        <ImageView
+            android:id="@+id/integral_adapter_img"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y369"
+            android:background="@android:color/background_dark"
+            />
+        <TextView
+            android:id="@+id/integral_adapter_tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/y30"
+            android:text="定值卷"
+            android:layout_margin="@dimen/x10"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/x10">
+            <ImageView
+                android:id="@+id/integral_adapter_img2"
+                android:layout_width="@dimen/y34"
+                android:layout_height="@dimen/y34" />
+            <TextView
+                android:id="@+id/integral_adapter_tv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/y26"
+                android:layout_marginLeft="@dimen/x10"
+                android:text="普利司通泰然这店铺"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/x10">
+            <ImageView
+                android:id="@+id/integral_adapter_img3"
+                android:layout_width="@dimen/y34"
+                android:layout_height="@dimen/y34" />
+            <TextView
+                android:id="@+id/integral_adapter_tv3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/y30"
+                android:layout_marginLeft="@dimen/x10"
+                android:text="200"
+                android:textColor="@color/red"
+                />
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/integral_adapter_tv4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="已兑换200"
+                    android:layout_marginRight="@dimen/x20"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

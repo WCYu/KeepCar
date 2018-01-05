@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="@dimen/y88"
     android:orientation="vertical">
     <LinearLayout
         android:id="@+id/Return_lly"
@@ -25,7 +25,7 @@
             android:text="北京"
             android:paddingLeft="10dp"
             android:textColor="@android:color/white"
-            android:textSize="26px" />
+            android:textSize="@dimen/y30" />
         <ImageView
             android:id="@+id/img"
             android:layout_gravity="center"
@@ -43,7 +43,7 @@
         android:layout_centerInParent="true"
         android:text="标题"
         android:textColor="@android:color/white"
-        android:textSize="38px" />
+        android:textSize="@dimen/y38" />
 
     <LinearLayout
         android:layout_width="wrap_content"

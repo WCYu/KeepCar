@@ -1,4 +1,4 @@
-package com.ysd.keepcar.view.home.activity;
+package com.ysd.keepcar.view.home.activity.exhibition;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -45,17 +45,18 @@ public class ExhibitionActivity extends BaseActivity {
         transaction = supportFragmentManager.beginTransaction();
         erShouFragment = new ErShouFragment();
         xinCarFragment = new XinCarFragment();
-        transaction.add(R.id.exhibition_frame,erShouFragment);
-        transaction.add(R.id.exhibition_frame,xinCarFragment);
+        transaction.add(R.id.exhibition_frame, erShouFragment);
+        transaction.add(R.id.exhibition_frame, xinCarFragment);
         isCheckFragment(xinCarFragment);
         transaction.commit();
     }
 
-    public void isCheckFragment(Fragment fragment){
+    public void isCheckFragment(Fragment fragment) {
         transaction.hide(erShouFragment);
         transaction.hide(xinCarFragment);
         transaction.show(fragment);
     }
+
     @Override
     public void initData() {
         Intent intent = getIntent();
@@ -74,7 +75,7 @@ public class ExhibitionActivity extends BaseActivity {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 transaction = supportFragmentManager.beginTransaction();
-                switch (checkedId){
+                switch (checkedId) {
                     case R.id.exhibition_xin_che:
                         isCheckFragment(xinCarFragment);
                         break;

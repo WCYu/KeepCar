@@ -21,6 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/y15"
             android:orientation="vertical"
+            android:background="@android:color/white"
             android:padding="@dimen/y5">
 
             <LinearLayout
@@ -239,20 +240,24 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/y130"
             android:orientation="horizontal"
+            android:layout_marginTop="@dimen/y20"
+            android:layout_marginBottom="@dimen/y20"
+            android:background="@color/cheng"
 
             >
             <ImageView
                 android:id="@+id/hometop_lunhua_img"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:background="@mipmap/a1"/>
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2.5"
                 android:orientation="vertical"
                 android:paddingLeft="@dimen/y5"
-                android:background="@color/cheng">
+                >
                 <TextView
                     android:id="@+id/hometop_lunhua_tv1"
                     android:layout_width="wrap_content"
@@ -299,6 +304,7 @@
                         android:layout_height="wrap_content"
                         android:background="@mipmap/jifen"
                         android:layout_gravity="center"
+
                         />
                     <TextView
                         android:id="@+id/hometop_lunhua_tv5"
@@ -315,18 +321,21 @@
                 android:layout_width="@dimen/x84"
                 android:layout_height="@dimen/y84"
                 android:layout_margin="@dimen/y5"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:background="@mipmap/a3"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/y221"
             android:padding="@dimen/y10"
-            android:orientation="horizontal">
+            android:layout_marginBottom="@dimen/y20"
+            android:orientation="horizontal"
+            android:background="@android:color/white">
 
             <RelativeLayout
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1">
 
                 <ImageView
@@ -339,7 +348,7 @@
 
             <RelativeLayout
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1">
 
                 <ImageView
@@ -352,7 +361,7 @@
 
             <RelativeLayout
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1">
 
                 <ImageView
@@ -365,7 +374,7 @@
 
             <RelativeLayout
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1">
 
                 <ImageView
@@ -379,47 +388,67 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/y120">
+            android:layout_height="@dimen/y246">
             <ImageView
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:background="@mipmap/a1"/>
             <ImageView
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="match_parent" />
+                android:layout_marginLeft="@dimen/x4"
+                android:layout_height="match_parent"
+                android:background="@mipmap/a2"/>
             <ImageView
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="match_parent" />
+                android:layout_marginLeft="@dimen/x4"
+                android:layout_height="match_parent"
+                android:background="@mipmap/a3"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/y100">
+            android:layout_height="@dimen/y184"
+            android:layout_marginTop="@dimen/y4"
+            android:layout_marginBottom="@dimen/y20">
             <ImageView
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:background="@mipmap/a4"/>
+            <ImageView
+                android:layout_marginLeft="@dimen/x4"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:background="@mipmap/a5"/>
             <ImageView
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="match_parent" />
+                android:layout_marginLeft="@dimen/x4"
+                android:layout_height="match_parent"
+                android:background="@mipmap/a6"/>
             <ImageView
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="match_parent" />
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="match_parent" />
+                android:layout_marginLeft="@dimen/x4"
+                android:layout_height="match_parent"
+                android:background="@mipmap/a7"/>
         </LinearLayout>
-        <TextView
-            android:layout_margin="@dimen/y24"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="热门推荐"
-            android:textSize="@dimen/y34"
-            android:textColor="#343434"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y88"
+            android:background="@android:color/white">
+            <TextView
+                android:layout_margin="@dimen/x24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="热门推荐"
+                android:textSize="@dimen/y34"
+                android:textColor="#343434"/>
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>

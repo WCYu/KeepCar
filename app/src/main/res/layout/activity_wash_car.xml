@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.ysd.keepcar.view.home.activity.WashCarActivity">
+    tools:context="com.ysd.keepcar.view.home.activity.washcar.WashCarActivity">
 
     <com.ysd.keepcar.custom.CustomTool
         android:id="@+id/washcar_custom"

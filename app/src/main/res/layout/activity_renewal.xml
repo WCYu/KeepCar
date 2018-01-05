@@ -22,19 +22,21 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/y88"
         android:padding="10dp"
+        android:gravity="center"
         android:background="@android:color/white">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="车辆"/>
+            android:text="车辆"
+            android:textSize="@dimen/y30"/>
 
         <TextView
             android:id="@+id/renewal_car"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
             android:text="宝马"/>
 
         <LinearLayout
@@ -63,32 +65,37 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/y88"
         android:background="@android:color/white"
+        android:gravity="center_vertical"
         android:padding="10dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="车价"/>
+            android:text="车价"
+            android:textSize="@dimen/y30"/>
         <EditText
             android:id="@+id/renewal_car_price"
-            android:layout_marginLeft="5dp"
+            android:layout_marginLeft="@dimen/y20"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
+            android:textSize="@dimen/y26"
             android:hint="请输入实购车价"/>
     </LinearLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_height="@dimen/y88"
+        android:layout_marginTop="@dimen/y20"
         android:padding="10dp"
+        android:gravity="center"
         android:background="@android:color/white">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="上期保险公司"/>
+            android:text="上期保险公司"
+            android:textSize="@dimen/y30"/>
 
         <TextView
             android:id="@+id/renewal_last_insurance"
@@ -97,6 +104,7 @@
             android:layout_centerInParent="true"/>
 
         <LinearLayout
+            android:id="@+id/renewal_shangqi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true">
@@ -121,13 +129,15 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/y88"
         android:padding="10dp"
+        android:gravity="center"
         android:background="@android:color/white">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="本期保险公司"/>
+            android:text="本期保险公司"
+            android:textSize="@dimen/y30"/>
 
         <TextView
             android:id="@+id/renewal_this_insurance"
@@ -135,6 +145,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"/>
         <LinearLayout
+            android:id="@+id/renewal_benqi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true">
@@ -159,21 +170,25 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/y88"
         android:padding="10dp"
+        android:gravity="center"
         android:background="@android:color/white">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="险种"/>
+            android:text="险种"
+            android:textSize="@dimen/y30"/>
 
         <TextView
             android:id="@+id/renewal_insurance_type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="@dimen/y26"
             android:layout_centerInParent="true"/>
 
         <LinearLayout
+            android:id="@+id/renewal_xianzhong"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true">
@@ -191,51 +206,50 @@
 
     </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:padding="10dp"
-        android:background="@android:color/white">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:text="向以下4S店索取报价单"/>
-        <CheckBox
-            android:id="@+id/renewal_select"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="10dp"
-            android:text="全选"
-            android:button="@drawable/check_renewal"
-            >
-
-        </CheckBox>
-
-    </RelativeLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/y224"
         android:orientation="vertical"
-        android:background="@android:color/white"
-        android:padding="10dp">
-        <CheckBox
-            android:id="@+id/renewal_claim"
+        android:gravity="center">
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="向以下4S店索取报价单"
-            android:button="@drawable/check_renewal"/>
-        <CheckBox
-            android:id="@+id/renewal_claim2"
-            android:layout_marginTop="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="向以下4S店索取报价单"
-            android:button="@drawable/check_renewal"/>
+            android:padding="@dimen/y10"
+            android:background="@android:color/white">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="向以下4S店索取报价单"
+                android:textSize="@dimen/y30"/>
+            <CheckBox
+                android:id="@+id/renewal_select"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:padding="@dimen/y10"
+                android:text="全选"
+                android:button="@drawable/check_renewal"
+                >
+            </CheckBox>
+        </RelativeLayout>
 
+            <CheckBox
+                android:layout_margin="@dimen/y15"
+                android:id="@+id/renewal_claim"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="向以下4S店索取报价单"
+                android:textSize="@dimen/y26"
+                android:button="@drawable/check_renewal"/>
+            <CheckBox
+                android:layout_margin="@dimen/y15"
+                android:id="@+id/renewal_claim2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="向以下4S店索取报价单"
+                android:textSize="@dimen/y26"
+                android:button="@drawable/check_renewal"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -252,6 +266,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="@dimen/y22"
             android:text="如果与上上期是同一家保险公司且同一家4S店续保,无需本人到店,直接对索取报价单完成支付即可,电子保单将自动发送到指定邮箱。"/>
     </LinearLayout>
     <Button
@@ -260,5 +275,6 @@
         android:layout_height="wrap_content"
         android:text="索取报价单"
         android:textColor="@android:color/white"
-        android:background="@color/colorRed"/>
+        android:background="@color/colorRed"
+        android:textSize="@dimen/y38"/>
 </com.ysd.keepcar.custom.PercentLinearLayout>

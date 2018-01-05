@@ -33,15 +33,15 @@
         <activity
             android:name="com.desmond.citypicker.ui.CityPickerActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
         <activity android:name=".view.home.activity.MaintainActivity" />
         <activity android:name=".view.home.activity.RepairActivity" />
-        <activity android:name=".view.home.activity.ExhibitionActivity" />
+        <activity android:name=".view.home.activity.exhibition.ExhibitionActivity" />
         <activity android:name=".view.home.activity.RenewalActivity" />
         <activity android:name=".view.home.activity.BoutiqueActivity" />
-        <activity android:name=".view.home.activity.WashCarActivity" />
+        <activity android:name=".view.home.activity.washcar.WashCarActivity" />
         <activity android:name=".view.home.activity.ActivityActivity" />
-        <activity android:name=".view.home.activity.ShoppingMallActivity" />
+        <activity android:name=".view.home.activity.integrashop.ShoppingMallActivity" />
         <activity android:name=".view.home.activity.QueryActivity" />
         <activity android:name=".view.home.activity.RescueActivity" />
         <activity android:name=".CityActivity" />
@@ -51,17 +51,19 @@
         <activity android:name=".view.shop.activity.Place_OrderActivity" />
         <activity android:name=".view.shop.activity.Payment_SuccessActivity"></activity>
         <!--<>-->
+        <activity android:name=".view.shop.activity.Payment_SuccessActivity" />
         <activity android:name=".view.personalcenter.login.LoginActivity" />
         <activity android:name=".view.personalcenter.mycar.MyCarActivity" />
         <activity android:name=".view.personalcenter.myshop.MyShopActivity" />
         <activity android:name=".view.personalcenter.myOrder.MyOrderActivity" />
         <activity android:name=".view.personalcenter.myOrder.ReuseActivity" />
-        <activity android:name=".view.home.activity.WashShopActivity" />
-        <activity android:name=".view.home.activity.WashDetailsActivity"></activity>
+        <activity android:name=".view.home.activity.washcar.WashShopActivity" />
+        <activity android:name=".view.home.activity.washcar.WashDetailsActivity" />
         <activity android:name=".view.home.activity.ErWeiMaActivity" />
         <activity android:name=".view.home.activity.exhibition.XinCarInfoActivity" />
-        <activity android:name=".view.home.activity.exhibition.ErShouCarActivity"></activity>
-        <activity android:name=".view.shoppingcart.activity.RealOrderActivity"></activity>
+        <activity android:name=".view.home.activity.exhibition.ErShouCarActivity" />
+        <activity android:name=".view.shoppingcart.activity.RealOrderActivity" />
+        <activity android:name=".view.home.activity.integrashop.ExchangeInfoActivity"></activity>
     </application>
 
 </manifest>

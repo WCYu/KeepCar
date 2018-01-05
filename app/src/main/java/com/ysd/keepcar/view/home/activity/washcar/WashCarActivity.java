@@ -1,9 +1,7 @@
-package com.ysd.keepcar.view.home.activity;
+package com.ysd.keepcar.view.home.activity.washcar;
 
 import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
-import android.os.Bundle;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,14 +9,12 @@ import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RadioButton;
-import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.ysd.keepcar.R;
 import com.ysd.keepcar.app.BaseActivity;
 import com.ysd.keepcar.custom.CustomTool;
-import com.ysd.keepcar.view.HomeActivity;
 
 //洗车Activity
 public class WashCarActivity extends BaseActivity implements CompoundButton.OnCheckedChangeListener, View.OnClickListener {

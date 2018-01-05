@@ -1,4 +1,4 @@
-package com.ysd.keepcar.view.home.activity;
+package com.ysd.keepcar.view.home.activity.washcar;
 
 import android.app.Activity;
 import android.content.Intent;
