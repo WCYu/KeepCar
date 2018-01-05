@@ -1,4 +1,4 @@
-package com.ysd.keepcar.view.home.activity;
+package com.ysd.keepcar.view.home.activity.exhibition;
 
 import android.content.Intent;
 import android.os.Bundle;

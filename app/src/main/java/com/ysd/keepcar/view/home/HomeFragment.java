@@ -1,20 +1,19 @@
 package com.ysd.keepcar.view.home;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.youth.banner.Banner;
 import com.ysd.keepcar.R;
+import com.ysd.keepcar.app.AppService;
 import com.ysd.keepcar.app.BaseFragment;
 import com.ysd.keepcar.entity.ReMenBean;
 import com.ysd.keepcar.utils.GlideImageLoader;
@@ -25,14 +24,14 @@ import com.ysd.keepcar.utils.ZJson;
 import com.ysd.keepcar.view.HomeActivity;
 import com.ysd.keepcar.view.home.activity.ActivityActivity;
 import com.ysd.keepcar.view.home.activity.BoutiqueActivity;
-import com.ysd.keepcar.view.home.activity.ExhibitionActivity;
+import com.ysd.keepcar.view.home.activity.exhibition.ExhibitionActivity;
 import com.ysd.keepcar.view.home.activity.MaintainActivity;
 import com.ysd.keepcar.view.home.activity.QueryActivity;
 import com.ysd.keepcar.view.home.activity.RenewalActivity;
 import com.ysd.keepcar.view.home.activity.RepairActivity;
 import com.ysd.keepcar.view.home.activity.RescueActivity;
-import com.ysd.keepcar.view.home.activity.ShoppingMallActivity;
-import com.ysd.keepcar.view.home.activity.WashCarActivity;
+import com.ysd.keepcar.view.home.activity.integrashop.ShoppingMallActivity;
+import com.ysd.keepcar.view.home.activity.washcar.WashCarActivity;
 import com.ysd.keepcar.view.home.adapter.HomeListAdapter;
 
 import org.json.JSONArray;
@@ -57,6 +56,8 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     private ArrayList<String> imgList;
     private TextView cityName;
     private List<ReMenBean.DataBean> data;
+    private int cityId;
+    private String userId;
 
     @Override
     public int getInitId() {
@@ -66,28 +67,24 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     @Override
     public void initView(View view) {
         listView = view.findViewById(R.id.home_list);
-        View viewTop = view.findViewById(R.id.home_include);
+        View viewTop = LayoutInflater.from(getActivity()).inflate(R.layout.hometop_item, null);
         vh = new ViewHolder(viewTop);
-//        View viewTop = LayoutInflater.from(getActivity()).inflate(R.layout.hometop_item, null);
-//        listView.addHeaderView(viewTop);
+        listView.addHeaderView(viewTop);
+        progress();
     }
 
     @Override
-    public void onHiddenChanged(boolean hidden) {
-        super.onHiddenChanged(hidden);
-        if (hidden) {
-            remen();
-        }
+    public void onResume() {
+        super.onResume();
+        remen();
     }
 
     @Override
     public void initData() {
         getBannerImg();
-        String userId = MySharedPreferences.getInstance().getUserId();
+        userId = MySharedPreferences.getInstance().getUserId();
         if (userId != null) {
             gunDongTiao(userId);
-        } else {
-            Toast.makeText(getActivity(), "data为空", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -97,8 +94,6 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
         map.put("tk", data);
         map.put("type", 0);
         String jsonMap = ZJson.toJSONMap(map);
-        Log.e("---HomeFragment---", data);
-        Log.e("---HomeFragment---", jsonMap);
         OkhttpUtil.getInstance().post((UrlPath.URLPATHAPP + UrlPath.URLGUNDONGTIAO), jsonMap, new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
@@ -108,7 +103,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 String string = response.body().string();
-                Log.e("---HomeFragment---", string);
+//                Log.e("--滚动条信息-HomeFragment---", string);
             }
         });
     }
@@ -117,8 +112,9 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     private void remen() {
         Map map = new HashMap();
         HomeActivity homeActivity = (HomeActivity) getActivity();
-        int cityId = homeActivity.cityId;
+        cityId = homeActivity.cityId;
         map.put("cityId", cityId);
+//        Log.e("--热门-HomeFragment---", cityId + "cityId");
         String jsonMap = ZJson.toJSONMap(map);
         OkhttpUtil.getInstance().post((UrlPath.URLPATHAPP + UrlPath.URLREMEN), jsonMap, new Callback() {
             @Override
@@ -129,7 +125,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 final String string = response.body().string();
-//                Log.e("---HomeFragment---", string);
+//                Log.e("--热门-HomeFragment---", string);
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -139,6 +135,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
                         if (data != null) {
                             HomeListAdapter homeListAdapter = new HomeListAdapter(getActivity(), (ArrayList<ReMenBean.DataBean>) data);
                             listView.setAdapter(homeListAdapter);
+                            progressDialog.dismiss();
                         }
                     }
                 });
@@ -235,9 +232,13 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
             case R.id.hometop_huodong:
                 intent.setClass(getActivity(), ActivityActivity.class);
                 intent.putExtra("title", "精彩活动");
+                intent.putExtra("cityId", cityId);
+                intent.putExtra("tk", userId);
                 break;
             case R.id.hometop_shangchneg:
                 intent.setClass(getActivity(), ShoppingMallActivity.class);
+                intent.putExtra("cityId", cityId);
+                intent.putExtra("tk", userId);
                 intent.putExtra("title", "积分商城");
                 break;
             case R.id.hometop_chaxun:

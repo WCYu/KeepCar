@@ -192,7 +192,7 @@ public class ShopFragment extends BaseFragment implements WaveSideBar.OnSelectIn
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 String string1 = response.body().string();
-                Log.e("TAG", "Meng" + string1);
+//                Log.e("---ShopFragment---", "Meng" + string1);
                 Gson gson = new Gson();
                 FourSList_Bean fourSList_bean = gson.fromJson(string1, FourSList_Bean.class);
                 FourSList_Bean.DataBean data = fourSList_bean.getData();

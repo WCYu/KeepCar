@@ -26,12 +26,6 @@ public class UrlPath {
     public static final String URLFOURSLIEBIAO="4sShop/shopList.do";
     public static final String URLFOURS="integralMall/showProduct_v1_0.do";
 
-//<------------------------------------------------------------------------------->
-
-    //4S--我的会员店和我的历史下单店
-    //获取4s店列表
-//    public static final String URLFOURSLIEBIAO = "carBrand/queryShopByBrandIdAndCityId.do";
-
     //轮播图地址
     public static final String URLPATHBANNER = "main/queryBrandImg.do";
 
@@ -43,4 +37,10 @@ public class UrlPath {
 
     //中间滚动部分展示当前账户所在的4s店
     public static final String URLGUNDONGTIAO = "myAccount/queryMyVipShop_v1_0.do";
+
+    //积分商城数据列表
+    public static final String URLINTEGRALSHOP= "integralMall/showProduct_v1_0.do";
+
+    //精彩活动
+    public static final String URLACTIVITY= "boutique/showProduct.do";
 }

@@ -39,7 +39,6 @@ dependencies {
     implementation files('libs/MobCommons-2017.0607.1736.jar')
     //banner
     compile 'com.youth.banner:banner:1.4.9'
-
     compile 'com.google.code.gson:gson:2.8.1'
     //城市选择器
     compile 'com.desmond:CityPicker:xxx'
@@ -53,4 +52,5 @@ dependencies {
     //二维码生成
     compile 'cn.yipianfengye.android:zxing-library:2.2'
     implementation 'com.google.code.gson:gson:2.2.4'
+    implementation 'com.android.support:recyclerview-v7:26.1.0'
 }

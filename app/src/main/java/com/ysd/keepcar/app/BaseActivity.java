@@ -1,5 +1,6 @@
 package com.ysd.keepcar.app;
 
+import android.app.ProgressDialog;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +12,9 @@ import android.view.WindowManager;
  */
 
 public abstract class BaseActivity extends AppCompatActivity {
+
+    public ProgressDialog progressDialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +24,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         initLinstener();
         initToolBar();
         initWindow();
+        initAdapter();
         AppService.baseActivity = this;
     }
 
@@ -43,5 +48,11 @@ public abstract class BaseActivity extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         }
+    }
+
+    public void progress() {
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        progressDialog.show();
     }
 }

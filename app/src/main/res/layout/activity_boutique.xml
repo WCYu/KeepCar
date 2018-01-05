@@ -19,4 +19,48 @@
 
     </com.ysd.keepcar.custom.CustomTool>
 
+    <RadioGroup
+        android:id="@+id/boutique_group"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y88"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="@dimen/y10">
+        <RadioButton
+            android:id="@+id/boutique_fenlei"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="分类"
+            android:textSize="@dimen/y34"
+            android:gravity="center"
+            android:button="@null"/>
+        <RadioButton
+            android:id="@+id/boutique_dianmian"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="店面不限"
+            android:textSize="@dimen/y34"
+            android:gravity="center"
+            android:button="@null"/>
+        <RadioButton
+            android:id="@+id/boutique_paixu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="排序"
+            android:textSize="@dimen/y34"
+            android:gravity="center"
+            android:button="@null"/>
+    </RadioGroup>
+
+    <GridView
+        android:id="@+id/boutique_grid"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:numColumns="2">
+
+    </GridView>
 </com.ysd.keepcar.custom.PercentLinearLayout>

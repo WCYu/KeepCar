@@ -6,8 +6,9 @@
 
     <com.ysd.keepcar.custom.PercentLinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/x8">
+        android:layout_height="@dimen/y216"
+        android:gravity="center"
+        >
 
         <RelativeLayout
             android:layout_width="@dimen/x208"
