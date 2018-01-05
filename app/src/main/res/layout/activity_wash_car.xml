@@ -23,11 +23,11 @@
         android:id="@+id/linear_washcar"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="@dimen/y88">
         <ToggleButton
             android:textOff="店铺"
             android:textOn="店铺"
-            android:textSize="20sp"
+            android:textSize="34px"
             android:id="@+id/dianpu_washcar"
             android:layout_gravity="center"
             android:layout_width="0dp"
@@ -43,7 +43,7 @@
             <ToggleButton
                 android:textOff="排序"
                 android:textOn="排序"
-                android:textSize="20sp"
+                android:textSize="34px"
                 android:id="@+id/paixu_washcar"
                 android:layout_gravity="center"
                 android:layout_width="0dp"
@@ -57,17 +57,47 @@
         android:id="@+id/itme_1"
         layout="@layout/washcar_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="@dimen/y196"/>
+    <View
+        android:background="@color/colorGreyBottom"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
     <include
         android:id="@+id/itme_2"
         layout="@layout/washcar_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="@dimen/y196"/>
+    <View
+        android:background="@color/colorGreyBottom"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
     <include
         android:id="@+id/itme_3"
         layout="@layout/washcar_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="@dimen/y196"/>
+    <View
+        android:background="@color/colorGreyBottom"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+    <include
+        android:id="@+id/itme_4"
+        layout="@layout/washcar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y196"/>
+    <View
+        android:background="@color/colorGreyBottom"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+    <include
+        android:id="@+id/itme_5"
+        layout="@layout/washcar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y196"/>
+    <View
+        android:background="@color/colorGreyBottom"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
 
     <ListView
         android:id="@+id/lv_washcar"
