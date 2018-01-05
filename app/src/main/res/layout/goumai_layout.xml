@@ -17,6 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="60dp">
             <TextView
+                android:id="@+id/jiage_goumai"
                 android:text="￥200"
                 android:textSize="18sp"
                 android:layout_marginTop="10dp"
@@ -25,6 +26,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <TextView
+                android:id="@+id/leixing_goumai"
                 android:text="标准洗车-五座轿车"
                 android:layout_marginLeft="100dp"
                 android:textColor="@color/black"
@@ -41,13 +43,13 @@
         android:layout_marginTop="10dp"
         android:background="@color/colorGreyBottom"
         android:layout_width="match_parent"
-        android:layout_height="0.1dp"/>
+        android:layout_height="1dp"/>
     <LinearLayout
         android:layout_margin="10dp"
         android:background="@color/colorWhite"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
        >
         <TextView
             android:text="购买数量"
@@ -55,6 +57,7 @@
             android:layout_weight="1"
             android:layout_height="wrap_content" />
         <TextView
+            android:id="@+id/jian_goumai"
             android:text="-"
             android:background="@color/colorGreyBottom"
             android:gravity="center"
@@ -62,18 +65,49 @@
             android:layout_height="wrap_content" />
         <TextView
             android:text="1"
+            android:id="@+id/shuliang_goumai"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <TextView
             android:text="+"
+            android:id="@+id/jia_goumai"
             android:background="@color/colorGreyBottom"
             android:gravity="center"
             android:layout_width="40dp"
             android:layout_height="wrap_content" />
     </LinearLayout>
+    <View
+        android:background="@color/colorGreyBottom"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+    <LinearLayout
+        android:id="@+id/xuanzhe_goumai"
+        android:layout_margin="10dp"
+        android:background="@color/colorWhite"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:text="车辆"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="请选择"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:src="@mipmap/xuanzhe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
     <Button
+        android:id="@+id/but_goumai"
         android:text="确定"
         android:textSize="18sp"
         android:textColor="@color/colorWhite"

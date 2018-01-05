@@ -11,10 +11,12 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RadioButton;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
@@ -55,6 +57,13 @@ public class WashDetailsActivity extends BaseActivity implements View.OnClickLis
     private RadioButton goumai_details;
     private ScrollView scrollview_details;
     private RadioButton fanhui_details;
+    private TextView shuliang_goumai;
+    private TextView jiage_goumai;
+
+    private int shuliang = 1;
+    private int jiage = 200;
+    private PopupWindow popupWindow1;
+
 
     @Override
     public int getInitId() {
@@ -174,7 +183,7 @@ public class WashDetailsActivity extends BaseActivity implements View.OnClickLis
                 //显示popuwindow
                 View view1 = LayoutInflater.from(WashDetailsActivity.this).inflate(R.layout.goumai_layout, null);
                 //创建一个popuwindow对象
-                PopupWindow popupWindow1 = new PopupWindow(view1, ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+                popupWindow1 = new PopupWindow(view1, ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
                 //默认获取不到焦点，设置获取焦点
                 popupWindow1.setFocusable(true);
                 //点击窗口以外区域，窗口消失
@@ -193,6 +202,19 @@ public class WashDetailsActivity extends BaseActivity implements View.OnClickLis
                     }
                 });
 
+                jiage_goumai = view1.findViewById(R.id.jiage_goumai);
+                TextView leixing_goumai = view1.findViewById(R.id.leixing_goumai);
+                TextView jia_goumai = view1.findViewById(R.id.jia_goumai);
+                TextView jian_goumai = view1.findViewById(R.id.jian_goumai);
+                shuliang_goumai = view1.findViewById(R.id.shuliang_goumai);
+                LinearLayout xuanzhe_goumai = view1.findViewById(R.id.xuanzhe_goumai);
+                Button but_goumai = view1.findViewById(R.id.but_goumai);
+
+                jia_goumai.setOnClickListener(this);
+                jian_goumai.setOnClickListener(this);
+                xuanzhe_goumai.setOnClickListener(this);
+                but_goumai.setOnClickListener(this);
+
                 break;
             case R.id.fanhui_details:
                 finish();
@@ -208,6 +230,40 @@ public class WashDetailsActivity extends BaseActivity implements View.OnClickLis
                 Intent intent1 = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + smsToUri1));
                 intent1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent1);
+                break;
+            case R.id.jia_goumai:
+
+                shuliang++;
+                shuliang_goumai.setText(shuliang+"");
+
+
+                break;
+            case R.id.jian_goumai:
+                if (shuliang >1){
+                    shuliang--;
+                    shuliang_goumai.setText(shuliang+"");
+                }else {
+                    shuliang_goumai.setText(1+"");
+                }
+                break;
+            case R.id.xuanzhe_goumai:
+                Toast.makeText(this, "别做梦了！你哪里有车！", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.but_goumai:
+                popupWindow1.dismiss();
+
+                //显示popuwindow
+                View view2 = LayoutInflater.from(WashDetailsActivity.this).inflate(R.layout.zhifu_layout, null);
+                //创建一个popuwindow对象
+                PopupWindow popupWindow2 = new PopupWindow(view2, ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+                //默认获取不到焦点，设置获取焦点
+                popupWindow2.setFocusable(true);
+                //点击窗口以外区域，窗口消失
+                popupWindow2.setBackgroundDrawable(new BitmapDrawable());
+                //弹出或者消失的时候带动画效果
+//                popupWindow2.setAnimationStyle(R.style.mypopu);
+                //显示popuwindow
+                popupWindow2.showAtLocation(scrollview_details, Gravity.BOTTOM,0,0);
                 break;
         }
     }

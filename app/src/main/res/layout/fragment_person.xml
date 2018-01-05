@@ -2,27 +2,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorWhite"
     tools:context="com.ysd.keepcar.view.personalcenter.PersonFragment">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
         <RelativeLayout
             android:id="@+id/wodedingdan_person"
-            android:background="@drawable/che"
+            android:background="@mipmap/beijing_my"
             android:layout_width="match_parent"
-            android:layout_height="300dp">
+            android:layout_height="@dimen/y450">
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/x120"
+                android:layout_height="@dimen/y120"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/yuan"
-                android:layout_marginTop="80dp" />
+                android:layout_marginTop="@dimen/y113" />
 
             <TextView
                 android:id="@+id/textView"
@@ -30,115 +31,117 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/imageView"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="16dp"
-                android:text="13161321147" />
-
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="10dp"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:src="@drawable/wodedingdan"
-                android:id="@+id/imageView2" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/imageView2"
-                android:layout_toEndOf="@+id/imageView2"
-                android:layout_toRightOf="@+id/imageView2"
-                android:textColor="#ef8318"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/colorWhite"
                 android:textSize="30px"
-                android:text="我的订单" />
+                android:text="13161321147" />
         </RelativeLayout>
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <LinearLayout
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_margin="10dp"
+                android:src="@mipmap/wodedingdan"
+                android:id="@+id/imageView2" />
+
+            <TextView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#ef8318"
+                android:textSize="30px"
+                android:text="我的订单" />
+        </LinearLayout>
+        <View
+            android:background="@color/tab_top_line_color"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+        <LinearLayout
+            android:gravity="center"
+            android:layout_margin="5dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y145">
+            <LinearLayout
                 android:gravity="center"
                 android:orientation="vertical"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content">
                 <ImageView
-                    android:src="@drawable/daifukuan"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp" />
+                    android:src="@mipmap/daifukuan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
                 <TextView
                     android:text="待付款"
-                    android:textSize="26px"
+                    android:textSize="30px"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>
             <LinearLayout
-                android:layout_margin="10dp"
                 android:gravity="center"
                 android:orientation="vertical"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content">
                 <ImageView
-                    android:src="@drawable/daishigong"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp" />
+                    android:src="@mipmap/daishigong"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
                 <TextView
                     android:text="待施工"
-                    android:textSize="26px"
+                    android:textSize="30px"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>
             <LinearLayout
-                android:layout_margin="10dp"
                 android:gravity="center"
                 android:orientation="vertical"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content">
                 <ImageView
-                    android:src="@drawable/daifahuo"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp" />
+                    android:src="@mipmap/daifahuo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
                 <TextView
                     android:text="待发货"
-                    android:textSize="26px"
+                    android:textSize="30px"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>
             <LinearLayout
-                android:layout_margin="10dp"
                 android:gravity="center"
                 android:orientation="vertical"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content">
                 <ImageView
-                    android:src="@drawable/daishouhuo"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp" />
+                    android:src="@mipmap/daishouhuo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
                 <TextView
                     android:text="待收货"
-                    android:textSize="26px"
+                    android:textSize="30px"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>
             <LinearLayout
-                android:layout_margin="10dp"
                 android:gravity="center"
                 android:orientation="vertical"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content">
                 <ImageView
-                    android:src="@drawable/daipingjia"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp" />
+                    android:src="@mipmap/daipingjia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
                 <TextView
                     android:text="待评价"
-                    android:textSize="26px"
+                    android:textSize="30px"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>
@@ -146,7 +149,7 @@
         <View
             android:background="@color/tab_top_line_color"
             android:layout_width="match_parent"
-            android:layout_height="10dp"/>
+            android:layout_height="@dimen/y20"/>
         <LinearLayout
             android:id="@+id/wodecheliang_person"
             android:orientation="horizontal"
@@ -154,9 +157,9 @@
             android:layout_height="wrap_content">
             <ImageView
                 android:layout_margin="10dp"
-                android:src="@drawable/cheliang"
-                android:layout_width="30dp"
-                android:layout_height="30dp" />
+                android:src="@mipmap/cheliang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
             <TextView
                 android:text="我的车辆"
                 android:textSize="30px"
@@ -168,14 +171,14 @@
             <ImageView
                 android:layout_gravity="center"
                 android:layout_margin="10dp"
-                android:src="@drawable/bianji"
-                android:layout_width="20dp"
-                android:layout_height="20dp" />
+                android:src="@mipmap/bianji"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
         </LinearLayout>
         <View
             android:background="@color/tab_top_line_color"
             android:layout_width="match_parent"
-            android:layout_height="0.1dp"/>
+            android:layout_height="1dp"/>
         <LinearLayout
             android:id="@+id/dangqiancheliang_person"
             android:orientation="horizontal"
@@ -191,7 +194,7 @@
                 android:layout_height="wrap_content" />
             <TextView
                 android:text="京88888 奥迪"
-                android:textSize="30px"
+                android:textSize="26px"
                 android:textColor="#999"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
@@ -199,14 +202,14 @@
             <ImageView
                 android:layout_gravity="center"
                 android:layout_margin="10dp"
-                android:src="@drawable/xuanze"
-                android:layout_width="20dp"
-                android:layout_height="20dp" />
+                android:src="@mipmap/xuanzhe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
         </LinearLayout>
         <View
             android:background="@color/tab_top_line_color"
             android:layout_width="match_parent"
-            android:layout_height="10dp"/>
+            android:layout_height="@dimen/y20"/>
         <LinearLayout
             android:id="@+id/zhanghu_person"
             android:orientation="horizontal"
@@ -214,9 +217,9 @@
             android:layout_height="wrap_content">
             <ImageView
                 android:layout_margin="10dp"
-                android:src="@drawable/zhanghao"
-                android:layout_width="30dp"
-                android:layout_height="30dp" />
+                android:src="@mipmap/zhanghu1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
             <TextView
                 android:text="我的账户"
                 android:textSize="30px"
@@ -250,73 +253,38 @@
                 android:layout_gravity="center"
                 android:text="某某某某店铺"
                 android:textColor="#999"
-                android:textSize="30px" />
+                android:textSize="26px" />
             <ImageView
                 android:layout_gravity="center"
                 android:layout_margin="10dp"
-                android:src="@drawable/xuanze"
-                android:layout_width="20dp"
-                android:layout_height="20dp" />
+                android:src="@mipmap/xuanzhe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
         </LinearLayout>
         <View
             android:background="@color/tab_top_line_color"
             android:layout_width="match_parent"
-            android:layout_height="0.1dp"/>
-        <RadioGroup
-            android:id="@+id/rg"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <RadioButton
-                android:padding="10dp"
-                android:id="@+id/jifen_person"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:text="积分"
-                android:button="@null"
-                android:gravity="center"
-                android:checked="true"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/jifen1"
-                android:background="@drawable/person_tab"/>
-            <RadioButton
-                android:padding="10dp"
-                android:id="@+id/chuzhi_person"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:text="储值"
-                android:button="@null"
-                android:gravity="center"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/chuzhi1"
-                android:background="@drawable/person_tab"/>
-            <RadioButton
-                android:padding="10dp"
-                android:id="@+id/yue_person"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:text="余额券"
-                android:button="@null"
-                android:gravity="center"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/yuejuan"
-                android:background="@drawable/person_tab"/>
-            <RadioButton
-                android:padding="10dp"
-                android:id="@+id/dinge_person"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:text="定额券"
-                android:button="@null"
-                android:gravity="center"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/dingejuan1"
-                android:background="@drawable/person_tab"/>
-        </RadioGroup>
+            android:layout_height="1dp"/>
 
-        <FrameLayout
-            android:id="@+id/framelayout_person"
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tab_person"
+            android:gravity="center"
             android:layout_width="match_parent"
-            android:layout_height="300dp"></FrameLayout>
+            android:layout_height="@dimen/y100"
+            app:tabIndicatorHeight="0dp"
+            app:tabTextColor="#6c6c6c"
+            app:tabSelectedTextColor="#FFFFFF"
+            app:tabBackground="@drawable/tabone"
+            app:tabTextAppearance="@style/tablayoutIcon"
+            app:tabMode="scrollable"
+            app:tabMaxWidth="@dimen/y185"
+            app:tabPaddingBottom="5dp"
+            />
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp_person"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_height="800px"></android.support.v4.view.ViewPager>
+
     </LinearLayout>
 </ScrollView>

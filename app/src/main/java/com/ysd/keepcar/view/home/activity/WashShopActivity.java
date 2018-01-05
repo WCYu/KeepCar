@@ -25,7 +25,10 @@ public class WashShopActivity extends BaseActivity implements View.OnClickListen
 
     private ImageView imageView3;
     private TextView xianjia1_shop;
+    private TextView xianjia_shop;
+    private TextView yuanjia_shop;
     private TextView yuanjia1_shop;
+    private TextView yishou_shop;
     private TextView yishou1_shop;
     private TextView xianjia2_shop;
     private TextView yuanjia2_shop;
@@ -33,12 +36,6 @@ public class WashShopActivity extends BaseActivity implements View.OnClickListen
     private TextView xianjia3_shop;
     private TextView yuanjia3_shop;
     private TextView yishou3_shop;
-    private TextView xianjia4_shop;
-    private TextView yuanjia4_shop;
-    private TextView yishou4_shop;
-    private TextView xianjia5_shop;
-    private TextView yuanjia5_shop;
-    private TextView yishou5_shop;
     private ListView lv_shop;
     private RadioButton zhanghu_shop;
     private RadioButton pingjia_shop;
@@ -59,8 +56,11 @@ public class WashShopActivity extends BaseActivity implements View.OnClickListen
 
     public void initView() {
         imageView3 = (ImageView) findViewById(R.id.imageView3);
+        xianjia_shop = (TextView) findViewById(R.id.xianjia_shop);
         xianjia1_shop = (TextView) findViewById(R.id.xianjia1_shop);
-        yuanjia1_shop = (TextView) findViewById(R.id.yuanjia1_shop);
+        yuanjia_shop = (TextView) findViewById(R.id.yuanjia_shop);
+        yuanjia1_shop = (TextView) findViewById(R.id.yuanjia_shop);
+        yishou_shop = (TextView) findViewById(R.id.yishou1_shop);
         yishou1_shop = (TextView) findViewById(R.id.yishou1_shop);
         xianjia2_shop = (TextView) findViewById(R.id.xianjia2_shop);
         yuanjia2_shop = (TextView) findViewById(R.id.yuanjia2_shop);
@@ -68,12 +68,6 @@ public class WashShopActivity extends BaseActivity implements View.OnClickListen
         xianjia3_shop = (TextView) findViewById(R.id.xianjia3_shop);
         yuanjia3_shop = (TextView) findViewById(R.id.yuanjia3_shop);
         yishou3_shop = (TextView) findViewById(R.id.yishou3_shop);
-        xianjia4_shop = (TextView) findViewById(R.id.xianjia4_shop);
-        yuanjia4_shop = (TextView) findViewById(R.id.yuanjia4_shop);
-        yishou4_shop = (TextView) findViewById(R.id.yishou4_shop);
-        xianjia5_shop = (TextView) findViewById(R.id.xianjia5_shop);
-        yuanjia5_shop = (TextView) findViewById(R.id.yuanjia5_shop);
-        yishou5_shop = (TextView) findViewById(R.id.yishou5_shop);
         zhanghu_shop = (RadioButton) findViewById(R.id.zhanghu_shop);
         pingjia_shop = (RadioButton) findViewById(R.id.pingjia_shop);
         daohang_shop = (RadioButton) findViewById(R.id.daohang_shop);
@@ -82,8 +76,7 @@ public class WashShopActivity extends BaseActivity implements View.OnClickListen
         yuanjia1_shop.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
         yuanjia2_shop.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
         yuanjia3_shop.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
-        yuanjia4_shop.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
-        yuanjia5_shop.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
+
 
         biaoxi_itme = findViewById(R.id.biaoxi_itme);
         biaoxi1_itme = findViewById(R.id.biaoxi1_itme);

@@ -7,5 +7,7 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="tabBackground">@drawable/tab_background</item>
     </style>
-
+    <style name="tablayoutIcon" parent="TextAppearance.Design.Tab">
+    <item name="textAllCaps">false</item>
+    </style>
 </resources>

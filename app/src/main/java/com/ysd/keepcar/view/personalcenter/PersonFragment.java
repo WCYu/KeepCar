@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -29,6 +30,7 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
+import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -41,9 +43,14 @@ import com.ysd.keepcar.view.personalcenter.myshop.MyShopActivity;
 import com.ysd.keepcar.view.personalcenter.tab.ChuZhiFragment;
 import com.ysd.keepcar.view.personalcenter.tab.DingEFragment;
 import com.ysd.keepcar.view.personalcenter.tab.JiFenFragment;
+import com.ysd.keepcar.view.personalcenter.tab.XiCheFragment;
+import com.ysd.keepcar.view.personalcenter.tab.XiangMuFragment;
 import com.ysd.keepcar.view.personalcenter.tab.YuEFragment;
+import com.ysd.keepcar.view.personalcenter.tab.ZheKouFragment;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -69,15 +76,18 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
     private LinearLayout zhanghu;
     private LinearLayout dianpu;
     private ViewPager vp_person;
-    private RadioButton jifen_person;
-    private RadioButton chuzhi_person;
-    private RadioButton yue_person;
-    private RadioButton dinge_person;
-    private FrameLayout framelayout_person;
-    private RadioGroup rg;
     private RelativeLayout wodedingdan_person;
     private ImageView wode;
+    private TabLayout tab_person;
 
+    private int big[]=new int[]{
+            R.drawable.onetab,
+            R.drawable.twotab,
+            R.drawable.threetab,
+            R.drawable.fourtab,
+            R.drawable.fivetab,
+            R.drawable.sixtab,
+            R.drawable.seventab};
 
     @Override
     public int getInitId() {
@@ -92,13 +102,10 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
         dangqiancheliang = (LinearLayout) inflate.findViewById(R.id.dangqiancheliang_person);
         zhanghu = (LinearLayout) inflate.findViewById(R.id.zhanghu_person);
         dianpu = (LinearLayout) inflate.findViewById(R.id.dianpu_person);
-        framelayout_person = (FrameLayout) inflate.findViewById(R.id.framelayout_person);
-        jifen_person = (RadioButton) inflate.findViewById(R.id.jifen_person);
-        chuzhi_person = (RadioButton) inflate.findViewById(R.id.chuzhi_person);
-        yue_person = (RadioButton) inflate.findViewById(R.id.yue_person);
-        dinge_person = (RadioButton) inflate.findViewById(R.id.dinge_person);
-        rg = (RadioGroup) inflate.findViewById(R.id.rg);
         wode = inflate.findViewById(R.id.imageView2);
+        tab_person = inflate.findViewById(R.id.tab_person);
+        vp_person = inflate.findViewById(R.id.vp_person);
+
 
         imageView.setOnClickListener(this);
         wodecheliang.setOnClickListener(this);
@@ -110,44 +117,27 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
 
     @Override
     public void initData() {
-        FragmentManager fragmentManager = getChildFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        List<String> tabs = new ArrayList<>();
+        tabs.add("积分");
+        tabs.add("储值");
+        tabs.add("洗车");
+        tabs.add("级别折扣");
+        tabs.add("项目");
+        tabs.add("定额券");
+        tabs.add("余额券");
+        List<Fragment> fragmentList = new ArrayList<>();
+        fragmentList.add(new JiFenFragment());
+        fragmentList.add(new ChuZhiFragment());
+        fragmentList.add(new XiCheFragment());
+        fragmentList.add(new ZheKouFragment());
+        fragmentList.add(new XiangMuFragment());
+        fragmentList.add(new DingEFragment());
+        fragmentList.add(new YuEFragment());
 
-        final ChuZhiFragment chuZhiFragment = new ChuZhiFragment();
-        final DingEFragment dingEFragment = new DingEFragment();
-        final JiFenFragment jiFenFragment = new JiFenFragment();
-        final YuEFragment yuEFragment = new YuEFragment();
+        FragmentAdapter adapter = new FragmentAdapter(getActivity().getSupportFragmentManager(),tabs,fragmentList,getActivity(),big);
+        vp_person.setAdapter(adapter);
+        tab_person.setupWithViewPager(vp_person);
 
-        fragmentTransaction.add(R.id.framelayout_person, jiFenFragment);
-        fragmentTransaction.add(R.id.framelayout_person, chuZhiFragment);
-        fragmentTransaction.add(R.id.framelayout_person, yuEFragment);
-        fragmentTransaction.add(R.id.framelayout_person, dingEFragment);
-        fragmentTransaction.show(jiFenFragment).hide(chuZhiFragment).hide(dingEFragment).hide(yuEFragment);
-        fragmentTransaction.commit();
-
-        rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-
-                FragmentManager childFragmentManager = getChildFragmentManager();
-                FragmentTransaction fragmentTransaction1 = childFragmentManager.beginTransaction();
-                switch (checkedId) {
-                    case R.id.jifen_person:
-                        fragmentTransaction1.show(jiFenFragment).hide(dingEFragment).hide(chuZhiFragment).hide(yuEFragment);
-                        break;
-                    case R.id.chuzhi_person:
-                        fragmentTransaction1.show(chuZhiFragment).hide(dingEFragment).hide(jiFenFragment).hide(yuEFragment);
-                        break;
-                    case R.id.yue_person:
-                        fragmentTransaction1.show(yuEFragment).hide(dingEFragment).hide(jiFenFragment).hide(chuZhiFragment);
-                        break;
-                    case R.id.dinge_person:
-                        fragmentTransaction1.show(dingEFragment).hide(chuZhiFragment).hide(jiFenFragment).hide(yuEFragment);
-                        break;
-                }
-                fragmentTransaction1.commit();
-            }
-        });
     }
 
     @Override
