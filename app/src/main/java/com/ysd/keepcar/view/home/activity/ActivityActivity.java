@@ -56,6 +56,7 @@ public class ActivityActivity extends BaseActivity {
         activity_grid = findViewById(R.id.activity_grid);
         progress();
     }
+
     @Override
     public void initData() {
         Intent intent = getIntent();
@@ -67,16 +68,16 @@ public class ActivityActivity extends BaseActivity {
     }
 
     private void getData() {
-        Map map=new HashMap();
-        map.put("shopCode","店面不限");
-        map.put("sortType","默认排序");
-        map.put("pageSize",10);
-        map.put("pageNum",0);
-        map.put("activeType","活动不限");
+        Map map = new HashMap();
+        map.put("shopCode", "店面不限");
+        map.put("sortType", "默认排序");
+        map.put("pageSize", 10);
+        map.put("pageNum", 0);
+        map.put("activeType", "活动不限");
 //        map.put("cityId",cityId);
 //        map.put(" tk",tk);
         String jsonMap = ZJson.toJSONMap(map);
-        OkhttpUtil.getInstance().post((UrlPath.URLPATHAPP+UrlPath.URLACTIVITY), jsonMap, new Callback() {
+        OkhttpUtil.getInstance().post((UrlPath.URLPATHAPP + UrlPath.URLACTIVITY), jsonMap, new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
 
@@ -89,11 +90,11 @@ public class ActivityActivity extends BaseActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Gson gson=new Gson();
+                        Gson gson = new Gson();
                         ActivityBean activityBean = gson.fromJson(string, ActivityBean.class);
                         listBeans = activityBean.getData().getList();
-                        if(listBeans!=null){
-                            ActivityAdapter activityAdapter=new ActivityAdapter((ArrayList<ActivityBean.DataBean.ListBean>) listBeans,ActivityActivity.this);
+                        if (listBeans != null) {
+                            ActivityAdapter activityAdapter = new ActivityAdapter((ArrayList<ActivityBean.DataBean.ListBean>) listBeans, ActivityActivity.this);
                             activity_grid.setAdapter(activityAdapter);
                             progressDialog.dismiss();
                         }
