@@ -150,6 +150,7 @@ public class Shop_DetailsActivity extends AppCompatActivity implements View.OnCl
                     }
                 });
                 break;
+
             case R.id.but_GouMai:
 
 //        弹出一个popupwindow
