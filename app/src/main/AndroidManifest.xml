@@ -45,10 +45,12 @@
         <activity android:name=".view.home.activity.QueryActivity" />
         <activity android:name=".view.home.activity.RescueActivity" />
         <activity android:name=".CityActivity" />
+        <!--/4S店/-->
         <activity android:name=".view.shop.activity.Four_S_ShopActivity" />
         <activity android:name=".view.shop.activity.Shop_DetailsActivity" />
         <activity android:name=".view.shop.activity.Place_OrderActivity" />
         <activity android:name=".view.shop.activity.Payment_SuccessActivity"></activity>
+        <!--<>-->
         <activity android:name=".view.personalcenter.login.LoginActivity" />
         <activity android:name=".view.personalcenter.mycar.MyCarActivity" />
         <activity android:name=".view.personalcenter.myshop.MyShopActivity" />

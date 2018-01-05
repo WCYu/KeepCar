@@ -1,30 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.ysd.keepcar.custom.PercentLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#88000000">
 
-    <com.ysd.keepcar.custom.PercentLinearLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/subscribe_item_pressed_bg"
-        android:orientation="vertical">
-
-
+        android:layout_height="150dp"
+        android:background="#ffffff">
 
         <RadioGroup
             android:id="@+id/brand_Group"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            app:layout_heightPercent="25%"
-            app:layout_widthPercent="98%">
+            android:layout_height="match_parent"
+            android:layout_gravity="right">
 
             <RadioButton
                 android:id="@+id/radio_Storefront"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="20dp"
                 android:layout_weight="1"
                 android:button="@null"
                 android:gravity="center_vertical"
@@ -35,7 +30,7 @@
             <RadioButton
                 android:id="@+id/radiobutMy_member_store"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="20dp"
                 android:layout_weight="1"
                 android:button="@null"
                 android:gravity="center_vertical"
@@ -45,7 +40,7 @@
             <RadioButton
                 android:id="@+id/radiobut_Single_store_in_history"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="20dp"
                 android:layout_weight="1"
                 android:button="@null"
                 android:gravity="center_vertical"
@@ -53,5 +48,5 @@
                 android:text="历史下单店" />
 
         </RadioGroup>
-    </com.ysd.keepcar.custom.PercentLinearLayout>
-</com.ysd.keepcar.custom.PercentLinearLayout>
+    </LinearLayout>
+</LinearLayout>
