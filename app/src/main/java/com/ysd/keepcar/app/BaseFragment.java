@@ -33,6 +33,7 @@ public abstract class BaseFragment extends Fragment {
     public abstract void initAdapter();
 
     public abstract void initLinstener();
+
     public void progress() {
         progressDialog = new ProgressDialog(getActivity());
         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
