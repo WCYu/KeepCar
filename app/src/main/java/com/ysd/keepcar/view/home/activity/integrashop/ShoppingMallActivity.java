@@ -75,25 +75,25 @@ public class ShoppingMallActivity extends BaseActivity {
     public void initData() {
         Intent intent = getIntent();
         String title = intent.getStringExtra("title");
-        int cityId = intent.getIntExtra("cityId",0);
+        int cityId = intent.getIntExtra("cityId", 0);
         String tk = intent.getStringExtra("tk");
         customTool.setAppTitle(title);
         getData();
     }
 
     private void getData() {
-        Map map=new HashMap();
-        map.put("productType","全部分类");
-        map.put("shopCode","店面不限");
-        map.put("searchType","默认排序");
-        map.put(" pageSize",10);
-        map.put("pageNum",0);
+        Map map = new HashMap();
+        map.put("productType", "全部分类");
+        map.put("shopCode", "店面不限");
+        map.put("searchType", "默认排序");
+        map.put(" pageSize", 10);
+        map.put("pageNum", 0);
 //        map.put("cityId",cityId+"");
 //        map.put("tk",tk);
 //        map.put("q","");
         String jsonMap = ZJson.toJSONMap(map);
 //        Log.e("--json-ShoppingMall---",jsonMap);
-        OkhttpUtil.getInstance().post((UrlPath.URLPATHAPP+UrlPath.URLINTEGRALSHOP), jsonMap, new Callback() {
+        OkhttpUtil.getInstance().post((UrlPath.URLPATHAPP + UrlPath.URLINTEGRALSHOP), jsonMap, new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
 
@@ -106,13 +106,13 @@ public class ShoppingMallActivity extends BaseActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Gson gson=new Gson();
+                        Gson gson = new Gson();
                         IntegralBean integralBean = gson.fromJson(string, IntegralBean.class);
                         IntegralBean.DataBean data = integralBean.getData();
                         listBeans = data.getList();
-                        if(listBeans!=null){
-                            IntegralAdapter integralAdapter=new IntegralAdapter((ArrayList<IntegralBean.DataBean.ListBean>) listBeans,ShoppingMallActivity.this);
-                            GridLayoutManager gridLayoutManager=new GridLayoutManager(ShoppingMallActivity.this,2);
+                        if (listBeans != null) {
+                            IntegralAdapter integralAdapter = new IntegralAdapter((ArrayList<IntegralBean.DataBean.ListBean>) listBeans, ShoppingMallActivity.this);
+                            GridLayoutManager gridLayoutManager = new GridLayoutManager(ShoppingMallActivity.this, 2);
                             gridLayoutManager.setOrientation(GridLayoutManager.VERTICAL);
                             recycler_shopping_view.setLayoutManager(gridLayoutManager);
                             recycler_shopping_view.setAdapter(integralAdapter);
