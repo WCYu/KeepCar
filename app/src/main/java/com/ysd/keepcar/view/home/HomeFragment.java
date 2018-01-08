@@ -55,9 +55,9 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     private ViewHolder vh;
     private ArrayList<String> imgList;
     private TextView cityName;
-    private List<ReMenBean.DataBean> data;
     private int cityId;
     private String userId;
+    private List<ReMenBean.DataBean.ListBean> data;
 
     @Override
     public int getInitId() {
@@ -114,6 +114,8 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
         HomeActivity homeActivity = (HomeActivity) getActivity();
         cityId = homeActivity.cityId;
         map.put("cityId", cityId);
+        map.put("pageNum",0);
+        map.put("pageSize",10);
 //        Log.e("--热门-HomeFragment---", cityId + "cityId");
         String jsonMap = ZJson.toJSONMap(map);
         OkhttpUtil.getInstance().post((UrlPath.URLPATHAPP + UrlPath.URLREMEN), jsonMap, new Callback() {
@@ -125,15 +127,15 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 final String string = response.body().string();
-//                Log.e("--热门-HomeFragment---", string);
+                Log.e("--热门-HomeFragment---", string);
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
                         Gson gson = new Gson();
                         ReMenBean reMenBean = gson.fromJson(string, ReMenBean.class);
-                        data = reMenBean.getData();
+                        data = reMenBean.getData().getList();
                         if (data != null) {
-                            HomeListAdapter homeListAdapter = new HomeListAdapter(getActivity(), (ArrayList<ReMenBean.DataBean>) data);
+                            HomeListAdapter homeListAdapter = new HomeListAdapter(getActivity(), (ArrayList<ReMenBean.DataBean.ListBean>) data);
                             listView.setAdapter(homeListAdapter);
                             progressDialog.dismiss();
                         }

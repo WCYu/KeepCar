@@ -20,9 +20,9 @@ import java.util.ArrayList;
 public class HomeListAdapter extends BaseAdapter {
 
     Context context;
-    ArrayList<ReMenBean.DataBean> arrayList;
+    ArrayList<ReMenBean.DataBean.ListBean> arrayList;
 
-    public HomeListAdapter(Context context, ArrayList<ReMenBean.DataBean> arrayList) {
+    public HomeListAdapter(Context context, ArrayList<ReMenBean.DataBean.ListBean> arrayList) {
         this.context = context;
         this.arrayList = arrayList;
     }
@@ -48,8 +48,8 @@ public class HomeListAdapter extends BaseAdapter {
         ViewHolder viewHolder=new ViewHolder(convertView);
 
         viewHolder.home_list_item_name.setText(arrayList.get(position).getProductType());
-        viewHolder.home_list_item_shop_name.setText(arrayList.get(position).getShopName());
-        viewHolder.home_list_item_fukuan.setText(arrayList.get(position).getProductName());
+        viewHolder.home_list_item_shop_name.setText(arrayList.get(position).getSalesNum());
+        viewHolder.home_list_item_fukuan.setText(arrayList.get(position).getShopName()+"");
         viewHolder.home_list_item_jiage.setText("￥"+arrayList.get(position).getOriginalPrice());
         return convertView;
     }
