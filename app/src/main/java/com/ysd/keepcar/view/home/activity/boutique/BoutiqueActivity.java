@@ -1,8 +1,8 @@
-package com.ysd.keepcar.view.home.activity;
+package com.ysd.keepcar.view.home.activity.boutique;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -58,7 +58,13 @@ public class BoutiqueActivity extends BaseActivity {
 
     @Override
     public void initLinstener() {
-
+        boutique_grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent=new Intent(BoutiqueActivity.this,BoutiqueInfoActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

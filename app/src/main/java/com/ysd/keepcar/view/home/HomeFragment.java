@@ -1,6 +1,5 @@
 package com.ysd.keepcar.view.home;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,7 +12,6 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 import com.youth.banner.Banner;
 import com.ysd.keepcar.R;
-import com.ysd.keepcar.app.AppService;
 import com.ysd.keepcar.app.BaseFragment;
 import com.ysd.keepcar.entity.ReMenBean;
 import com.ysd.keepcar.utils.GlideImageLoader;
@@ -23,7 +21,7 @@ import com.ysd.keepcar.utils.UrlPath;
 import com.ysd.keepcar.utils.ZJson;
 import com.ysd.keepcar.view.HomeActivity;
 import com.ysd.keepcar.view.home.activity.ActivityActivity;
-import com.ysd.keepcar.view.home.activity.BoutiqueActivity;
+import com.ysd.keepcar.view.home.activity.boutique.BoutiqueActivity;
 import com.ysd.keepcar.view.home.activity.exhibition.ExhibitionActivity;
 import com.ysd.keepcar.view.home.activity.MaintainActivity;
 import com.ysd.keepcar.view.home.activity.QueryActivity;

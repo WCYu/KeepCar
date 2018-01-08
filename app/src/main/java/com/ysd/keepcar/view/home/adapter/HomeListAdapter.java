@@ -48,7 +48,7 @@ public class HomeListAdapter extends BaseAdapter {
         ViewHolder viewHolder=new ViewHolder(convertView);
 
         viewHolder.home_list_item_name.setText(arrayList.get(position).getProductType());
-        viewHolder.home_list_item_shop_name.setText(arrayList.get(position).getSalesNum());
+        viewHolder.home_list_item_shop_name.setText(arrayList.get(position).getSalesWays());
         viewHolder.home_list_item_fukuan.setText(arrayList.get(position).getShopName()+"");
         viewHolder.home_list_item_jiage.setText("￥"+arrayList.get(position).getOriginalPrice());
         return convertView;

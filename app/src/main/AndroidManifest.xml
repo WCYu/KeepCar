@@ -38,19 +38,19 @@
         <activity android:name=".view.home.activity.RepairActivity" />
         <activity android:name=".view.home.activity.exhibition.ExhibitionActivity" />
         <activity android:name=".view.home.activity.RenewalActivity" />
-        <activity android:name=".view.home.activity.BoutiqueActivity" />
+        <activity android:name=".view.home.activity.boutique.BoutiqueActivity" />
         <activity android:name=".view.home.activity.washcar.WashCarActivity" />
         <activity android:name=".view.home.activity.ActivityActivity" />
         <activity android:name=".view.home.activity.integrashop.ShoppingMallActivity" />
         <activity android:name=".view.home.activity.QueryActivity" />
         <activity android:name=".view.home.activity.RescueActivity" />
         <activity android:name=".CityActivity" />
-        <!--/4S店/-->
+        <!-- /4S店/ -->
         <activity android:name=".view.shop.activity.Four_S_ShopActivity" />
         <activity android:name=".view.shop.activity.Shop_DetailsActivity" />
         <activity android:name=".view.shop.activity.Place_OrderActivity" />
-        <activity android:name=".view.shop.activity.Payment_SuccessActivity"></activity>
-        <!--<>-->
+        <activity android:name=".view.shop.activity.Payment_SuccessActivity" />
+        <!-- <> -->
         <activity android:name=".view.shop.activity.Payment_SuccessActivity" />
         <activity android:name=".view.personalcenter.login.LoginActivity" />
         <activity android:name=".view.personalcenter.mycar.MyCarActivity" />
@@ -63,7 +63,8 @@
         <activity android:name=".view.home.activity.exhibition.XinCarInfoActivity" />
         <activity android:name=".view.home.activity.exhibition.ErShouCarActivity" />
         <activity android:name=".view.shoppingcart.activity.RealOrderActivity" />
-        <activity android:name=".view.home.activity.integrashop.ExchangeInfoActivity"></activity>
+        <activity android:name=".view.home.activity.integrashop.ExchangeInfoActivity" />
+        <activity android:name=".view.home.activity.boutique.BoutiqueInfoActivity"></activity>
     </application>
 
 </manifest>
