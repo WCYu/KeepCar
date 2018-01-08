@@ -40,7 +40,7 @@
         <activity android:name=".view.home.activity.RenewalActivity" />
         <activity android:name=".view.home.activity.boutique.BoutiqueActivity" />
         <activity android:name=".view.home.activity.washcar.WashCarActivity" />
-        <activity android:name=".view.home.activity.ActivityActivity" />
+        <activity android:name=".view.home.activity.activity.ActivityActivity" />
         <activity android:name=".view.home.activity.integrashop.ShoppingMallActivity" />
         <activity android:name=".view.home.activity.QueryActivity" />
         <activity android:name=".view.home.activity.RescueActivity" />
@@ -64,7 +64,8 @@
         <activity android:name=".view.home.activity.exhibition.ErShouCarActivity" />
         <activity android:name=".view.shoppingcart.activity.RealOrderActivity" />
         <activity android:name=".view.home.activity.integrashop.ExchangeInfoActivity" />
-        <activity android:name=".view.home.activity.boutique.BoutiqueInfoActivity"></activity>
+        <activity android:name=".view.home.activity.boutique.BoutiqueInfoActivity" />
+        <activity android:name=".view.home.activity.activity.ActivityInfoActivity"></activity>
     </application>
 
 </manifest>

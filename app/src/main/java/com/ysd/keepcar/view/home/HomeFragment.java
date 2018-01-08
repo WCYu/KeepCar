@@ -20,7 +20,7 @@ import com.ysd.keepcar.utils.OkhttpUtil;
 import com.ysd.keepcar.utils.UrlPath;
 import com.ysd.keepcar.utils.ZJson;
 import com.ysd.keepcar.view.HomeActivity;
-import com.ysd.keepcar.view.home.activity.ActivityActivity;
+import com.ysd.keepcar.view.home.activity.activity.ActivityActivity;
 import com.ysd.keepcar.view.home.activity.boutique.BoutiqueActivity;
 import com.ysd.keepcar.view.home.activity.exhibition.ExhibitionActivity;
 import com.ysd.keepcar.view.home.activity.MaintainActivity;

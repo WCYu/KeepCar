@@ -1,17 +1,14 @@
-package com.ysd.keepcar.view.home.activity;
+package com.ysd.keepcar.view.home.activity.activity;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.google.gson.Gson;
 import com.ysd.keepcar.R;
-import com.ysd.keepcar.app.AppService;
 import com.ysd.keepcar.app.BaseActivity;
 import com.ysd.keepcar.custom.CustomTool;
 import com.ysd.keepcar.utils.OkhttpUtil;
@@ -111,7 +108,13 @@ public class ActivityActivity extends BaseActivity {
 
     @Override
     public void initLinstener() {
-
+        activity_grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent=new Intent(ActivityActivity.this,ActivityInfoActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
