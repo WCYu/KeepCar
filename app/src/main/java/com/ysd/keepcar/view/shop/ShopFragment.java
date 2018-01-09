@@ -73,7 +73,8 @@ public class ShopFragment extends BaseFragment implements WaveSideBar.OnSelectIn
 
         // 品牌
         radiobut_Brand = view.findViewById(R.id.radiobut_Brand);
-        shop_group = view.findViewById(R.id.shop_group);
+        shop_group = view.findViewById(R.id.shop_group1);
+        shop_group = view.findViewById(R.id.shop_group1);
 
         //店面
         radiobut_Storefront = view.findViewById(R.id.radiobut_Storefront);
@@ -243,32 +244,6 @@ public class ShopFragment extends BaseFragment implements WaveSideBar.OnSelectIn
 
 
     //品牌
-    private void popupWindow1(View vicinityView) {
-
-        popupWindow1 = new PopupWindow(vicinityView, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        vicinityView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                popupWindow1.dismiss();
-            }
-        });
-
-
-        popupWindow1.setFocusable(true);
-
-        popupWindow1.setBackgroundDrawable(new BitmapDrawable());
-        popupWindow1.showAsDropDown(radiobut_Brand, 0, 20);
-
-        popupWindow1.setOnDismissListener(new PopupWindow.OnDismissListener() {
-            @Override
-            public void onDismiss() {
-                shop_group.clearCheck();
-
-            }
-        });
-    }
-
-    //品牌
     private void initPettypeView1(View vicinityView) {
         recycler_view = (RecyclerView) vicinityView.findViewById(R.id.recycler_view);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(AppService.baseActivity);
@@ -310,12 +285,38 @@ public class ShopFragment extends BaseFragment implements WaveSideBar.OnSelectIn
 
     }
 
+    //品牌
+    private void popupWindow1(View vicinityView) {
+
+        popupWindow1 = new PopupWindow(vicinityView, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        vicinityView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                popupWindow1.dismiss();
+            }
+        });
+
+
+        popupWindow1.setFocusable(true);
+
+        popupWindow1.setBackgroundDrawable(new BitmapDrawable());
+        popupWindow1.showAsDropDown(radiobut_Brand, 0, 20);
+
+        popupWindow1.setOnDismissListener(new PopupWindow.OnDismissListener() {
+            @Override
+            public void onDismiss() {
+                shop_group.clearCheck();
+
+            }
+        });
+    }
+
     //初始化PopupWindow
     private void popupWindow2(View vicinityView) {
 
 
-        popupWindow = new PopupWindow(vicinityView, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        vicinityView.setOnClickListener(new View.OnClickListener() {
+        popupWindow = new PopupWindow(vicinityView, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+          vicinityView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 popupWindow.dismiss();
@@ -326,7 +327,7 @@ public class ShopFragment extends BaseFragment implements WaveSideBar.OnSelectIn
 
         popupWindow.setBackgroundDrawable(new BitmapDrawable());
 
-        popupWindow.showAsDropDown(shop_group, 0, 10);
+        popupWindow.showAsDropDown(shop_group, 0, 30);
         popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
             @Override
             public void onDismiss() {

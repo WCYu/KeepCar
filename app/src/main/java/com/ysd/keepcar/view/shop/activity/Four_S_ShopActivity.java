@@ -1,12 +1,14 @@
 package com.ysd.keepcar.view.shop.activity;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +22,11 @@ import android.widget.TextView;
 import com.ysd.keepcar.R;
 import com.ysd.keepcar.app.AppService;
 import com.ysd.keepcar.app.BaseActivity;
+import com.ysd.keepcar.view.personalcenter.tab.ChuZhiFragment;
+import com.ysd.keepcar.view.personalcenter.tab.DingEFragment;
+import com.ysd.keepcar.view.personalcenter.tab.JiFenFragment;
+import com.ysd.keepcar.view.personalcenter.tab.YuEFragment;
+import com.ysd.keepcar.view.shop.adapter.Fragment_popuAdapter;
 import com.ysd.keepcar.view.shop.adapter.Shop_Fragment_Adapter;
 import com.ysd.keepcar.view.shop.fragment.Boutique_Fragment;
 import com.ysd.keepcar.view.shop.fragment.HuoDong_Fragment;
@@ -28,6 +35,7 @@ import com.ysd.keepcar.view.shop.fragment.The_New_Car_Fragment;
 import com.ysd.keepcar.view.shop.fragment.UsedCar_Fragment;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Four_S_ShopActivity extends BaseActivity implements View.OnClickListener {
 
@@ -73,6 +81,7 @@ public class Four_S_ShopActivity extends BaseActivity implements View.OnClickLis
         btn_bendianzhanghu = findViewById(R.id.btn_bendianzhanghu);
         btn_find = findViewById(R.id.btn_find);
         btn_daohang = findViewById(R.id.btn_daohang);
+
 
         btn_bendianzhanghu.setOnClickListener(this);
         btn_find.setOnClickListener(this);
@@ -151,8 +160,7 @@ public class Four_S_ShopActivity extends BaseActivity implements View.OnClickLis
             //本店账户
             case R.id.btn_bendianzhanghu:
 
-
-               startActivity(new Intent(Four_S_ShopActivity.this, Shop_DetailsActivity.class));
+                ShowPopuWindow();
                 break;
 
             //发现
@@ -162,9 +170,64 @@ public class Four_S_ShopActivity extends BaseActivity implements View.OnClickLis
                 break;
             //导航
             case R.id.btn_daohang:
-
+                startActivity(new Intent(Four_S_ShopActivity.this, Shop_DetailsActivity.class));
                 break;
         }
+    }
+
+    private int big[] = new int[]{
+            R.drawable.onetab,
+            R.drawable.twotab,
+            R.drawable.threetab,
+            R.drawable.fourtab,
+    };
+
+    private void ShowPopuWindow() {
+
+//        弹出一个popupwindow
+
+//        加载popupwndow的布局
+        View shop_goumai_popuwindow = LayoutInflater.from(Four_S_ShopActivity.this).inflate(R.layout.account_of_our_shop_popuwindow, null);
+//        创建一个popupWindow对象
+        popupWindow = new PopupWindow(shop_goumai_popuwindow, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+
+        shop_goumai_popuwindow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                popupWindow.dismiss();
+            }
+        });
+
+        //        默认获取不到焦点，设置获取焦点
+
+        popupWindow.setFocusable(true);
+//        点击窗口以外的区域，窗口消失
+        popupWindow.setBackgroundDrawable(new BitmapDrawable());
+        popupWindow.setOutsideTouchable(true);
+//        显示popupwindow
+        popupWindow.showAtLocation(shop_goumai_popuwindow, Gravity.BOTTOM, 0, 0);
+        TextView text_view = shop_goumai_popuwindow.findViewById(R.id.text_view);
+        text_view.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
+
+        TabLayout tab_this_shop = shop_goumai_popuwindow.findViewById(R.id.tab_this_shop);
+        ViewPager vp_this_shop = shop_goumai_popuwindow.findViewById(R.id.vp_this_shop);
+
+        ArrayList<String> tabs = new ArrayList<>();
+        tabs.add("积分");
+        tabs.add("储值");
+        tabs.add("余额券");
+        tabs.add("定额券");
+        List<Fragment> fragmentList = new ArrayList<>();
+        fragmentList.add(new JiFenFragment());
+        fragmentList.add(new ChuZhiFragment());
+        fragmentList.add(new YuEFragment());
+        fragmentList.add(new DingEFragment());
+
+        tab_this_shop.setupWithViewPager(vp_this_shop);
+        FragmentManager fm = getSupportFragmentManager();
+        Fragment_popuAdapter fragment_popuAdapter = new Fragment_popuAdapter(fm, tabs, fragmentList);
+        vp_this_shop.setAdapter(fragment_popuAdapter);
+
     }
 
     private void Find_Popuwindow(View shop_find_popuwindow) {

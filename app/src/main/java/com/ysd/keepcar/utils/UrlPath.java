@@ -25,7 +25,7 @@ public class UrlPath {
     //获取4s店列表
     public static final String URLFOURSLIEBIAO="4sShop/shopList.do";
     public static final String URLFOURS="integralMall/showProduct_v1_0.do";
-
+//<------------------------------------------------------------------------------->
     //轮播图地址
     public static final String URLPATHBANNER = "main/queryBrandImg.do";
 
