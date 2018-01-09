@@ -159,6 +159,7 @@ public class Shop_DetailsActivity extends AppCompatActivity implements View.OnCl
 
 //        弹出一个popupwindow
 
+
 //        加载popupwndow的布局
         View shop_goumai_popuwindow = LayoutInflater.from(Shop_DetailsActivity.this).inflate(R.layout.shop_goumai_popuwindow, null);
 //        创建一个popupWindow对象
