@@ -152,7 +152,7 @@
         <com.ysd.keepcar.view.shop.entity.BanViewPager
             android:id="@+id/viewp_shop"
             android:layout_width="match_parent"
-            android:layout_height="280dp"
+            android:layout_height="300dp"
        />
 
         <RelativeLayout

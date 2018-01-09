@@ -25,6 +25,8 @@ public class FragmentAdapter extends FragmentPagerAdapter {
     int[] tabImg;
 
 
+
+
     public FragmentAdapter(FragmentManager fm, List<String> tabs, List<Fragment> fragments, Context context, int[] tabImg) {
         super(fm);
         this.tabs = tabs;
