@@ -45,10 +45,10 @@ public class WashCarAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         convertView = LayoutInflater.from(context).inflate(R.layout.washcar_list_item, null);
-        ViewHolder vh=new ViewHolder(convertView);
+        ViewHolder vh = new ViewHolder(convertView);
         vh.washcar_item_name.setText(arrayList.get(position).getShopName());
         vh.washcar_item_rating.setRating((float) arrayList.get(position).getStar());
-        vh.washcar_item_address.setText(arrayList.get(position).getProvinceName()+" "+arrayList.get(position).getCityName());
+        vh.washcar_item_address.setText(arrayList.get(position).getProvinceName() + " " + arrayList.get(position).getCityName());
         return convertView;
     }
 
