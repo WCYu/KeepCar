@@ -45,12 +45,12 @@ public class HomeListAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         convertView = LayoutInflater.from(context).inflate(R.layout.home_list_item, null);
-        ViewHolder viewHolder=new ViewHolder(convertView);
+        ViewHolder viewHolder = new ViewHolder(convertView);
 
         viewHolder.home_list_item_name.setText(arrayList.get(position).getProductType());
         viewHolder.home_list_item_shop_name.setText(arrayList.get(position).getSalesWays());
-        viewHolder.home_list_item_fukuan.setText(arrayList.get(position).getShopName()+"");
-        viewHolder.home_list_item_jiage.setText("￥"+arrayList.get(position).getOriginalPrice());
+        viewHolder.home_list_item_fukuan.setText(arrayList.get(position).getShopName() + "");
+        viewHolder.home_list_item_jiage.setText("￥" + arrayList.get(position).getOriginalPrice());
         return convertView;
     }
 
