@@ -42,7 +42,7 @@ public class IntegralAdapter extends RecyclerView.Adapter<IntegralAdapter.ViewHo
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.integral_adapter_tv1.setText(arrayList.get(position).getProductType());
         holder.integral_adapter_tv2.setText(arrayList.get(position).getShopName());
-        holder.integral_adapter_tv3.setText(arrayList.get(position).getIntegralValue()+"");
+        holder.integral_adapter_tv3.setText(arrayList.get(position).getIntegralValue() + "");
 //        holder.integral_adapter_tv4.setText(arrayList.get(position)+"");
 //        Glide.with(context).load("").into(holder.integral_adapter_img);
 //        Glide.with(context).load("").into(holder.integral_adapter_img2);
@@ -50,7 +50,7 @@ public class IntegralAdapter extends RecyclerView.Adapter<IntegralAdapter.ViewHo
         holder.integral_adapter_lly.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(context, ExchangeInfoActivity.class);
+                Intent intent = new Intent(context, ExchangeInfoActivity.class);
                 context.startActivity(intent);
             }
         });
@@ -70,16 +70,17 @@ public class IntegralAdapter extends RecyclerView.Adapter<IntegralAdapter.ViewHo
         public TextView integral_adapter_tv3;
         public TextView integral_adapter_tv4;
         LinearLayout integral_adapter_lly;
+
         public ViewHolder(View itemView) {
             super(itemView);
-            integral_adapter_img=itemView.findViewById(R.id.integral_adapter_img);
-            integral_adapter_tv1=itemView.findViewById(R.id.integral_adapter_tv1);
-            integral_adapter_img2=itemView.findViewById(R.id.integral_adapter_img2);
-            integral_adapter_tv2=itemView.findViewById(R.id.integral_adapter_tv2);
-            integral_adapter_img3=itemView.findViewById(R.id.integral_adapter_img3);
-            integral_adapter_tv3=itemView.findViewById(R.id.integral_adapter_tv3);
-            integral_adapter_tv4=itemView.findViewById(R.id.integral_adapter_tv4);
-            integral_adapter_lly=itemView.findViewById(R.id.integral_adapter_lly);
+            integral_adapter_img = itemView.findViewById(R.id.integral_adapter_img);
+            integral_adapter_tv1 = itemView.findViewById(R.id.integral_adapter_tv1);
+            integral_adapter_img2 = itemView.findViewById(R.id.integral_adapter_img2);
+            integral_adapter_tv2 = itemView.findViewById(R.id.integral_adapter_tv2);
+            integral_adapter_img3 = itemView.findViewById(R.id.integral_adapter_img3);
+            integral_adapter_tv3 = itemView.findViewById(R.id.integral_adapter_tv3);
+            integral_adapter_tv4 = itemView.findViewById(R.id.integral_adapter_tv4);
+            integral_adapter_lly = itemView.findViewById(R.id.integral_adapter_lly);
         }
     }
 }
