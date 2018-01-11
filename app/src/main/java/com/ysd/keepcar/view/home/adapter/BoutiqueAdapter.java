@@ -43,7 +43,7 @@ public class BoutiqueAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         convertView = LayoutInflater.from(context).inflate(R.layout.boutique_adapter_item, null);
-        ViewHolder vh=new ViewHolder(convertView);
+        ViewHolder vh = new ViewHolder(convertView);
 //        vh.boutique_adapter_tv1.setText(arrayList.get(position));
 //        vh.boutique_adapter_tv2.setText(arrayList.get(position));
 //        vh.boutique_adapter_tv3.setText(arrayList.get(position));
