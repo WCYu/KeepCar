@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/y196">
+
+    <ImageView
+        android:id="@+id/washcar_item_img"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/y188"
+        android:layout_weight="1"
+        android:background="@android:color/background_dark"
+        android:layout_gravity="center"/>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="@dimen/y188"
+        android:layout_weight="2"
+        android:layout_gravity="center">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/washcar_item_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="公司名称"
+                android:layout_margin="@dimen/y5"
+                android:textSize="@dimen/y30" />
+
+            <RatingBar
+                android:id="@+id/washcar_item_rating"
+                style="@style/Widget.AppCompat.RatingBar.Indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/y5"
+                android:numStars="5" />
+
+            <TextView
+                android:id="@+id/washcar_item_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1.8km 北京朝阳区"
+                android:layout_margin="@dimen/y5"
+                android:textSize="@dimen/y26" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:padding="@dimen/y10">
+            <TextView
+                android:id="@+id/washcar_item_jiage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="￥18.00"
+                android:textSize="@dimen/y36"
+                android:textColor="@android:color/holo_red_dark"/>
+            <TextView
+                android:id="@+id/washcar_item_xinghao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="（五座轿车）"
+                android:textSize="@dimen/y24"
+                />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

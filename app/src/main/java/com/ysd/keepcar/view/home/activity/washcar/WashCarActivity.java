@@ -2,33 +2,52 @@ package com.ysd.keepcar.view.home.activity.washcar;
 
 import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.CompoundButton;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.RadioButton;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
+import com.google.gson.Gson;
 import com.ysd.keepcar.R;
 import com.ysd.keepcar.app.BaseActivity;
 import com.ysd.keepcar.custom.CustomTool;
+import com.ysd.keepcar.utils.OkhttpUtil;
+import com.ysd.keepcar.utils.UrlPath;
+import com.ysd.keepcar.utils.ZJson;
+import com.ysd.keepcar.view.home.adapter.WashCarAdapter;
+import com.ysd.keepcar.view.home.bean.WashCarBean;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.Response;
 
 //洗车Activity
 public class WashCarActivity extends BaseActivity implements CompoundButton.OnCheckedChangeListener, View.OnClickListener {
 
     CustomTool customTool;
-    private CustomTool washcar_custom;
     private ToggleButton dianpu_washcar;
     private ToggleButton paixu_washcar;
     private LinearLayout linear_washcar;
-    private View v1;
     private PopupWindow popu1;
-    private View itme_1;
-    private View itme_2;
-    private View itme_3;
+    ListView listView;
+    private View v1;
+
+    ArrayList<WashCarBean.DataBean.ListBean> arrayList=new ArrayList();
+    private WashCarAdapter washCarAdapter;
 
     @Override
     public int getInitId() {
@@ -37,20 +56,14 @@ public class WashCarActivity extends BaseActivity implements CompoundButton.OnCh
 
     @Override
     public void initView() {
+        progress();
         customTool = findViewById(R.id.washcar_custom);
         dianpu_washcar = findViewById(R.id.dianpu_washcar);
         paixu_washcar = findViewById(R.id.paixu_washcar);
         linear_washcar = findViewById(R.id.linear_washcar);
-        itme_1 = findViewById(R.id.itme_1);
-        itme_2 = findViewById(R.id.itme_2);
-        itme_3 = findViewById(R.id.itme_3);
-
-
+        listView = findViewById(R.id.washcar_list);
         dianpu_washcar.setOnCheckedChangeListener(this);
         paixu_washcar.setOnCheckedChangeListener(this);
-        itme_1.setOnClickListener(this);
-        itme_2.setOnClickListener(this);
-        itme_3.setOnClickListener(this);
     }
 
     @Override
@@ -58,16 +71,60 @@ public class WashCarActivity extends BaseActivity implements CompoundButton.OnCh
         Intent intent = getIntent();
         String title = intent.getStringExtra("title");
         customTool.setAppTitle(title);
+        getData();
+    }
+
+    private void getData() {
+        Map map=new HashMap();
+//        map.put("cityId","");
+//        map.put("tk","");
+        map.put("shopCode","店面不限");
+        map.put("sortType","默认排序");
+        map.put("pageNum",0);
+        map.put("pageSize",10);
+        String jsonMap = ZJson.toJSONMap(map);
+        OkhttpUtil.getInstance().post((UrlPath.URLPATHAPP+UrlPath.URLWASHCAR), jsonMap, new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                String string = response.body().string();
+                Gson gson=new Gson();
+                WashCarBean washCarBean = gson.fromJson(string, WashCarBean.class);
+                final List<WashCarBean.DataBean.ListBean> list = washCarBean.getData().getList();
+                arrayList.addAll(list);
+//                Log.e("---WashCarActivity---",string);
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        if(arrayList!=null){
+                            washCarAdapter.notifyDataSetChanged();
+                            progressDialog.dismiss();
+                        }
+                    }
+                });
+            }
+        });
     }
 
     @Override
     public void initAdapter() {
-
+        washCarAdapter = new WashCarAdapter(arrayList,this);
+        listView.setAdapter(washCarAdapter);
     }
 
     @Override
     public void initLinstener() {
-
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent=new Intent(WashCarActivity.this,WashShopActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     //头标签
@@ -177,7 +234,6 @@ public class WashCarActivity extends BaseActivity implements CompoundButton.OnCh
             case R.id.lishi_washcar:
                 Toast.makeText(this, "历史下单店", Toast.LENGTH_SHORT).show();
                 break;
-
             case R.id.moren_washcar:
                 Toast.makeText(this, "默认排序", Toast.LENGTH_SHORT).show();
                 break;
@@ -189,18 +245,6 @@ public class WashCarActivity extends BaseActivity implements CompoundButton.OnCh
                 break;
             case R.id.jiage_washcar:
                 Toast.makeText(this, "价格最低", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.itme_1:
-                Intent intent1 = new Intent(WashCarActivity.this,WashShopActivity.class);
-                startActivity(intent1);
-                break;
-            case R.id.itme_2:
-                Intent intent2 = new Intent(WashCarActivity.this,WashShopActivity.class);
-                startActivity(intent2);
-                break;
-            case R.id.itme_3:
-                Intent intent3 = new Intent(WashCarActivity.this,WashShopActivity.class);
-                startActivity(intent3);
                 break;
         }
     }

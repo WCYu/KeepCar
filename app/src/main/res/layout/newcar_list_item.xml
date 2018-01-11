@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/y200">
+
+        <RelativeLayout
+            android:layout_width="@dimen/x268"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/exhibition_list_item_icon"
+                android:layout_width="@dimen/x268"
+                android:layout_height="@dimen/y208"
+                android:layout_gravity="center"
+                android:background="@android:color/background_dark" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="@dimen/y20">
+
+            <TextView
+                android:id="@+id/exhibition_list_item_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="精品"
+                android:textColor="#343434"
+                android:textSize="@dimen/y30" />
+
+            <TextView
+                android:id="@+id/exhibition_list_item_shi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/y10"
+                android:text="shop_name"
+                android:textColor="#999999"
+                android:textSize="@dimen/y26" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/y10">
+
+                <TextView
+                    android:id="@+id/exhibition_list_item_jiage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3.4-11.89"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="@dimen/y26" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/y10"
+                    android:text="万" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/exhibition_list_item_shijia"
+            android:layout_width="@dimen/x116"
+            android:layout_height="@dimen/y44"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/y20"
+            android:text="约试驾"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:background="#FF0000"
+            android:textSize="@dimen/y30" />
+</LinearLayout>

@@ -16,6 +16,8 @@ import com.ysd.keepcar.custom.CustomTool;
 import com.ysd.keepcar.view.home.fragment.ErShouFragment;
 import com.ysd.keepcar.view.home.fragment.XinCarFragment;
 
+import java.security.PublicKey;
+
 //展厅Activity
 public class ExhibitionActivity extends BaseActivity {
 
@@ -28,6 +30,7 @@ public class ExhibitionActivity extends BaseActivity {
     private FragmentTransaction transaction;
     private ErShouFragment erShouFragment;
     private XinCarFragment xinCarFragment;
+    public String tk;
 
     @Override
     public int getInitId() {
@@ -61,7 +64,11 @@ public class ExhibitionActivity extends BaseActivity {
     public void initData() {
         Intent intent = getIntent();
         String title = intent.getStringExtra("title");
+        tk = intent.getStringExtra("tk");
         customTool.setAppTitle(title);
+        Bundle bundle=new Bundle();
+        bundle.putString("tk",tk);
+        erShouFragment.setArguments(bundle);
     }
 
     @Override

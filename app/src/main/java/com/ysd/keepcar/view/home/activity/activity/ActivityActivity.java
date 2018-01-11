@@ -1,11 +1,13 @@
 package com.ysd.keepcar.view.home.activity.activity;
 
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.ysd.keepcar.R;
@@ -36,12 +38,17 @@ public class ActivityActivity extends BaseActivity {
     private RadioButton activity_paixu;
     private RadioGroup boutique_group;
     private GridView activity_grid;
-    private List<ActivityBean.DataBean.ListBean> listBeans;
+    private List<ActivityBean.DataBean.ListBean> listBeans = new ArrayList<>();
+
+    private ActivityAdapter activityAdapter;
 
     @Override
     public int getInitId() {
         return R.layout.activity_activity;
     }
+
+
+
 
     @Override
     public void initView() {
@@ -51,6 +58,10 @@ public class ActivityActivity extends BaseActivity {
         activity_paixu = findViewById(R.id.activity_paixu);
         boutique_group = findViewById(R.id.boutique_group);
         activity_grid = findViewById(R.id.activity_grid);
+
+        activityAdapter = new ActivityAdapter((ArrayList<ActivityBean.DataBean.ListBean>) listBeans, ActivityActivity.this);
+        activity_grid.setAdapter(activityAdapter);
+
         progress();
     }
 
@@ -89,10 +100,9 @@ public class ActivityActivity extends BaseActivity {
                     public void run() {
                         Gson gson = new Gson();
                         ActivityBean activityBean = gson.fromJson(string, ActivityBean.class);
-                        listBeans = activityBean.getData().getList();
+                        listBeans.addAll(activityBean.getData().getList());
                         if (listBeans != null) {
-                            ActivityAdapter activityAdapter = new ActivityAdapter((ArrayList<ActivityBean.DataBean.ListBean>) listBeans, ActivityActivity.this);
-                            activity_grid.setAdapter(activityAdapter);
+                            activityAdapter.notifyDataSetChanged();
                             progressDialog.dismiss();
                         }
                     }

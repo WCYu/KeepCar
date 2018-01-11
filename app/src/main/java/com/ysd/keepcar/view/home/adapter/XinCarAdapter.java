@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ysd.keepcar.R;
+import com.ysd.keepcar.view.home.bean.NewCarBean;
 
 import java.util.ArrayList;
 
@@ -19,9 +20,9 @@ import java.util.ArrayList;
 public class XinCarAdapter extends BaseAdapter {
 
     Context context;
-    ArrayList arrayList;
+    ArrayList<NewCarBean.DataBean.ListBean> arrayList;
 
-    public XinCarAdapter(Context context, ArrayList arrayList) {
+    public XinCarAdapter(Context context, ArrayList<NewCarBean.DataBean.ListBean> arrayList) {
         this.context = context;
         this.arrayList = arrayList;
     }
@@ -43,30 +44,31 @@ public class XinCarAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        convertView = LayoutInflater.from(context).inflate(R.layout.home_list_item, null);
-        ViewHolder vh=new ViewHolder(convertView);
-        vh.home_list_item_name.setText(arrayList.get(position)+"");
-        vh.home_list_item_shop_name.setText(arrayList.get(position)+"");
-        vh.home_list_item_fukuan.setText(arrayList.get(position)+"");
-        vh.home_list_item_jiage.setText(arrayList.get(position)+"");
+        convertView = LayoutInflater.from(context).inflate(R.layout.newcar_list_item, null);
+        ViewHolder vh = new ViewHolder(convertView);
+        String brandName = arrayList.get(position).getBrandName();
+        String seriesName = arrayList.get(position).getSeriesName();
+        vh.exhibition_list_item_name.setText(brandName+"+"+seriesName);
+        vh.exhibition_list_item_shi.setText("试驾" + arrayList.get(position).getNum());
+        vh.exhibition_list_item_jiage.setText(arrayList.get(position).getMinPrice() + "-" + arrayList.get(position).getMaxPrice());
         return convertView;
     }
 
     public static class ViewHolder {
         public View rootView;
-        public ImageView home_list_item_icon;
-        public TextView home_list_item_name;
-        public TextView home_list_item_shop_name;
-        public TextView home_list_item_fukuan;
-        public TextView home_list_item_jiage;
+        public ImageView exhibition_list_item_icon;
+        public TextView exhibition_list_item_name;
+        public TextView exhibition_list_item_shi;
+        public TextView exhibition_list_item_jiage;
+        public TextView exhibition_list_item_shijia;
 
         public ViewHolder(View rootView) {
             this.rootView = rootView;
-            this.home_list_item_icon = (ImageView) rootView.findViewById(R.id.home_list_item_icon);
-            this.home_list_item_name = (TextView) rootView.findViewById(R.id.home_list_item_name);
-            this.home_list_item_shop_name = (TextView) rootView.findViewById(R.id.home_list_item_shop_name);
-            this.home_list_item_fukuan = (TextView) rootView.findViewById(R.id.home_list_item_fukuan);
-            this.home_list_item_jiage = (TextView) rootView.findViewById(R.id.home_list_item_jiage);
+            this.exhibition_list_item_icon = (ImageView) rootView.findViewById(R.id.exhibition_list_item_icon);
+            this.exhibition_list_item_name = (TextView) rootView.findViewById(R.id.exhibition_list_item_name);
+            this.exhibition_list_item_shi = (TextView) rootView.findViewById(R.id.exhibition_list_item_shi);
+            this.exhibition_list_item_jiage = (TextView) rootView.findViewById(R.id.exhibition_list_item_jiage);
+            this.exhibition_list_item_shijia = (TextView) rootView.findViewById(R.id.exhibition_list_item_shijia);
         }
 
     }

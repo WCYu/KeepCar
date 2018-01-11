@@ -53,55 +53,11 @@
                 android:drawableRight="@drawable/washcar_btn"/>
     </LinearLayout>
 
-    <include
-        android:id="@+id/itme_1"
-        layout="@layout/washcar_layout"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/y196"/>
-    <View
-        android:background="@color/colorGreyBottom"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"/>
-    <include
-        android:id="@+id/itme_2"
-        layout="@layout/washcar_layout"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/y196"/>
-    <View
-        android:background="@color/colorGreyBottom"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"/>
-    <include
-        android:id="@+id/itme_3"
-        layout="@layout/washcar_layout"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/y196"/>
-    <View
-        android:background="@color/colorGreyBottom"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"/>
-    <include
-        android:id="@+id/itme_4"
-        layout="@layout/washcar_layout"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/y196"/>
-    <View
-        android:background="@color/colorGreyBottom"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"/>
-    <include
-        android:id="@+id/itme_5"
-        layout="@layout/washcar_layout"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/y196"/>
-    <View
-        android:background="@color/colorGreyBottom"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"/>
-
     <ListView
-        android:id="@+id/lv_washcar"
+        android:id="@+id/washcar_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></ListView>
+        android:layout_height="match_parent">
+
+    </ListView>
 
 </com.ysd.keepcar.custom.PercentLinearLayout>

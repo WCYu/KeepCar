@@ -216,6 +216,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
             case R.id.hometop_zhanting:
                 intent.setClass(getActivity(), ExhibitionActivity.class);
                 intent.putExtra("title", "4S店展厅");
+                intent.putExtra("tk", userId);
                 break;
             case R.id.hometop_xubao:
                 intent.setClass(getActivity(), RenewalActivity.class);

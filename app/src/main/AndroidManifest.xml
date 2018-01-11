@@ -51,7 +51,6 @@
         <activity android:name=".view.shop.activity.Place_OrderActivity" />
         <activity android:name=".view.shop.activity.Payment_SuccessActivity" />
         <!-- <> -->
-        <activity android:name=".view.shop.activity.Payment_SuccessActivity" />
         <activity android:name=".view.personalcenter.login.LoginActivity" />
         <activity android:name=".view.personalcenter.mycar.MyCarActivity" />
         <activity android:name=".view.personalcenter.myshop.MyShopActivity" />
@@ -65,7 +64,7 @@
         <activity android:name=".view.shoppingcart.activity.RealOrderActivity" />
         <activity android:name=".view.home.activity.integrashop.ExchangeInfoActivity" />
         <activity android:name=".view.home.activity.boutique.BoutiqueInfoActivity" />
-        <activity android:name=".view.home.activity.activity.ActivityInfoActivity"></activity>
+        <activity android:name=".view.home.activity.activity.ActivityInfoActivity"/>
     </application>
 
 </manifest>

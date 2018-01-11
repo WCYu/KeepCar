@@ -34,12 +34,12 @@ public class ActivityAdapter extends BaseAdapter {
 
     @Override
     public Object getItem(int position) {
-        return null;
+        return arrayList.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return position;
     }
 
     @Override
