@@ -50,8 +50,8 @@ public class ErShouFragmentAdapter extends BaseAdapter {
         vh.ershocar_list_item_name.setText(brandName + "+" + seriesName);
         vh.ershocar_list_item_xinghao.setText(arrayList.get(position).getModelName());
         vh.ershocar_list_item_shijian.setText(arrayList.get(position).getBuyDate());
-        vh.ershocar_list_item_jiage.setText(arrayList.get(position).getCurrentPrice()+"");
-        vh.ershocar_list_item_xincarjiage.setText(arrayList.get(position).getNewCarPrice()+"");
+        vh.ershocar_list_item_jiage.setText(arrayList.get(position).getCurrentPrice() + "");
+        vh.ershocar_list_item_xincarjiage.setText(arrayList.get(position).getNewCarPrice() + "");
         return convertView;
     }
 
